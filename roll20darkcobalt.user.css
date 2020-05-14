@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.2
+@version      1.0.3
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -3060,8 +3060,12 @@
         font-size: 22px;
         font-weight: 600;
         text-align: center;
-        padding-top: 10px !important;
+		line-height: 20px;
+        padding-top: 5px !important;
     }
+	.sheet-rolltemplate-npcaction div.sheet-container {
+		padding-top: 10px;
+	}
     .sheet-rolltemplate-traits .sheet-subheader,
     .sheet-rolltemplate-spell .sheet-italics,
     .charsheet .sheet-npc .sheet-italics {
