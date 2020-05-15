@@ -8,5 +8,11 @@
 
 </div>
 
-------------
+
+### What is done?
+
+- all typography: used custom font for headers, numbers, main text
+- color palette: dark blue grey bg, violet elements and yellow accents
+- 5e DND charstheet
+
 work in progress...
