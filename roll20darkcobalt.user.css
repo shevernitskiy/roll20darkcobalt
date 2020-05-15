@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.5
+@version      1.0.6
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.5 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.6 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1765,6 +1765,9 @@
     #initiativewindow_settings small {
         color: var(--color-text-disabled);
     }
+    #initiativewindow ul li {
+        background-color: var(--color-bg-light);
+    }
     /* ------------------------------ Flotating Bar ----------------------------- */
 
     #floatingtoolbar,
@@ -2972,7 +2975,11 @@
     .sheet-rolltemplate-atk div.sheet-desc:hover,
     .sheet-rolltemplate-atkdmg div.sheet-desc:hover,
     .sheet-rolltemplate-dmg div.sheet-desc:hover,
-    .sheet-rolltemplate-desc div.sheet-desc:hover {
+    .sheet-rolltemplate-desc div.sheet-desc:hover,
+    .sheet-rolltemplate-traits:hover,
+    .sheet-rolltemplate-npcaction div.sheet-container:hover,
+    .sheet-rolltemplate-npcatk:hover,
+    .sheet-rolltemplate-npcdmg:hover {
         box-shadow: 0px 0px 10px var(--color-outline);
     }
     .sheet-rolltemplate-simple .sheet-adv span,
