@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.3
+@version      1.0.4
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,6 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
+		--version: "Dark Cobalt v1.0.4 by shevernitskiy";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1705,6 +1706,15 @@
     body {
         background: url("data:image/png;base64,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");
     }
+	#loading-overlay h1:nth-of-type(1):before {
+		content: var(--version);
+		position: absolute;
+		top: 7px;
+		left: 70px;
+		font-size: 24px;
+		color: var(--color-outline);
+		text-shadow: 0px 0px 10px var(--color-button-main), 0px 0px 10px var(--color-button-main);
+	}
     /* ------------------------------ Turn Order -------------------------------- */
     #initiativewindow {
         width: calc(100% - 5px) !important;
@@ -1944,7 +1954,12 @@
         border-radius: 0px 0px 5px 5px;
         bottom: -33px !important;
     }
-    /* ========== Playerzone ===========*/
+	.table-striped>tbody>tr:nth-of-type(odd) {
+		background-color: var(--color-element-bg);
+	}
+
+    /* ------------------------------- Playerzone ------------------------------- */
+
     #playerzone .player {
         box-shadow: 0px 0px 5px var(--color-text-disabled);
     }
@@ -3714,8 +3729,9 @@
     }
     .charsheet .sheet-advantagetoggle input[type="radio"]:checked + span,
     .charsheet input[type="radio"].sheet-tab-button:checked + span {
-        background: var(--color-button-hover) !important;
-        box-shadow: 0px 0px 10px var(--color-button-main);
+        background: var(--color-outline) !important;
+        box-shadow: 0px 0px 10px var(--color-outline);
+		color: var(--color-button-hover) !important;
     }
     .charsheet .sheet-advantagetoggle input[type="radio"],
     .charsheet .sheet-advantagetoggle input[type="radio"] + span {
@@ -4891,6 +4907,27 @@
         box-shadow: 0px 0px 2px var(--color-text-disabled);
         padding: 5px;
     }
+	.charsheet .sheet-npc_toggle[value="1"] ~ .sheet-advantagetoggle {
+		top: -15px;
+		left: 350px;
+	}
+	.charsheet .sheet-npc_toggle[value="1"] ~ .sheet-advantagetoggle input[type=radio] + span {
+		background-color: var(--color-button-main);
+		font-family: var(--font-primary);
+		text-transform: uppercase;
+	}
+	.charsheet .sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-actions, .charsheet .sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-stat-block {
+		margin-top: 0px;
+		margin-bottom: 15px;
+	}
+	.charsheet .sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc {
+		margin-top: 10px;
+	}
+	.charsheet .sheet-npc_toggle[value="1"] ~ .sheet-advantagetoggle input[type=radio]:checked + span {
+		background: var(--color-outline) !important;
+		color: var(--color-button-hover);
+		box-shadow: 0px 0px 10px var(--color-outline);
+	}
     .charsheet .sheet-licensecontainer div.sheet-npc div.sheet-triangle,
     .charsheet .sheet-licensecontainer div.sheet-triangle {
         border: 0.5px solid var(--color-text-disabled);
