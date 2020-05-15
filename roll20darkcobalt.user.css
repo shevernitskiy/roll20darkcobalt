@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.4
+@version      1.0.5
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -33,12 +33,12 @@
         --color-blue: #0c6be7;
         --color-outline: #fc0;
         --color-player-progress: rgba(255, 204, 0, 0.6);
-        --colot-none: #0000;
+        --color-none: #0000;
         --font-number: "Ruda", sans-serif;
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-		--version: "Dark Cobalt v1.0.4 by shevernitskiy";
+		--version: "Dark Cobalt v1.0.5 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1709,11 +1709,20 @@
 	#loading-overlay h1:nth-of-type(1):before {
 		content: var(--version);
 		position: absolute;
+		display: block;
+		white-space: pre;
 		top: 7px;
 		left: 70px;
-		font-size: 24px;
-		color: var(--color-outline);
-		text-shadow: 0px 0px 10px var(--color-button-main), 0px 0px 10px var(--color-button-main);
+		line-height: 18px;
+		font-size: 20px;
+		font-weight: 400;
+		background-color: var(--color-floating-bar-bg);
+		border-radius: 10px;
+		font-family: var(--font-header);
+		padding-left: 6px;
+		padding-right: 6px;
+		color: var(--color-text-primary);
+		box-shadow: 0px 0px 10px var(--color-text-disabled);
 	}
     /* ------------------------------ Turn Order -------------------------------- */
     #initiativewindow {
@@ -3120,6 +3129,7 @@
     .sheet-rolltemplate-dmg div.sheet-desc,
     .sheet-rolltemplate-dmg div.sheet-savedc,
     .sheet-rolltemplate-spell div.sheet-container,
+	.sheet-rolltemplate-traits,
     .sheet-rolltemplate-npc,
     .sheet-rolltemplate-npcaction div.sheet-container,
 	.sheet-rolltemplate-atkdmg div.sheet-container.sheet-atk,
@@ -3130,6 +3140,14 @@
         background-position: 3px 3px !important;
         background-size: 20px !important;
     }
+	.sheet-rolltemplate-traits {
+		background-position: 1px 1px !important;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9tmdbEQAAAAfdFJOUwDu38A7/Rf3GZAKboKx5zO64WEs1Q1Tn8VNkiWMA2mQxdQOAAAA70lEQVQYGb3A2XaDIBQF0COiF5yjmafz/39Za102BZS8NBsfYQze0oq0eEORkEmBuBNHJ0QZ4UgMYlJOUkRozjS2nTk7Y1PJRYkNpuGiMVilO77oNALao60bOpraHlv8GqpUuErSasC3omZUXQA4JIxKDhhVjKow6RjR4YdR3KQMZrniBpVjYRRXKYMXecIVSY4/LhmDsgscPYN6ePYM2MOnGKDgEwYIfMIAgeeWMSC7waUZpOHqGdTDZRlk4bKcyVXrq3Bm4bKcZPcco/yecWLhshztSizKHUcWrpKSPh948XimwhKuYjDwmKHAv/kCiPxORZbgGF4AAAAASUVORK5CYII=');
+	}
+	.sheet-rolltemplate-traits .sheet-row.sheet-header {
+		padding-left: 14px !important;
+		padding-right: 14px !important
+	}
     .sheet-rolltemplate-npcatk {
         background-repeat: no-repeat !important;
         background-color: var(--color-element-bg) !important;
@@ -4142,7 +4160,7 @@
     }
     /* Add Modify */
     .charsheet .repcontrol .btn {
-        color: var(--colot-none) !important;
+        color: var(--color-none) !important;
     }
     .charsheet .repcontrol .repcontrol_add:before,
     .charsheet .repcontrol .repcontrol_edit:after {
@@ -5262,7 +5280,7 @@
 	}
 	.subsettings #cell_measurement:after {
 		content: " :)";
-		color: var(--colot-none);
+		color: var(--color-none);
 	}
 	.dialog .pagedetails.tab-pane .subsettings label:nth-last-of-type(2) {
 		position: relative;
