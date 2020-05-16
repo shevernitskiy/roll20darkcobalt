@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.6
+@version      1.0.7
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.6 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.7 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1979,6 +1979,36 @@
         background-color: var(--color-floating-bar-bg);
     }
 
+    /* -------------------------------- Macro box ------------------------------- */
+
+    #macrobar {
+        margin: 10px;
+    }
+    #macrobar .macrobox .btn {
+        text-shadow: 0px 0px 10px var(--color-bg-light),
+            0px 0px 5px var(--color-bg-light) !important;
+        box-shadow: 0px 0px 5px var(--color-text-disabled) !important;
+        border-radius: 0px;
+    }
+    #macrobar .macrobox:nth-of-type(1) .btn {
+        border-top-left-radius: 4px !important;
+        border-bottom-left-radius: 4px !important;
+    }
+    #macrobar .macrobox:nth-last-of-type(1) .btn {
+        border-bottom-right-radius: 4px !important;
+        border-top-right-radius: 4px !important;
+    }
+    #macrobar div.macrobox {
+        margin-right: 0px;
+    }
+    #macrobar div.macrobox:hover,
+    #macrobar div.macrobox.ui-sortable-helper {
+        background-color: var(--color-button-main);
+        margin-right: 0px;
+    }
+    #macrobar_macros {
+        background: none;
+    }
     /* -------------------------------------------------------------------------- */
     /*                                   Sidebar                                  */
     /* -------------------------------------------------------------------------- */
