@@ -1,29 +1,19 @@
 on:
   push:
-    # Sequence of patterns matched against refs/tags
+    branches:
+      - master
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-name: Create Release
+      - v*
 
 jobs:
-  build:
-    name: Create Release
+  release-on-push:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      - id: release
+        uses: rymndhng/release-on-push-action@v0.14.0
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+          bump_version_scheme: minor
+      - name: Check Output Parameters
+        run: echo "Got version ${{ steps.release.outputs.tag_name }}"
