@@ -15,4 +15,7 @@
 - color palette: dark blue grey bg, violet elements and yellow accents
 - 5e DND charsheet
 
+### Disclaimer
+I don't know how it will work with other sheets and games
+
 work in progress...
