@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.8
+@version      1.0.9
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -31,14 +31,14 @@
         --color-red: #f85212;
         --color-green: #78ff10;
         --color-blue: #0c6be7;
-        --color-outline: #fc0;
+        --color-yellow: #fc0;
         --color-player-progress: rgba(255, 204, 0, 0.6);
         --color-none: #0000;
         --font-number: "Ruda", sans-serif;
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.8 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.9 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1173,7 +1173,7 @@
     .selectize-input.focus,
     textarea:focus {
         outline: none;
-        border: 1px solid var(--color-outline);
+        border: 1px solid var(--color-yellow);
     }
     select[disabled] {
         background: var(--color-element-bg);
@@ -1202,7 +1202,7 @@
     }
     .selectize-dropdown-content .option.active {
         background: none;
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     .selectize-control.multi .selectize-input > div.active {
         background: var(--color-button-main);
@@ -1229,12 +1229,12 @@
         border-radius: 4px;
     }
     .chosen-container .chosen-drop .highlighted {
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
         background: var(--color-element-bg) !important;
     }
     .chosen-container-multi .chosen-choices:focus {
         outline: none;
-        border: 1px solid var(--color-outline);
+        border: 1px solid var(--color-yellow);
     }
     .chosen-container-multi .chosen-choices li.search-choice,
     .textboxlist-bit-box {
@@ -1269,7 +1269,7 @@
         top: 12px;
     }
     .textboxlist-bit-editable {
-        border: 1px solid var(--color-outline);
+        border: 1px solid var(--color-yellow);
         border-radius: 4px;
     }
     .textboxlist-bit-editable-input {
@@ -1333,7 +1333,7 @@
         color: var(--color-text-disabled);
     }
     .dropbox {
-        border: 1px dashed var(--color-outline);
+        border: 1px dashed var(--color-yellow);
     }
     .handouteditor .avatar {
         background-color: var(--color-bg-light);
@@ -1342,7 +1342,7 @@
         border: 0px;
     }
     .ui-widget-content a {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     /* Notepad */
     .note-editor.note-frame {
@@ -1451,7 +1451,7 @@
     }
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus {
-        color: var(--color-outline);
+        color: var(--color-yellow);
         background-color: var(--color-element-bg);
     }
     .dropdown-menu > li > a {
@@ -1506,7 +1506,7 @@
     }
     code {
         background-color: var(--color-element-bg);
-        color: var(--color-outline);
+        color: var(--color-yellow);
         font-size: 90%;
         font-family: var(--font-number);
         font-weight: 700;
@@ -2059,7 +2059,7 @@
         box-shadow: 0 0 3px var(--color-text-disabled);
     }
     #rightsidebar div.content a:not(.btn) {
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
     }
 
     /* -------------------------------- Tab Menu -------------------------------- */
@@ -2176,7 +2176,7 @@
         color: var(--color-text-disabled);
     }
     #rightsidebar .zoomInfoBox {
-        outline: 1px dashed var(--color-outline);
+        outline: 1px dashed var(--color-yellow);
     }
     #rightsidebar select + label {
         margin-top: 10px;
@@ -2370,10 +2370,10 @@
     }
     #rightsidebar #jukeboxwhatsplaying .progress {
         background-color: var(--color-player-progress);
-        box-shadow: inset 3px 0 0 0 var(--color-outline);
+        box-shadow: inset 3px 0 0 0 var(--color-yellow);
     }
     #rightsidebar #jukeboxfolderroot .jukebox-content-playing {
-        box-shadow: inset 3px 0 0 0 var(--color-outline);
+        box-shadow: inset 3px 0 0 0 var(--color-yellow);
     }
     #rightsidebar #jukebox .primarycontrols {
         margin-bottom: 15px;
@@ -2480,7 +2480,7 @@
     #ttaudio_results .result .progress,
     #battlebards_results .result .progress,
     #incompetech_results .result .progress {
-        box-shadow: inset -3px 0 0 0 var(--color-outline);
+        box-shadow: inset -3px 0 0 0 var(--color-yellow);
         background: var(--color-player-progress);
         border-radius: 0px;
     }
@@ -2524,7 +2524,7 @@
     #incompetech_results .result .controls button:hover > .pictos,
     #incompetech_results .result .controls button:hover > i,
     #incompetech_results .result .controls button:focus > .pictos {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     #myaudio_playlists .listresults .result .titleedit,
     #myaudio_results .result .titleedit,
@@ -2534,7 +2534,7 @@
         color: var(--color-text-primary);
         background: var(--color-bg-light);
         font-family: var(--font-secondary);
-        border: 1px solid var(--color-outline);
+        border: 1px solid var(--color-yellow);
     }
     #myaudio_playlists .listheader .titleedit {
         font-size: 18px;
@@ -2542,7 +2542,7 @@
     }
     #myaudio_dropzone {
         background-color: var(--color-bg-medium);
-        border: 1px dashed var(--color-outline) !important;
+        border: 1px dashed var(--color-yellow) !important;
         color: var(--color-text-disabled);
     }
 
@@ -2564,7 +2564,7 @@
         padding: 5px;
     }
     .no-touch .dd-content:hover {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     .folderroot .dd-content {
         border: 0px;
@@ -2607,7 +2607,7 @@
     .booktemplate h1,
     .booktemplate h2 {
         font-family: var(--font-header) !important;
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
     }
     .booktemplate h1 {
         font-size: 34px !important;
@@ -2618,7 +2618,7 @@
         font-weight: 400 !important;
     }
     .booktemplate .redsubtitle {
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
     }
     .booktemplate {
         color: var(--color-text-secondary);
@@ -2646,7 +2646,7 @@
     .booktemplate .reactions span,
     .booktemplate .single-list span,
     .booktemplate .attributes span {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
 
     /* --------------------------------- Journal -------------------------------- */
@@ -2754,7 +2754,7 @@
     }
     #imagedialog .tabcontainer a.active,
     #imagedialog .tabcontainer a:hover {
-        color: var(--color-outline);
+        color: var(--color-yellow);
         text-decoration: none;
     }
     #imagedialog .tabcontainer a#switchtouserlibrary {
@@ -2829,7 +2829,7 @@
     /* Whisper */
     .textchatcontainer .message.private {
         background-color: var(--color-bg-light);
-        box-shadow: inset 0px 0px 8px var(--color-outline);
+        box-shadow: inset 0px 0px 8px var(--color-yellow);
     }
     /* Other */
     /* Formula */
@@ -3034,7 +3034,7 @@
     .sheet-rolltemplate-npcaction div.sheet-container:hover,
     .sheet-rolltemplate-npcatk:hover,
     .sheet-rolltemplate-npcdmg:hover {
-        box-shadow: 0px 0px 10px var(--color-outline);
+        box-shadow: 0px 0px 10px var(--color-yellow);
     }
     .sheet-rolltemplate-simple .sheet-adv span,
     .sheet-rolltemplate-simple .sheet-solo span,
@@ -3141,7 +3141,7 @@
     .sheet-rolltemplate-traits .sheet-header,
     .sheet-rolltemplate-spell .sheet-title {
         font-family: var(--font-header);
-        color: var(--color-outline);
+        color: var(--color-yellow);
         font-size: 22px;
         font-weight: 600;
         text-align: center;
@@ -3839,8 +3839,8 @@
     }
     .charsheet .sheet-advantagetoggle input[type="radio"]:checked + span,
     .charsheet input[type="radio"].sheet-tab-button:checked + span {
-        background: var(--color-outline) !important;
-        box-shadow: 0px 0px 10px var(--color-outline);
+        background: var(--color-yellow) !important;
+        box-shadow: 0px 0px 10px var(--color-yellow);
         color: var(--color-button-hover) !important;
     }
     .charsheet .sheet-advantagetoggle input[type="radio"],
@@ -3975,7 +3975,7 @@
     .charsheet button[type="roll"]:hover *,
     .charsheet .sheet-spell button[type="roll"]:hover input[type="text"],
     .charsheet .sheet-action .sheet-display button[type="roll"]:hover * {
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
     }
     /* Labels Big */
     .charsheet
@@ -4318,7 +4318,7 @@
     .charsheet .sheet-traits .sheet-options-flag:hover + span,
     .charsheet .sheet-equipment .sheet-inventorysubflag:hover + span,
     .charsheet .sheet-header .sheet-options-flag:hover + span {
-        color: var(--color-outline);
+        color: var(--color-yellow);
         background: none;
     }
     .charsheet .sheet-spell .sheet-details-flag + span,
@@ -4425,7 +4425,7 @@
     .charsheet .sheet-proficiencies .sheet-options,
     .charsheet .sheet-trait .sheet-options {
         border: 0;
-        box-shadow: 0px 0px 5px var(--color-outline);
+        box-shadow: 0px 0px 5px var(--color-yellow);
     }
     .charsheet .sheet-options .sheet-row > span {
         color: var(--color-text-secondary);
@@ -4577,7 +4577,7 @@
     }
     .charsheet .sheet-item .sheet-inventorysubflag:checked ~ .sheet-subitem {
         margin-top: 2px;
-        box-shadow: 0px 0px 5px var(--color-outline);
+        box-shadow: 0px 0px 5px var(--color-yellow);
     }
     /* Traits */
     .charsheet
@@ -4592,7 +4592,7 @@
     }
     .charsheet .sheet-traits .sheet-display .sheet-title {
         font-family: var(--font-header);
-        color: var(--color-outline);
+        color: var(--color-yellow);
         font-size: 20px;
     }
     .charsheet .sheet-traits input[name="attr_source_type"] {
@@ -4746,6 +4746,223 @@
     /* Textarea */
     .charsheet .sheet-textbox textarea {
         font-size: 13px;
+    }
+
+    /* Container Icons */
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-init,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-speed,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-ac,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-hp,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-skills-container,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-saving-throw-container {
+        background-color: var(--color-element-bg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 17px !important;
+        background-position-y: 1px !important;
+        background-position-x: calc(100% - 2px) !important;
+        box-shadow: 0px 0px 2px var(--color-text-disabled) !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-init
+        button,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-speed
+        .sheet-label {
+        bottom: 8px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-ac
+        .sheet-pc-ac {
+        bottom: 2px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container {
+        height: 80px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-init,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-speed,
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-ac {
+        min-height: 70px !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        input {
+        height: 40px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-speed {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC3UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lRJuQIAAAA8dFJOUwAKUnv6ZBVnmvaYksUkDDrs24TOwhfht18Ev+ikNHdxREjms6tp1GwSoFrJKNE3iz6ABRvtMQ+I3vIejrRSpPMAAAEPSURBVBgZpcDXcoJQFEDRQ40UC1LsXdSxm172/39XBskgl/iSyZK/0PvvSX+iyX2vLTKDs9x1IrMbWz25Y+8AyTQ2XK8pv3WAqNE2AVyp6gLRJiJniKruQOupww/HlrKeD2zXFAwp84DV5pmc2WnrUpICWBOu5lZDFDoZe0VmoYlqZgIcYjL9R1GNHDLLI5m6qLSAK7cLsJAKj9ywCbCWiiG5sA6QimprD8nZAZCKahDuzz6ZSzOBsSg0B9OLpz6A0dPbU1GNAdOLZwdgXkvfdkG4tBpS6H4A5lfDcCi0dCnYl9A9mfPZMeHGEsUo4PKZcDMShebj1h0Kvqi0iLT5cCMVdsuplbxIxYQyS/7pGxuvRGZO3ftYAAAAAElFTkSuQmCC");
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-init {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC3UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lRJuQIAAAA8dFJOUwANmiu/Cif1+uAFo35oIh7N9tK3sGBMLRhJFDSNeFwBPOVvMINU3YlW8VLrEsqnqtezkUHElTfhRWNN5gk48/gAAAEESURBVBgZncAHcoJAAAXQL7AsSLXFgj1GsZtayL//uQJEZ2g6GR/+LbRd3PK11r5rOKu/GEsVOZ5Pw4qQWpBsIU8cSM6GOrAzSBpIqP3HIOjWJ4h1g42jsDl3GDOQ6nXaa8bkae+3FEXjmYaLevQ+Y9EYWYG9Z5aFosHY55/mPESZ3mCqLVBBmEzZqNRiorFBpRUTZheVnpharh4EynTJi8bzSEVe7ZMZWwd5GsnZdNc/MmYNkLcg6XuA/kM2pygISR4ForFJ6UxQoEpyBPS25GGAImFS9gG0eZqiTKPpAujI0QRFrj2kJgD0LA9lCjlEQqCCa8gOrlPMD1ynv3m44VXgbr+kpy9nQwn67gAAAABJRU5ErkJggg==");
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-ac {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB+UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9ihwPVQAAAApdFJOUwC1Q03MU4orMvoUjy+lZyg16tie8Ax90j4Flaxv9ROcgVnJwmI3YB9xYJG9YAAAANVJREFUKM+N02kTgiAQBmBUMsC87yuvLv7/H2xKCJXN2k/6PsMMwC5Cv+o4uo43nAiTQUmI5dndaL7/CO/jCbdcq4Ngsep+CoIdfpXOiDOYryI6wkxERHY5smD25wh7MIsotkGmIrJdkLGIbjnIhrx0DrIjM6oydQX4Ir8MgEt5LoQygM1EvTjAfa02lOscDYozjQuaKmbJll132W/2hv3lIyOUhms24nW7Hlb8CNmmnZ0FW22htXv14YZ6wDg4MwdTaILjYkacV5h27Ns8WbXRnNH/9QTiODDhLULn7AAAAABJRU5ErkJggg==");
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-hp {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAASUExURezt9kdwTOzt9uzt9uzt9uzt9lAh2u0AAAAFdFJOUzQABLxeVWAtbAAAAEFJREFUGNNjEEQFDCBCyDQ0NDRYEc4XCAUBRrrwhRgYGFjAfAcgS5FBOBQZGDKIovAD6c5Hdw+6e+kdXtjiCwkAAKNjWUEAHkmUAAAAAElFTkSuQmCC") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-hp
+        + .sheet-hp {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURUdwTP///////////////////////////////////////////////////////////0Q+7AIAAAAPdFJOUwAwMbn0PMpmmMJX4DMK6RY+uvUAAAB/SURBVCjP1dPBDoAgCIBhRMyozPd/28JaQdPq6n9os+/ARgnwN5/PfE0xX2GF3c2uE0ZXmgRilOd0vEGzDVGAqI6yH6vWDc9jaW7wHrM5PphT4jZzAjBuZ4dlL7zMJnqbTSHQg71WAO3eLFW0uF7q/UnWobR287f8uwYfl6jaBjL3GKm9Je1XAAAAAElFTkSuQmCC") !important;
+    }
+
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container {
+        background-image: none !important;
+        margin-left: 5px !important;
+        margin-right: 8px !important;
+        height: 60px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attributes-container {
+        background-size: auto;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container
+        button {
+        position: relative;
+        top: 50px;
+        font-size: 7px !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container
+        .sheet-attr-mod {
+        position: relative;
+        top: -55px;
+        margin: 0px;
+        left: -8px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container
+        .sheet-attr {
+        position: relative;
+        top: 0px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(1) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACNUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lKcnqIAAAAudFJOUwDgY/gLCSuIXsxxvfRpNObAHAXZg/7qbrqbFa1DWO4gfBguShPSottEPXe1D5IjM3IHAAAA20lEQVQYGa3BV3KDMAAFwEeVRLHpbnEZXNPe/Y8XDAxFkb+SXfzZNhA1XpIRWZ7wgmBrDaM39nyYfLKjMgxcuVFqF3sAHLbyFAMZsWWlAMlKfosMgxVLdnIPJMsvTFwcDgKwEWDC5igBG5WH0YojB3c2bhjtOQHFJxtPXnDljIMbWzaAo0VNghM7D0BRJ3Fmx3L31IXAhb2PNTWJC+DKzrLkTFRkaBQ089GqaRSip2jyjp6kwQ6DkL9YWwzSJTWHBSb8ijNWjZljztFBuNB4hXgsFnYsNvHZxX/5ATMCTUttPujrAAAAAElFTkSuQmCC") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(2) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAClUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9pVrbrcAAAA2dFJOUwAQboEUYTEK9ZXxg1cejc4k4+00hkqSwSv5ZKPHaRn90a672je3BZ4NXSje2EQDyXmr6zqJdjmG50sAAAEISURBVBgZlcAHVsJAAEXRDykzIlV67x0b6tv/0pyJiBjCOXr1P0El0G1FINJNPaChK091I29U46GqNDOnEMvL1XO6UgRaulBazvM6awKBLqyBks7un/tGF2bAQmm7l56RtygwU1rHQtvIMx1daeGUdcsE56iUuPIQyXvFU0obxqGcCMcqpQJU5axqQF8pTUtZzuMep9uQY6bdtU5WoZyq5ctQUgAUdWnAiS1JZSBSIpffGmnI2VQq7RkYJZZwvK9bfvSG7yYMQyUGZBhPCiMlNsERp9sk0TrgjPs7fdvka5BXGy+OLfZupF+ihjTFy2kbhMpwwIuV7Y1EWZnMhITtKEvx7uRDf/UJMrgvDfKbQtkAAAAASUVORK5CYII=") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(3) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC6UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9tk0EqEAAAA9dFJOUwBECtQXH5/O9u70LcxnNW+u8EsPE/2W6obEPeUFC3WPUmu0p9nhP/lkxsAomICcm6u70Tx4WjCI8oKkHSQoQUV+AAABWklEQVQYGXXBh1rTYACG0Tcxe7YlHXTvyZShot/935ZJwPKnPJ7DWbwMvtW+z1wu/N6/STu/tlMwe3H49PooKZheUbuaRpKWMR/yrpLnTsGZ2/m11m5P7UXhnC/2keYARRjEVDqLCcBk0aFiKSyAhQZUnEgbC+Z9RQ4VTwtgpZhKS1I3z1VqUeloBfgCGN/IcDMGMiWArzG4BzUcXMjkA75O0NKFFmTyoWhHLuS6kMNc4YSpZoDTVUPXAQ5KOeoEMFBtvVZtAJBqSbtPxe6F0shzXW8khT0b4FUjlPA/YwltCgCLhicAR+Ko9tSm90bDKmPyI9ADhSf1r9WnYRPc9xUMbCA+qjTEsFXJc3hnPfpKMaS67p34dKcUQ6p7THeyMFhaYkqUYciUYDpqiGGoI6ZbtTA86BZTMdKMs2f9LGgYRvJsaranYMuFp1ChXwsVbPniT6IPfsw/fwGdnT4s9pc1cAAAAABJRU5ErkJggg==") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(4) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAByUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lL0Y/4AAAAldFJOUwCZKjcEq/Fnmth1DPbJRwLAoX9Pr+KTPB5fF+EzVajsatYgJbolSzelAAAAp0lEQVQoz+2TSRaDIBQEBRGQWUTjFDNy/ysGiUZygLznIr0ratGL32TZocPrVgrvm1ktdHaN90K2NY/yVGG/xXRQfgCDPGifhtCUyr/+mb44RnJi5VsbG4A5sepCIWUBoOwOK0KrB2QUAKZQXdyCHvaLPifEJ7PfcwjapG2zS6mI3dj1UGcot+PyNrIcZRoSh2N32fN1VJ1YtIDbxq7F1+Y0itEH+QIvfcA+pFSGZqoAAAAASUVORK5CYII=") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(5) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACiUExURUdwTP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////z077CsAAAA1dFJOUwDD0VTM4XT2KQnzMCI9l5urBIZ5M7MVuWfnG2YTNu2CXIqe2zy710RPvUv9aB+oktVbDHpdBx0NewAAAWJJREFUGBmNwVdC20AARdGrOuqyXOSGG70acPL2v7WMGob4IzmH/3CveUQjkAIa0Vz3DB4kM44hk5VBPDbSA1/uJAUeoawQL5B0x1mkxtyV5c7ViPim1F9Keius2sgyh+l0bGSZGmsFSEt/VtxIMjlWbiTdFDN/KQFGg5BWqIEBMledbUwr3qrjZlhxodaI3kitIqbjGVnv9N5lGY/BrStrh7eGtcdOlntLJ3fUKpkUUEwo1XJyLEetj/AI9elUwzH8UMsB1PGJ0oOZTMwhjfDVAa5dNRKkbXg6hVuJRA33mka1eS2XqjZp9RkEn1W6qbQsXzcVZ8dkFfpGlvHDVXLkh33wxk5GltGOt+A331wlKeTjQFYwziFNrjibjLAitSKs0S/OnEes/cuT9PSyx3p0OFONFT8vpMVzjFWLL1FCJzMmo5NEDKY+vTSl508ZeD4XfI/B2uGCs2awmHFhtuDf/gCfGjzqT8fxJgAAAABJRU5ErkJggg==") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-attr-container:nth-of-type(6) {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADGUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9sWM5SkAAABBdFJOUwD01kUy9uRjCgaVFDoePpDnxyByww+vd5+5Ncul4M78qVTyvCh/AZllGWgj0l9u2oyJKlFMnGdC+kh1XC2YolqCAtiORwAAAW5JREFUGBmFwAVuG1EAANExLRhjjimG0IaZynP/S/XLXTlbyVIeBWdspex3yVbGft0xQaXGfotlDO2SQ/a5UO+O1A/+d/aaALdG42r1W9k5QZaw87vcpnXwklxNVq20Y5ur4wcKut5tDkkjjVI6y2tLDQpu9C5hbbCGga4ommoFYoMYqtqn6MZrYG2wBkaO+JT2S74CaaRRAjzpvMHWj/tRSb0Ahg963gLOSupxvU3Qr6lloFlTNQYmBp0EgN61zoGyW6UGdLRWIZcM/ANNczFkLpvsVIxhbO4cYld8ejaDF3NdqDpip7Uwg665GVQ0JvcR6S3MzM0g0+UYgOEvgzrMzM3g1mBwAlw9nc50AifVgUG5egJzje6/P/LP22JD8GJwRLCwT8GzFeCnwTHQs07R1DpwanAInJpRdOmmAZnBOaQHHlIwPNAOxAZ1GGvtgk+r93d9o2kQ81hTJ+w0WjAtb5pTg8veYtCGaY+v/QVQO0ftjVWtCAAAAABJRU5ErkJggg==") !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-skills-container {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB+UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9ihwPVQAAAApdFJOUwB/8FtgDyrTwPYLVqTKu0bRnjXV44rfhRa0/S6pejQcAmqwZjolkLeVcKwgbwAAAQlJREFUOMvN1NluglAAhOFfOWIRARdW972d93/BXqgV2UmTpnMJX0IOJzPwr+K6ndhiJs0WrcyeSpI0tRvZZK6fzCe1bDQYKpfhYFTtjKNCHFPBrKUqsrQKbO2pJt46x3YbNWSze54hUkuiEZAmjlrjJCmxOiVm/7XqJIH9Z+uX7xACv4n5gf+EEIR1LAzg4wU5HCtpeDzwDoGodKpVdH9TgKS3t1/q3FLK8GQB2NnLZTaAdSrAsTwX4PKg2QXA9TQuQcm7AphYig3A1ZMq4bMp53OuPdVQSh5NmSSPB3Xw3pRce2qh5Jh8e4qw9rZ9IDDG9C0XwLZc1+3vBqD7pPQYqR6z12NI/yzfVVprQIRmxssAAAAASUVORK5CYII=");
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-saving-throw-container {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACrUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9orJI/sAAAA4dFJOUwD28gQVMyli1f3vtHRP30eJkxvrmlXiEdAOZge72YDCCi6t+UI5Wm2fd6N7S+c8X6any8eOIiONP68JdwAAAXZJREFUOMvN1NeagjAQBtChBAxdigiuFXt36//+T7Y3KAmIeunc8eVkMikM0TsFC4LpC0xfA+Cx/oRpOwUAAHWjPXKuh1sM963M+IAUH8ZdlnVRj+I7bbqVijth5TW2GN7GlFzXzWpWfyHBXpVkRkS0rb57csZ+NTJibKRUGZnoEldbRfdqjHLNTQTYwZilXV5nvDthY6giPO+UtT6tnaNt6DEHIMIj+bAcTboZX3MsoAZzIhvw3MGmPBjVGfjXWSI8ZOSUq505wNepYd9yS5vpOZ2y/owFwTQTdyZB4UT2RPNo1n0KUYRh8UfUDrld3odpWhP6aYdbMpQS2kSzdmgTrUqongTXXNqgsITCKw+T5mYOx1MdWinNRfgl3bEAA6K4L8BlO1wWS/FB+p37kA89X/5pBuVL+Z33pBqdQbOXxByARvMKtnWW6RhwiT6vcMxae0XiRcYVesmj5jPZRH2YJqCMJk/6WXjhro9L+EKHzIjSt+rs/xxjf+1GkXknAAAAAElFTkSuQmCC");
     }
 
     /* --------------------------------- Spells --------------------------------- */
@@ -4958,7 +5175,7 @@
     }
     .charsheet .sheet-spell .sheet-details span[name="attr_spellname"] {
         font-family: var(--font-header);
-        color: var(--color-outline);
+        color: var(--color-yellow);
         font-size: 20px;
         font-weight: 600;
     }
@@ -4967,7 +5184,7 @@
     }
     .charsheet span.sheet-spellritual,
     .charsheet span.sheet-spellconcentration {
-        background-color: var(--color-outline);
+        background-color: var(--color-yellow);
         color: var(--color-bg-dark);
     }
     /* Setting */
@@ -4989,7 +5206,7 @@
     .charactereditor .defaulttoken {
         background-color: var(--color-bg-light);
         color: var(--color-text-disabled);
-        border: 1px dashed var(--color-outline);
+        border: 1px dashed var(--color-yellow);
     }
     .avatar .inner {
         padding-top: 30px;
@@ -5054,9 +5271,9 @@
         ~ .sheet-advantagetoggle
         input[type="radio"]:checked
         + span {
-        background: var(--color-outline) !important;
+        background: var(--color-yellow) !important;
         color: var(--color-button-hover);
-        box-shadow: 0px 0px 10px var(--color-outline);
+        box-shadow: 0px 0px 10px var(--color-yellow);
     }
     .charsheet .sheet-licensecontainer div.sheet-npc div.sheet-triangle,
     .charsheet .sheet-licensecontainer div.sheet-triangle {
@@ -5064,7 +5281,7 @@
     }
     .charsheet .sheet-npc .sheet-actions .sheet-title,
     .charsheet .sheet-npc .sheet-display .sheet-title span {
-        color: var(--color-outline) !important;
+        color: var(--color-yellow) !important;
         font-family: var(--font-header);
         font-weight: 600;
         font-size: 28px;
@@ -5207,7 +5424,7 @@
         .repitem:last-child:focus-within
         button.sheet-npc_options-flag
         + span {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     .charsheet
         .sheet-npc
@@ -5225,7 +5442,7 @@
         > .repitem:nth-child(1)
         .sheet-toggle_repeating_npcreaction_edit
         + span {
-        color: var(--color-outline);
+        color: var(--color-yellow);
     }
     .charsheet .sheet-npc .sheet-action textarea {
         width: 96%;
@@ -5236,7 +5453,7 @@
     .sheet-rolltemplate-npcdmg .sheet-header {
         font-family: var(--font-header);
         font-size: 20px;
-        color: var(--color-outline);
+        color: var(--color-yellow);
         text-align: center;
         font-weight: 600;
     }
