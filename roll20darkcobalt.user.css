@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.9
+@version      1.0.10
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.9 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.10 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1059,6 +1059,7 @@
     #rightsidebar .ui-tabs-panel::-webkit-scrollbar-corner,
     textarea::-webkit-scrollbar-corner {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
 
     /* Buttons */
@@ -1762,9 +1763,6 @@
     #initiativewindow ul li {
         border: 0px;
     }
-    #initiativewindow ul li span.name {
-        padding-left: 4px;
-    }
     div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix
         > div
         button.pictos {
@@ -2129,6 +2127,12 @@
     }
     .ui-tabs .ui-tabs-nav li a:focus {
         outline: none;
+    }
+    #rightsidebar li.alertify a {
+        background-color: var(--color-yellow) !important;
+        color: var(--color-button-hover) !important;
+        -webkit-animation: none;
+        animation: none;
     }
 
     /* ----------------------------- Sidebar Control ---------------------------- */
@@ -3107,9 +3111,8 @@
     .sheet-rolltemplate-atkdmg .inlinerollresult.fullfail,
     .sheet-rolltemplate-dmg .inlinerollresult.fullfail,
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail {
-        color: var(--color-red);
-        text-shadow: 0px 0px 20px var(--color-red),
-            0px 0px 20px var(--color-red);
+        color: var(--color-red) !important;
+        text-shadow: 0px 0px 20px, 0px 0px 20px;
     }
     .sheet-rolltemplate-simple .inlinerollresult.fullcrit,
     .sheet-rolltemplate-skill .inlinerollresult.fullcrit,
@@ -3117,9 +3120,8 @@
     .sheet-rolltemplate-atkdmg .inlinerollresult.fullcrit,
     .sheet-rolltemplate-dmg .inlinerollresult.fullcrit,
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit {
-        color: var(--color-green);
-        text-shadow: 0px 0px 20px var(--color-green),
-            0px 0px 20px var(--color-green);
+        color: var(--color-green) !important;
+        text-shadow: 0px 0px 20px, 0px 0px 20px !important;
     }
     .sheet-rolltemplate-npc,
     .sheet-rolltemplate-npcaction .sheet-container,
@@ -3183,6 +3185,25 @@
     .charsheet .sheet-actions .sheet-bold {
         color: var(--color-text-primary);
         font-weight: 400;
+    }
+    .sheet-rolltemplate-dmg .sheet-solo .sheet-damage,
+    .sheet-rolltemplate-atk .sheet-solo > span,
+    .sheet-rolltemplate-atk .sheet-adv > span,
+    .sheet-rolltemplate-dmg .sheet-desc span.sheet-plus,
+    .sheet-rolltemplate-atkdmg .sheet-desc span.sheet-plus {
+        font-weight: 800;
+        font-family: var(--font-number);
+        font-size: 12px;
+        white-space: nowrap !important;
+        color: inherit;
+        word-spacing: 0px;
+        line-height: 24px !important;
+        display: inline-block;
+    }
+    .sheet-rolltemplate-dmg .inlinerollresult,
+    .sheet-rolltemplate-atk .inlinerollresult {
+        top: 3px;
+        position: relative;
     }
     .sheet-rolltemplate-atk div.sheet-container,
     .sheet-rolltemplate-dmg div.sheet-container,
@@ -3270,11 +3291,14 @@
         float: left;
         background-repeat: no-repeat;
         position: relative;
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9nvqL5kAAAAZdFJOUwAZ/OsSf/CmTgrTULZv5QHiP1Q+zCuaWJXib9kOAAAAv0lEQVQ4y6WUSw6DMAwFnQCElP+v7bv/RUsLLFKi+EnMeqSRFccid3g1M+VVgB0Jz5cAWkJ0ADBR4Q2jennGif0vjMxzYTw0zwykuIeBRvFqe4iFMnEHTjzDQM1M/GVV3/jC4hPhgCIRTorxMJDlXBgVGXbx5bpQ/s/8JMPy5sIifqHCAWsiHK5aIhxQnF6Xc6KtlS1vuLDIY/cGQ4qVein2/+V67VKY+HJFTgAXFmmpiQ+x9IQ4Wiq8MbtJ7vABh1QoG+cdBuUAAAAASUVORK5CYII=");
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC3UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lRJuQIAAAA8dFJOUwANmiu/Cif1+uAFo35oIh7N9tK3sGBMLRhJFDSNeFwBPOVvMINU3YlW8VLrEsqnqtezkUHElTfhRWNN5gk48/gAAAEESURBVBgZncAHcoJAAAXQL7AsSLXFgj1GsZtayL//uQJEZ2g6GR/+LbRd3PK11r5rOKu/GEsVOZ5Pw4qQWpBsIU8cSM6GOrAzSBpIqP3HIOjWJ4h1g42jsDl3GDOQ6nXaa8bkae+3FEXjmYaLevQ+Y9EYWYG9Z5aFosHY55/mPESZ3mCqLVBBmEzZqNRiorFBpRUTZheVnpharh4EynTJi8bzSEVe7ZMZWwd5GsnZdNc/MmYNkLcg6XuA/kM2pygISR4ForFJ6UxQoEpyBPS25GGAImFS9gG0eZqiTKPpAujI0QRFrj2kJgD0LA9lCjlEQqCCa8gOrlPMD1ynv3m44VXgbr+kpy9nQwn67gAAAABJRU5ErkJggg==");
         background-size: 20px;
         top: -10px;
         left: 10px;
     }
+    /*
+url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9nvqL5kAAAAZdFJOUwAZ/OsSf/CmTgrTULZv5QHiP1Q+zCuaWJXib9kOAAAAv0lEQVQ4y6WUSw6DMAwFnQCElP+v7bv/RUsLLFKi+EnMeqSRFccid3g1M+VVgB0Jz5cAWkJ0ADBR4Q2jennGif0vjMxzYTw0zwykuIeBRvFqe4iFMnEHTjzDQM1M/GVV3/jC4hPhgCIRTorxMJDlXBgVGXbx5bpQ/s/8JMPy5sIifqHCAWsiHK5aIhxQnF6Xc6KtlS1vuLDIY/cGQ4qVein2/+V67VKY+HJFTgAXFmmpiQ+x9IQ4Wiq8MbtJ7vABh1QoG+cdBuUAAAAASUVORK5CYII=")	
+	*/
     .sheet-rolltemplate-simple
         div.sheet-container
         .sheet-result
@@ -3845,7 +3869,7 @@
     }
     .charsheet .sheet-advantagetoggle input[type="radio"],
     .charsheet .sheet-advantagetoggle input[type="radio"] + span {
-        width: 100px !important;
+        width: 110px !important;
     }
     .charsheet
         .sheet-advantagetoggle
@@ -3862,15 +3886,15 @@
         border-top-right-radius: 4px;
     }
     .charsheet .sheet-advantagetoggle {
-        left: 315px;
+        left: 345px;
     }
     .charsheet .sheet-advantagetoggle input.sheet-toggle-left,
     .charsheet .sheet-advantagetoggle input.sheet-toggle-left + span {
-        right: 207px;
+        right: 227px;
     }
     .charsheet .sheet-advantagetoggle input.sheet-toggle-center,
     .charsheet .sheet-advantagetoggle input.sheet-toggle-center + span {
-        right: 104px;
+        right: 114px;
     }
     .charsheet input[type="radio"].sheet-tab-button.sheet-core,
     .charsheet input[type="radio"].sheet-tab-button.sheet-core + span {
@@ -4904,7 +4928,7 @@
         .sheet-attr-container
         .sheet-attr-mod {
         position: relative;
-        top: -55px;
+        top: -58px;
         margin: 0px;
         left: -8px;
     }
@@ -5482,7 +5506,8 @@
         .sheet-damagetemplate
         .inlinerollresult.fullcrit {
         color: var(--color-green) !important;
-        text-shadow: 0px 0px 10px;
+        text-shadow: 0px 0px 20px var(--color-green),
+            0px 0px 20px var(--color-green) !important;
     }
     .sheet-rolltemplate-npc .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcaction .inlinerollresult.fullfail,
@@ -5492,7 +5517,8 @@
         .sheet-damagetemplate
         .inlinerollresult.fullfail {
         color: var(--color-red) !important;
-        text-shadow: 0px 0px 10px;
+        text-shadow: 0px 0px 20px var(--color-red),
+            0px 0px 20px var(--color-red) !important;
     }
     .sheet-rolltemplate-npc .sheet-row {
         padding: 5px;
