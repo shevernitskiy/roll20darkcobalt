@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.10
+@version      1.0.11
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.10 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.11 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -3112,7 +3112,7 @@
     .sheet-rolltemplate-dmg .inlinerollresult.fullfail,
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail {
         color: var(--color-red) !important;
-        text-shadow: 0px 0px 20px, 0px 0px 20px;
+        text-shadow: 0px 0px 20px, 0px 0px 20px !important;
     }
     .sheet-rolltemplate-simple .inlinerollresult.fullcrit,
     .sheet-rolltemplate-skill .inlinerollresult.fullcrit,
@@ -3122,6 +3122,44 @@
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit {
         color: var(--color-green) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+    }
+    .sheet-rolltemplate-simple .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-skill .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-atk .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-atkdmg .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-dmg .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-dmg
+        .sheet-damagetemplate
+        .sheet-grey
+        .inlinerollresult.fullfail,
+    .sheet-rolltemplate-simple .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-skill .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-atk .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-atkdmg .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-dmg .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-dmg
+        .sheet-damagetemplate
+        .sheet-grey
+        .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npc .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-npcaction .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-npcatk .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-npcdmg .sheet-grey .inlinerollresult.fullfail,
+    .sheet-rolltemplate-npcdmg
+        .sheet-damagetemplate
+        .sheet-grey
+        .inlinerollresult.fullfail,
+    .sheet-rolltemplate-npc .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npcaction .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npcatk .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npcdmg .sheet-grey .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npcdmg
+        .sheet-damagetemplate
+        .sheet-grey
+        .inlinerollresult.fullcrit {
+        color: var(--color-text-disabled) !important;
+        text-shadow: none !important;
+        font-weight: 800;
     }
     .sheet-rolltemplate-npc,
     .sheet-rolltemplate-npcaction .sheet-container,
@@ -5190,7 +5228,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         font-size: 14px !important;
     }
     .charsheet .sheet-spell .sheet-display button[type="roll"] {
-        border-bottom: 1px solid var(--color-text-disabled);
+        border-bottom: 0px solid var(--color-text-disabled);
     }
     .charsheet .sheet-spell .sheet-options-done {
         background-color: var(--color-button-main);
@@ -5509,6 +5547,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         text-shadow: 0px 0px 20px var(--color-green),
             0px 0px 20px var(--color-green) !important;
     }
+
     .sheet-rolltemplate-npc .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcaction .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcatk .inlinerollresult.fullfail,
