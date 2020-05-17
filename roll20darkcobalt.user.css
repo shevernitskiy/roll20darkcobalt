@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.12
+@version      1.0.13
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.12 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.13 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1464,6 +1464,20 @@
     }
     .note-editor.note-frame .note-editing-area {
         width: calc(100% + 5px);
+    }
+    /* Tooltip */
+    .tipsy-inner {
+        color: var(--color-text-primary);
+        font-family: var(--font-number);
+        background-color: var(--color-bg-medium);
+        box-shadow: 0px 0px 5px var(--color-text-disabled),
+            0px 0px 3px var(--color-text-disabled);
+        border-radius: 5px;
+        max-width: 250px;
+        font-weight: 300;
+    }
+    .tipsy-arrow {
+        display: none;
     }
 
     /* ---------------------------------- Typo ---------------------------------- */
@@ -3109,6 +3123,7 @@
     .sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-bottom {
         display: none;
     }
+    /*
     .sheet-rolltemplate-simple div.sheet-container:hover,
     .sheet-rolltemplate-skill div.sheet-container:hover,
     .sheet-rolltemplate-atk div.sheet-container:hover,
@@ -3130,6 +3145,7 @@
     .sheet-rolltemplate-npcdmg:hover {
         box-shadow: 0px 0px 10px var(--color-yellow);
     }
+	*/
     .sheet-rolltemplate-simple .sheet-adv span,
     .sheet-rolltemplate-simple .sheet-solo span,
     .sheet-rolltemplate-skill .sheet-roll span,
