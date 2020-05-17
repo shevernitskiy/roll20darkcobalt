@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.13
+@version      1.0.14
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.13 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.14 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1805,7 +1805,7 @@
         background-color: var(--color-bg-light);
     }
     /* ------------------------------ Radial Menu ------------------------------- */
-
+    /*
     #radial-menu .button {
         background: var(--color-element-bg) !important;
         border: 0px;
@@ -1894,6 +1894,7 @@
         color: var(--color-red);
         top: -2px;
     }
+	*/
     /* ------------------------------ Flotating Bar ----------------------------- */
 
     #floatingtoolbar,
@@ -2811,6 +2812,7 @@
     #journal #superjournaladd li:hover {
         background-color: var(--color-button-hover);
     }
+    /*
     .handout .dd-content .token {
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURezt9kdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9k+ibs4AAAALdFJOU38A8jNC2MNtDryUsAxjbAAAAH5JREFUKM9jEOzcjQZmCDIIVqMLbgcKcqMLbqCdYAIDHLDBBLcKIoFoqOAmR4SYiDYtnYRNEKvtWN2J1UfDI+g2LQDZxYIquAVqMIrgRqyCAiBSGYvgJkMsgspYtAMVYgoqY7EIpBBDUBmLk8AKUTPCRgFlqOORssxGcbBCQQA6TIczoR+NIgAAAABJRU5ErkJggg==");
         width: 25px;
@@ -2820,6 +2822,7 @@
     .handout .dd-content .token img {
         display: none;
     }
+	*/
 
     /* ------------------------------ Image Library ----------------------------- */
 
@@ -2878,6 +2881,18 @@
     #imagedialog #userlibrary button.showuploaddialog {
         border-radius: 5px 0px 0px 5px;
         margin-right: 0px !important;
+    }
+    #imagedialog #librarysearchroot .marketplacead,
+    #imagedialog .expandsearch,
+    #imagedialog #librarysearchroot .googleresult {
+        background: var(--color-bg-light);
+        font-weight: 400 !important;
+    }
+    #imagedialog .folder-title small {
+        display: block;
+        float: right;
+        top: -1px;
+        font-style: italic;
     }
 
     /* -------------------------------------------------------------------------- */
