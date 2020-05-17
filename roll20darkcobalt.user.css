@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.11
+@version      1.0.12
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.11 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.12 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1789,6 +1789,96 @@
     }
     #initiativewindow ul li {
         background-color: var(--color-bg-light);
+    }
+    /* ------------------------------ Radial Menu ------------------------------- */
+
+    #radial-menu .button {
+        background: var(--color-element-bg) !important;
+        border: 0px;
+    }
+    #radial-menu .button.button-1 {
+        border-radius: 0px 0px 25px 25px;
+    }
+    #radial-menu .button.button-2 {
+        border-radius: 25px 25px 0px 0px;
+    }
+    #radial-menu .button.button-1,
+    #radial-menu .button.button-2 {
+        box-shadow: 0px 0px 5px var(--color-text-disabled);
+        left: 95px;
+    }
+    #radial-menu .button.button-2 {
+        top: -5px;
+    }
+    #radial-menu .button.button-1 {
+        top: 33px;
+    }
+    #radial-menu .button.button-3,
+    #radial-menu .button.button-4,
+    #radial-menu .button.button-5 {
+        left: -60px;
+    }
+    #radial-menu .button.button-3 {
+        box-shadow: 0px 0px 5px var(--color-text-disabled),
+            inset 0px 0px 5px var(--color-green),
+            inset 0px 0px 10px var(--color-green),
+            inset 0px 0px 15px var(--color-green) !important;
+        top: 15px;
+    }
+    #radial-menu .button.button-4 {
+        box-shadow: 0px 0px 5px var(--color-text-disabled),
+            inset 0px 0px 5px var(--color-blue),
+            inset 0px 0px 10px var(--color-blue),
+            inset 0px 0px 15px var(--color-blue) !important;
+        top: 60px;
+    }
+    #radial-menu .button.button-5 {
+        box-shadow: 0px 0px 5px var(--color-text-disabled),
+            inset 0px 0px 5px var(--color-red),
+            inset 0px 0px 10px var(--color-red),
+            inset 0px 0px 15px var(--color-red) !important;
+        top: -30px;
+    }
+    #radial-menu .button div.inner {
+        background: none;
+        color: var(--color-text-primary);
+        font-family: var(--font-number);
+        font-weight: 800;
+        margin-top: 5px;
+        text-shadow: 0px 0px 5px var(--color-bg-dark),
+            0px 0px 2px var(--color-bg-dark), 0px 0px 2px var(--color-bg-dark);
+    }
+    #radial-menu .button.button-1 div.inner,
+    #radial-menu .button.button-2 div.inner {
+        margin-top: 2px;
+    }
+    #radial-menu .button div.inner span {
+        font-size: 24px !important;
+    }
+    #radial-menu .markermenu {
+        background: var(--color-element-bg) !important;
+        box-shadow: 0px 0px 5px var(--color-text-disabled);
+    }
+    #radial-menu .markermenu .markercolor,
+    #radial-menu .markermenu .markericon {
+        border: 5px;
+    }
+    #radial-menu .markermenu.open {
+        width: 230px;
+        height: 225px;
+        border-radius: 15px;
+    }
+    #radial-menu .markermenu .markericon.active,
+    #radial-menu .markermenu .markercolor.active {
+        outline: 2px dashed var(--color-yellow);
+        outline-offset: -2px;
+        border: 0px;
+        background-color: var(--color-yellow);
+        border-radius: 5px;
+    }
+    #radial-menu .markermenu .markercolor.dead {
+        color: var(--color-red);
+        top: -2px;
     }
     /* ------------------------------ Flotating Bar ----------------------------- */
 
@@ -5509,7 +5599,11 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-npc .sheet-action textarea {
         width: 96%;
     }
-    .sheet-rolltemplate-npc .sheet-header,
+
+    .sheet-rolltemplate-npcatk
+        .sheet-row.sheet-subheader
+        .sheet-rolltemplate-npc
+        .sheet-header,
     .sheet-rolltemplate-npcaction .sheet-header,
     .sheet-rolltemplate-npcatk .sheet-header,
     .sheet-rolltemplate-npcdmg .sheet-header {
