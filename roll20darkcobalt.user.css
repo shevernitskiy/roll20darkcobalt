@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.17
+@version      1.0.18
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.17 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.18 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -5694,12 +5694,42 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         > .repitem:nth-child(1)
         .sheet-toggle_repeating_npcreaction_edit
         + span {
-        color: var(--color-yellow);
+        color: var(--color-yellow) !important;
     }
     .charsheet .sheet-npc .sheet-action textarea {
-        width: 96%;
+        width: calc(100% - 20px) !important;
+        margin-left: 5px;
     }
-
+    .charsheet .sheet-npc .sheet-trait textarea {
+        margin-left: 5px;
+        width: calc(100% - 10px) !important;
+    }
+    .charsheet
+        .sheet-npc
+        .sheet-npc_ui_flags[value*="repeating_npctrait_edit"]
+        ~ .sheet-stat-block
+        .sheet-traits
+        .repcontainer
+        > .repitem
+        .sheet-toggle_repeating_npctrait_edit
+        + span,
+    .charsheet
+        .sheet-npc
+        .sheet-npc_ui_flags[value*="repeating_npcaction_edit"]
+        ~ .sheet-actions:not(.sheet-legendary):not(.sheet-reaction)
+        .repcontainer
+        > .repitem
+        .sheet-toggle_repeating_npcaction_edit
+        + span {
+        color: var(--color-yellow) !important;
+        z-index: 1;
+    }
+    .charsheet .sheet-spells .sheet-col2 {
+        margin-left: 0px;
+    }
+    .charsheet .sheet-spells .sheet-col1 {
+        margin-right: 10px;
+    }
     .sheet-rolltemplate-npcatk
         .sheet-row.sheet-subheader
         .sheet-rolltemplate-npc
@@ -5803,6 +5833,22 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background: var(--color-element-bg);
         color: var(--color-red);
         font-weight: 700;
+    }
+    .charsheet .sheet-attack .sheet-options,
+    .charsheet .sheet-spell .sheet-options,
+    .charsheet .sheet-tool .sheet-options,
+    .charsheet .sheet-npc .sheet-npc_options,
+    .charsheet .sheet-trait .sheet-options,
+    .charsheet .sheet-global-mod .sheet-options,
+    .charsheet .sheet-action .sheet-options,
+    .charsheet .sheet-textbox .sheet-options,
+    .charsheet .sheet-proficiencies .sheet-options,
+    .charsheet .sheet-trait .sheet-options {
+        background-color: var(--color-bg-light) !important;
+    }
+    .charsheet .sheet-npc_options textarea {
+        background-color: var(--color-element-bg) !important;
+        border: 1px solid var(--color-bg-medium) !important;
     }
 
     /* ------------------------------ Map Settings ------------------------------ */
@@ -5975,131 +6021,162 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
-	body {
-		font-family: var(--font-secondary);
-		background-color: var(--color-bg-light);
-		color: var(--font-primary);
-	}
-	.container {
-		background-color: var(--color-bg-light);
-	}
-	.primarycontentcontainer ol.breadcrumb {
-		font-family: var(--font-header);
-		border: 0px;
-	}
-	.breadcrumb {
-		background: none;
-	}
-	.breadcrumb>li {
-		font-size: 18px;
-		color: var(--color-text-primary);
-	}
-	a, a:link, a:active,
-	.content-text a, .content-text a:active, .content-text a:visited, .content-text a:link {
-		color: var(--color-yellow);
-	}
-	a.autolink, h3 a {
-		border-bottom: 1px dotted var(--color-yellow);
-	}
-	a.autolink:hover, h3 a:hover {
-		color: var(--color-yellow) !important;
-		background: none;
-	}
-	.breadcrumb>li+li:before {
-		color: var(--color-button-main);
-		font-weight: 800;
-	}
-	.content-text h1, .content-text h2, .content-text h3, .content-text h4,
-	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-		color: var(--color-text-primary);
-		font-family: var(--font-header);
-		font-weight: 500;
-	}
-	.content-text[data-bookid="dnd5e"] h1, .content-text[data-bookid="dnd5e"] h2, .content-text[data-bookid="dnd5e"] h3, .content-text[data-bookid="dnd5e"] h4 {
-		color: var(--color-text-primary);
-		font-family: var(--font-header);
-		font-weight: 500;
-	}
-	.content-text {
-		color: var(--color-text-primary);
-		font-family: var(--font-secondary);
-		font-size: 14px;
-		font-weight: 400;
-	}
-	.content-text .pull-right {
-		background-color: var(--color-bg-light) !important;
-	}
-	.content-text p {
-		font-family: var(--font-secondary);
-	}
-	p {
-		color: var(--color-text-primary);
-	}
-	#tableofcontents {
-		background-color: var(--color-bg-light);
-		border: 0px;
-	}
-	.booktemplate .name h1 {
-		color: var(--color-bg-light);
-		font-weight: 800;
-	}
-	.attrList .attrListItem:nth-child(odd) {
-		background-color: var(--color-element-bg);
-		border: 0px;
-	}
-	.attrList .attrListItem, .attrList .newAttrListItem {
-		border: 0px;
-	}
-	.btn-primary {
-		background-color: var(--color-button-main);
-		font-family: var(--font-primary) !important;
-	}
-	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.hover {
-		color: var(--color-text-primary);
-		background-color: var(--color-button-hover);
-	}
-	.booktemplate {
-		color: var(--color-bg-light);
-	}
-	.booktemplate.expansion0 .header {
-		background-color: var(--color-element-bg);
-		border-radius: 5px;
-	}
-	.booktemplate .card {
-		color: var(--color-element-bg);
-	}
-	.booktemplate .single-view h2 {
-		color: var(--color-element-bg);
-	}
-	.globalfooter .footerborder1,
-	.globalfooter .footerborder2 {
-		visibility: hidden;
-	}
-	.alert-info, aside {
-		background-color: var(--color-button-hover);
-		border-top: 1px solid var(--color-button-main);
-		border-bottom: 1px solid var(--color-button-main);
-	}
-	.alert, aside {
-		color: var(--color-text-primary);
-		font-family: var(--font-secondary);
-	}
-	hr {
-		border-top-color: var(--color-text-disabled);
-	}
-	#pagecontent table td {
-		border: 0px;
-		font-size: 12px;
-	}
-	#pagecontent table tbody tr:nth-of-type(odd) {
-		background-color: var(--color-element-bg);
-	}
-	#pagecontent table thead td {
-		border-bottom: 2px solid var(--color-button-main) !important;
-		font-size: 16px;
-		font-family: var(--font-primary);
-	}
-	caption {
-		color: var(--color-text-primary);
-	}
+    body {
+        font-family: var(--font-secondary);
+        background-color: var(--color-bg-light);
+        color: var(--font-primary);
+    }
+    .container {
+        background-color: var(--color-bg-light);
+    }
+    .primarycontentcontainer ol.breadcrumb {
+        font-family: var(--font-header);
+        border: 0px;
+    }
+    .breadcrumb {
+        background: none;
+    }
+    .breadcrumb > li {
+        font-size: 18px;
+        color: var(--color-text-primary);
+    }
+    a,
+    a:link,
+    a:active,
+    .content-text a,
+    .content-text a:active,
+    .content-text a:visited,
+    .content-text a:link {
+        color: var(--color-yellow);
+    }
+    a.autolink,
+    h3 a {
+        border-bottom: 1px dotted var(--color-yellow);
+    }
+    a.autolink:hover,
+    h3 a:hover {
+        color: var(--color-yellow) !important;
+        background: none;
+    }
+    .breadcrumb > li + li:before {
+        color: var(--color-button-main);
+        font-weight: 800;
+    }
+    .content-text h1,
+    .content-text h2,
+    .content-text h3,
+    .content-text h4,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        color: var(--color-text-primary);
+        font-family: var(--font-header);
+        font-weight: 500;
+    }
+    .content-text[data-bookid="dnd5e"] h1,
+    .content-text[data-bookid="dnd5e"] h2,
+    .content-text[data-bookid="dnd5e"] h3,
+    .content-text[data-bookid="dnd5e"] h4 {
+        color: var(--color-text-primary);
+        font-family: var(--font-header);
+        font-weight: 500;
+    }
+    .content-text {
+        color: var(--color-text-primary);
+        font-family: var(--font-secondary);
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .content-text .pull-right {
+        background-color: var(--color-bg-light) !important;
+    }
+    .content-text p {
+        font-family: var(--font-secondary);
+    }
+    p {
+        color: var(--color-text-primary);
+    }
+    #tableofcontents {
+        background-color: var(--color-bg-light);
+        border: 0px;
+    }
+    .booktemplate .name h1 {
+        color: var(--color-bg-light);
+        font-weight: 800;
+    }
+    .attrList .attrListItem:nth-child(odd) {
+        background-color: var(--color-element-bg);
+        border: 0px;
+    }
+    .attrList .attrListItem,
+    .attrList .newAttrListItem {
+        border: 0px;
+    }
+    .btn-primary {
+        background-color: var(--color-button-main);
+        font-family: var(--font-primary) !important;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .btn-primary.hover {
+        color: var(--color-text-primary);
+        background-color: var(--color-button-hover);
+    }
+    .booktemplate {
+        color: var(--color-bg-light);
+    }
+    .booktemplate.expansion0 .header {
+        background-color: var(--color-element-bg);
+        border-radius: 5px;
+    }
+    .booktemplate .card {
+        color: var(--color-element-bg);
+    }
+    .booktemplate .single-view h2 {
+        color: var(--color-element-bg);
+    }
+    .globalfooter .footerborder1,
+    .globalfooter .footerborder2 {
+        visibility: hidden;
+    }
+    .alert-info,
+    aside {
+        background-color: var(--color-button-hover);
+        border-top: 1px solid var(--color-button-main);
+        border-bottom: 1px solid var(--color-button-main);
+    }
+    .alert,
+    aside {
+        color: var(--color-text-primary);
+        font-family: var(--font-secondary);
+    }
+    hr {
+        border-top-color: var(--color-text-disabled);
+    }
+    #pagecontent table td {
+        border: 0px;
+        font-size: 12px;
+    }
+    #pagecontent table tbody tr:nth-of-type(odd) {
+        background-color: var(--color-element-bg);
+    }
+    #pagecontent table thead td {
+        border-bottom: 2px solid var(--color-button-main) !important;
+        font-size: 16px;
+        font-family: var(--font-primary);
+    }
+    caption {
+        color: var(--color-text-primary);
+    }
 }
