@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.15
+@version      1.0.16
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.15 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.16 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1581,6 +1581,14 @@
     .ui-dialog .zoomoptionsmenu button.zoomout {
         border-radius: 0px 5px 5px 0px;
     }
+    .ui-dialog button.zoomoptions {
+        height: 17.5px;
+    }
+    .ui-dialog .zoomoptionsmenu button.zoomdisplay {
+        height: 24px;
+        top: -0.5px;
+        position: relative;
+    }
     .ui-dialog .zoomoptionsmenu button,
     .ui-dialog .ui-dialog-buttonpane button {
         font-family: var(--font-primary);
@@ -2917,6 +2925,42 @@
         float: right;
         top: -1px;
         font-style: italic;
+    }
+    #libraryview > div:first-child {
+        background-color: var(--color-element-bg) !important;
+        color: var(--color-red) !important;
+        box-shadow: 0px 0px 5px var(--color-red);
+        margin-bottom: 10px !important;
+    }
+    #libraryview .textboxlist.noedit .textboxlist-bits {
+        max-height: 18px;
+    }
+    #libraryview .metadata {
+        top: 10px;
+        position: relative;
+    }
+    .tagset .textboxlist {
+        background: none;
+    }
+    #libraryview .textboxlist-focus .textboxlist-bits {
+        box-shadow: 0px 0px 2px var(--color-text-disabled);
+        border-radius: 5px 5px 0px 0px;
+    }
+    .textboxlist-autocomplete-placeholder,
+    .textboxlist-autocomplete-results {
+        background-color: var(--color-bg-medium);
+        box-shadow: 0px 0px 2px var(--color-text-disabled);
+        border-radius: 0px 0px 5px 5px;
+        margin-top: 2px;
+        border: 0px;
+        color: var(--color-text-disabled);
+    }
+    .tagset .textboxlist-bit-editable {
+        border: 1px solid var(--color-yellow);
+        background: var(--color-bg-dark);
+    }
+    .tagset .textboxlist-bit-editable-input {
+        background: var(--color-bg-medium);
     }
 
     /* -------------------------------------------------------------------------- */
