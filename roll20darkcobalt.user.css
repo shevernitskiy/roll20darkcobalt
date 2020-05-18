@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.18
+@version      1.0.19
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.18 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.19 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -5216,6 +5216,21 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .sheet-saving-throw-container {
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACrUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9orJI/sAAAA4dFJOUwD28gQVMyli1f3vtHRP30eJkxvrmlXiEdAOZge72YDCCi6t+UI5Wm2fd6N7S+c8X6any8eOIiONP68JdwAAAXZJREFUOMvN1NeagjAQBtChBAxdigiuFXt36//+T7Y3KAmIeunc8eVkMikM0TsFC4LpC0xfA+Cx/oRpOwUAAHWjPXKuh1sM963M+IAUH8ZdlnVRj+I7bbqVijth5TW2GN7GlFzXzWpWfyHBXpVkRkS0rb57csZ+NTJibKRUGZnoEldbRfdqjHLNTQTYwZilXV5nvDthY6giPO+UtT6tnaNt6DEHIMIj+bAcTboZX3MsoAZzIhvw3MGmPBjVGfjXWSI8ZOSUq505wNepYd9yS5vpOZ2y/owFwTQTdyZB4UT2RPNo1n0KUYRh8UfUDrld3odpWhP6aYdbMpQS2kSzdmgTrUqongTXXNqgsITCKw+T5mYOx1MdWinNRfgl3bEAA6K4L8BlO1wWS/FB+p37kA89X/5pBuVL+Z33pBqdQbOXxByARvMKtnWW6RhwiT6vcMxae0XiRcYVesmj5jPZRH2YJqCMJk/6WXjhro9L+EKHzIjSt+rs/xxjf+1GkXknAAAAAElFTkSuQmCC");
     }
+    /* Options */
+    .charsheet .sheet-tool .sheet-options input,
+    .charsheet .sheet-attack .sheet-options input[type="text"],
+    .charsheet .sheet-spell .sheet-options input[type="text"],
+    .charsheet .sheet-proficiencies .sheet-options input[type="text"],
+    .charsheet .sheet-traits .sheet-options input[type="text"],
+    .charsheet .sheet-global-mod .sheet-options input[type="text"],
+    .charsheet .sheet-tool .sheet-options select,
+    .charsheet .sheet-attack .sheet-options select,
+    .charsheet .sheet-spell .sheet-options select,
+    .charsheet .sheet-proficiencies .sheet-options select,
+    .charsheet .sheet-traits .sheet-options select {
+        background-color: var(--color-bg-light);
+        border-bottom: 1px solid var(--color-element-bg);
+    }
 
     /* --------------------------------- Spells --------------------------------- */
 
@@ -5678,24 +5693,6 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         + span {
         color: var(--color-yellow);
     }
-    .charsheet
-        .sheet-npc
-        .sheet-npc_ui_flags[value*="repeating_npcaction_edit_0_"]
-        ~ .sheet-actions:not(.sheet-legendary):not(.sheet-reaction)
-        .repcontainer
-        > .repitem:nth-child(1)
-        .sheet-toggle_repeating_npcaction_edit
-        + span,
-    .charsheet
-        .sheet-npc
-        .sheet-npc_ui_flags[value*="repeating_npcreaction_edit_0_"]
-        ~ .sheet-reaction
-        .repcontainer
-        > .repitem:nth-child(1)
-        .sheet-toggle_repeating_npcreaction_edit
-        + span {
-        color: var(--color-yellow) !important;
-    }
     .charsheet .sheet-npc .sheet-action textarea {
         width: calc(100% - 20px) !important;
         margin-left: 5px;
@@ -5720,9 +5717,30 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .repcontainer
         > .repitem
         .sheet-toggle_repeating_npcaction_edit
+        + span,
+    .charsheet
+        .sheet-npc
+        .sheet-npc_ui_flags[value*="repeating_npcaction_edit"]
+        ~ .sheet-actions:not(.sheet-legendary):not(.sheet-reaction)
+        .repcontainer
+        > .repitem:nth-child(1)
+        .sheet-toggle_repeating_npcaction_edit
+        + span,
+    .charsheet
+        .sheet-npc
+        .sheet-npc_ui_flags[value*="repeating_npcreaction_edit"]
+        ~ .sheet-reaction
+        .repcontainer
+        > .repitem:nth-child(1)
+        .sheet-toggle_repeating_npcreaction_edit
         + span {
         color: var(--color-yellow) !important;
         z-index: 1;
+    }
+    .charsheet .sheet-npc_options {
+        padding: 5px;
+        border-radius: 5px;
+        width: 97% !important;
     }
     .charsheet .sheet-spells .sheet-col2 {
         margin-left: 0px;
