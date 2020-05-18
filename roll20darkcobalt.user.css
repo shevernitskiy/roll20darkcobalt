@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.19
+@version      1.0.20
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.19 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.20 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1355,7 +1355,10 @@
     }
     .note-editor.note-frame .note-statusbar {
         background-color: var(--color-element-bg);
-        width: calc(100% + 5px);
+        width: 100% !important;
+    }
+    .note-editor.note-frame .note-editing-area {
+        width: 100% !important;
     }
     .note-editor.note-frame .note-editing-area .note-codable {
         color: var(--color-text-primary);
@@ -1582,6 +1585,7 @@
     .ui-dialog .zoomoptionsmenu button.zoomout {
         border-radius: 0px 5px 5px 0px;
     }
+    /*
     .ui-dialog button.zoomoptions {
         height: 17.5px;
     }
@@ -1590,6 +1594,7 @@
         top: -0.5px;
         position: relative;
     }
+	*/
     .ui-dialog .zoomoptionsmenu button,
     .ui-dialog .ui-dialog-buttonpane button {
         font-family: var(--font-primary);
@@ -1726,7 +1731,8 @@
     /* ------------------------------ Context Menu ------------------------------ */
 
     .d20contextmenu > ul,
-    div#color_selector {
+    div#color_selector,
+    .d20contextmenu ul li ul.submenu {
         background-color: var(--color-bg-light);
         color: var(--color-text-primary);
         border: 0px;
@@ -1736,11 +1742,17 @@
         font-family: var(--font-primary);
         font-size: 16px;
     }
+    .d20contextmenu ul li ul.submenu {
+        width: 180px;
+    }
     .d20contextmenu ul li {
         border: 0px;
         border-radius: 3px;
     }
-    .d20contextmenu ul li:hover {
+    .d20contextmenu ul li:hover,
+    .d20contextmenu ul li.hasSub:hover,
+    .d20contextmenu ul li.active,
+    .d20contextmenu ul li.head:hover {
         background-color: var(--color-button-main);
     }
     div#color_custom label {
@@ -2040,7 +2052,28 @@
     #floatingtoolbar li#measure div.submenu li[mode="hide"] {
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURUdwTOzt9oDcdx0AAAABdFJOUwBA5thmAAAAzUlEQVRIx6WW2w6AIAxD1///aROjguu6S+DJwBHKWkGzRgNs0IAJD0x4gPjkbYD4bDUwjxkPxd99bf7pG/JSPlLp+/Dq8KMRvfE8X7j04lmf2pgQyKFEtGhWgQH/3+ZaHMU2twfJb3XzvLboN/7pEXlnU8T0wvXHLxXHV4yrHvT0r3+BtkS7s78sTZRPeZiEfHb4MF+ml/PQ5o3Dnn8eEe/8kds0DpQsyxoIXNcWoVMB+JbzOOQrPRXtr4uK9rGpaB+bij67aqcXefc34QIjaANcoErBQAAAAABJRU5ErkJggg==");
     }
-
+    /* -------------------------------- Secondary bar --------------------------- */
+    #secondary-toolbar {
+        opacity: 1;
+        border: 0px;
+        border-radius: 8px;
+    }
+    #secondary-toolbar li {
+        border: 0px;
+        color: var(--color-text-primary);
+    }
+    #secondary-toolbar .tokenactions .btn {
+        border-radius: 0px;
+        text-shadow: 0px 0px 3px var(--color-bg-dark);
+    }
+    #secondary-toolbar .tokenactions .btn:nth-of-type(1) {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    #secondary-toolbar .tokenactions .btn:nth-last-of-type(1) {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
     /* -------------------------------- Zoom bar -------------------------------- */
 
     #zoomclick {
@@ -2855,6 +2888,15 @@
     .dd-empty {
         background: var(--color-bg-light);
         border: 1px dashed var(--color-yellow);
+    }
+    .dropbox .remove {
+        background-color: var(--color-floating-bar-bg);
+        border-bottom-left-radius: 10px;
+        padding-left: 5px;
+        box-shadow: 0px 0px 5px var(--color-red);
+    }
+    div.dropbox.filled:hover {
+        border: 1px dashed var(--color-red);
     }
 
     /* ------------------------------ Image Library ----------------------------- */
@@ -3753,10 +3795,19 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         border-radius: 2px;
         border: 2px solid var(--color-button-main);
     }
-    .charsheet
-        input[type="checkbox"][name="attr_global_damage_active_flag"]:before,
     .charsheet .sheet-equipment input[type="checkbox"].sheet-equipped:before,
     .charsheet .sheet-attack .sheet-options input[type="checkbox"]:before {
+        background-color: var(--color-element-bg) !important;
+        border: 2px solid var(--color-element-bg) !important;
+    }
+    .charsheet
+        input[type="checkbox"][name="attr_global_damage_active_flag"]:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_attack_active_flag"]:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_save_active_flag"]:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_skill_active_flag"]:before {
         background-color: var(--color-bg-light) !important;
         border: 2px solid var(--color-bg-light) !important;
     }
@@ -4021,6 +4072,11 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     .charsheet .sheet-body {
         margin-top: 40px;
+    }
+    .attributes .body.editable .attrib div.attrname:hover {
+        background: none;
+        color: var(--color-yellow);
+        text-shadow: 0px 0px 2px var(--color-yellow);
     }
     .charsheet
         .sheet-licensecontainer
@@ -4435,11 +4491,35 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-attacks .sheet-display span,
     .charsheet .sheet-tool .sheet-display span,
     .charsheet .sheet-equipment .sheet-item span,
-    .charsheet .sheet-proficiencies .sheet-display span {
+    .charsheet .sheet-proficiencies .sheet-display span,
+    .charsheet div.sheet-globaldisplay {
         background-color: var(--color-bg-light);
         border-radius: 3px;
         font-weight: 400;
         color: var(--color-text-primary);
+    }
+    .charsheet
+        .sheet-globalattack
+        .sheet-globaldisplay
+        button[type="roll"]
+        span {
+        color: var(--color-text-primary);
+        font-size: 10px;
+        font-family: var(--font-secondary);
+        font-weight: 400;
+    }
+    .charsheet div.sheet-globaldisplay {
+        width: calc(100% - 35px) !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-saving-throw-container
+        .sheet-label:nth-of-type(1) {
+        bottom: 0px;
+    }
+    .charsheet .sheet-globalattack .sheet-global-mod {
+        margin-left: 0px;
     }
     .charsheet
         .sheet-licensecontainer
@@ -5861,7 +5941,8 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-action .sheet-options,
     .charsheet .sheet-textbox .sheet-options,
     .charsheet .sheet-proficiencies .sheet-options,
-    .charsheet .sheet-trait .sheet-options {
+    .charsheet .sheet-trait .sheet-options,
+    .charsheet .sheet-equipment .sheet-item .sheet-subitem {
         background-color: var(--color-bg-light) !important;
     }
     .charsheet .sheet-npc_options textarea {
