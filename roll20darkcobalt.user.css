@@ -5975,162 +5975,131 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
-    body {
-        font-family: var(--font-secondary);
-        background-color: var(--color-bg-light);
-        color: var(--font-primary);
-    }
-    .container {
-        background-color: var(--color-bg-light);
-    }
-    .primarycontentcontainer ol.breadcrumb {
-        font-family: var(--font-header);
-        border: 0px;
-    }
-    .breadcrumb {
-        background: none;
-    }
-    .breadcrumb > li {
-        font-size: 18px;
-        color: var(--color-text-primary);
-    }
-    a,
-    a:link,
-    a:active,
-    .content-text a,
-    .content-text a:active,
-    .content-text a:visited,
-    .content-text a:link {
-        color: var(--color-yellow);
-    }
-    a.autolink,
-    h3 a {
-        border-bottom: 1px dotted var(--color-yellow);
-    }
-    a.autolink:hover,
-    h3 a:hover {
-        color: var(--color-yellow) !important;
-        background: none;
-    }
-    .breadcrumb > li + li:before {
-        color: var(--color-button-main);
-        font-weight: 800;
-    }
-    .content-text h1,
-    .content-text h2,
-    .content-text h3,
-    .content-text h4,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4,
-    .h5,
-    .h6 {
-        color: var(--color-text-primary);
-        font-family: var(--font-header);
-        font-weight: 500;
-    }
-    .content-text[data-bookid="dnd5e"] h1,
-    .content-text[data-bookid="dnd5e"] h2,
-    .content-text[data-bookid="dnd5e"] h3,
-    .content-text[data-bookid="dnd5e"] h4 {
-        color: var(--color-text-primary);
-        font-family: var(--font-header);
-        font-weight: 500;
-    }
-    .content-text {
-        color: var(--color-text-primary);
-        font-family: var(--font-secondary);
-        font-size: 14px;
-        font-weight: 300;
-    }
-    .content-text .pull-right {
-        background-color: var(--color-bg-light) !important;
-    }
-    .content-text p {
-        font-family: var(--font-secondary);
-    }
-    p {
-        color: var(--color-text-primary);
-    }
-    #tableofcontents {
-        background-color: var(--color-bg-light);
-        border: 0px;
-    }
-    .booktemplate .name h1 {
-        color: var(--color-bg-light);
-        font-weight: 800;
-    }
-    .attrList .attrListItem:nth-child(odd) {
-        background-color: var(--color-element-bg);
-        border: 0px;
-    }
-    .attrList .attrListItem,
-    .attrList .newAttrListItem {
-        border: 0px;
-    }
-    .btn-primary {
-        background-color: var(--color-button-main);
-        font-family: var(--font-primary) !important;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .btn-primary.hover {
-        color: var(--color-text-primary);
-        background-color: var(--color-button-hover);
-    }
-    .booktemplate {
-        color: var(--color-text-primary);
-    }
-    .booktemplate.expansion0 .header {
-        background-color: var(--color-element-bg);
-        border-radius: 5px;
-    }
-    .booktemplate .card {
-        color: var(--color-element-bg);
-    }
-    .booktemplate .single-view h2 {
-        color: var(--color-element-bg);
-    }
-    .globalfooter .footerborder1,
-    .globalfooter .footerborder2 {
-        visibility: hidden;
-    }
-    .alert-info,
-    aside {
-        background-color: var(--color-button-hover);
-        border-top: 1px solid var(--color-button-main);
-        border-bottom: 1px solid var(--color-button-main);
-    }
-    .alert,
-    aside {
-        color: var(--color-text-primary);
-        font-family: var(--font-secondary);
-    }
-    hr {
-        border-top-color: var(--color-text-disabled);
-    }
-    #pagecontent table td {
-        border: 0px;
-        font-size: 12px;
-    }
-    #pagecontent table tbody tr:nth-of-type(odd) {
-        background-color: var(--color-element-bg);
-    }
-    #pagecontent table thead td {
-        border-bottom: 2px solid var(--color-button-main) !important;
-        font-size: 16px;
-        font-family: var(--font-primary);
-    }
-    caption {
-        color: var(--color-text-primary);
-    }
+	body {
+		font-family: var(--font-secondary);
+		background-color: var(--color-bg-light);
+		color: var(--font-primary);
+	}
+	.container {
+		background-color: var(--color-bg-light);
+	}
+	.primarycontentcontainer ol.breadcrumb {
+		font-family: var(--font-header);
+		border: 0px;
+	}
+	.breadcrumb {
+		background: none;
+	}
+	.breadcrumb>li {
+		font-size: 18px;
+		color: var(--color-text-primary);
+	}
+	a, a:link, a:active,
+	.content-text a, .content-text a:active, .content-text a:visited, .content-text a:link {
+		color: var(--color-yellow);
+	}
+	a.autolink, h3 a {
+		border-bottom: 1px dotted var(--color-yellow);
+	}
+	a.autolink:hover, h3 a:hover {
+		color: var(--color-yellow) !important;
+		background: none;
+	}
+	.breadcrumb>li+li:before {
+		color: var(--color-button-main);
+		font-weight: 800;
+	}
+	.content-text h1, .content-text h2, .content-text h3, .content-text h4,
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		color: var(--color-text-primary);
+		font-family: var(--font-header);
+		font-weight: 500;
+	}
+	.content-text[data-bookid="dnd5e"] h1, .content-text[data-bookid="dnd5e"] h2, .content-text[data-bookid="dnd5e"] h3, .content-text[data-bookid="dnd5e"] h4 {
+		color: var(--color-text-primary);
+		font-family: var(--font-header);
+		font-weight: 500;
+	}
+	.content-text {
+		color: var(--color-text-primary);
+		font-family: var(--font-secondary);
+		font-size: 14px;
+		font-weight: 400;
+	}
+	.content-text .pull-right {
+		background-color: var(--color-bg-light) !important;
+	}
+	.content-text p {
+		font-family: var(--font-secondary);
+	}
+	p {
+		color: var(--color-text-primary);
+	}
+	#tableofcontents {
+		background-color: var(--color-bg-light);
+		border: 0px;
+	}
+	.booktemplate .name h1 {
+		color: var(--color-bg-light);
+		font-weight: 800;
+	}
+	.attrList .attrListItem:nth-child(odd) {
+		background-color: var(--color-element-bg);
+		border: 0px;
+	}
+	.attrList .attrListItem, .attrList .newAttrListItem {
+		border: 0px;
+	}
+	.btn-primary {
+		background-color: var(--color-button-main);
+		font-family: var(--font-primary) !important;
+	}
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.hover {
+		color: var(--color-text-primary);
+		background-color: var(--color-button-hover);
+	}
+	.booktemplate {
+		color: var(--color-bg-light);
+	}
+	.booktemplate.expansion0 .header {
+		background-color: var(--color-element-bg);
+		border-radius: 5px;
+	}
+	.booktemplate .card {
+		color: var(--color-element-bg);
+	}
+	.booktemplate .single-view h2 {
+		color: var(--color-element-bg);
+	}
+	.globalfooter .footerborder1,
+	.globalfooter .footerborder2 {
+		visibility: hidden;
+	}
+	.alert-info, aside {
+		background-color: var(--color-button-hover);
+		border-top: 1px solid var(--color-button-main);
+		border-bottom: 1px solid var(--color-button-main);
+	}
+	.alert, aside {
+		color: var(--color-text-primary);
+		font-family: var(--font-secondary);
+	}
+	hr {
+		border-top-color: var(--color-text-disabled);
+	}
+	#pagecontent table td {
+		border: 0px;
+		font-size: 12px;
+	}
+	#pagecontent table tbody tr:nth-of-type(odd) {
+		background-color: var(--color-element-bg);
+	}
+	#pagecontent table thead td {
+		border-bottom: 2px solid var(--color-button-main) !important;
+		font-size: 16px;
+		font-family: var(--font-primary);
+	}
+	caption {
+		color: var(--color-text-primary);
+	}
 }
