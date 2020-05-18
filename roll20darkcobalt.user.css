@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.14
+@version      1.0.15
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.14 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.15 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1737,6 +1737,16 @@
     div#color_custom label {
         color: var(--color-text-primary);
     }
+    .d20contextmenu li[data-action-type="deleteitem"]:hover,
+    .d20contextmenu li[data-action-type="permdelete"]:hover,
+    .d20contextmenu li[data-action-type="massdelete"]:hover,
+    .d20contextmenu li[data-action-type="deletefolderpropagate"]:hover {
+        background-color: var(--color-red) !important;
+    }
+    .d20contextmenu ul li[data-action-type="deleteitem"],
+    .d20contextmenu li[data-action-type="deletefolderpropagate"] {
+        background-color: var(--color-bg-light) !important;
+    }
 
     /* -------------------------------------------------------------------------- */
     /*                                   Editor                                   */
@@ -2812,17 +2822,31 @@
     #journal #superjournaladd li:hover {
         background-color: var(--color-button-hover);
     }
-    /*
-    .handout .dd-content .token {
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURezt9kdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9k+ibs4AAAALdFJOU38A8jNC2MNtDryUsAxjbAAAAH5JREFUKM9jEOzcjQZmCDIIVqMLbgcKcqMLbqCdYAIDHLDBBLcKIoFoqOAmR4SYiDYtnYRNEKvtWN2J1UfDI+g2LQDZxYIquAVqMIrgRqyCAiBSGYvgJkMsgspYtAMVYgoqY7EIpBBDUBmLk8AKUTPCRgFlqOORssxGcbBCQQA6TIczoR+NIgAAAABJRU5ErkJggg==");
+    .handout .dd-content .token img[src="/images/handout.png"] {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURezt9kdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9k+ibs4AAAALdFJOU38A8jNC2MNtDryUsAxjbAAAAH5JREFUKM9jEOzcjQZmCDIIVqMLbgcKcqMLbqCdYAIDHLDBBLcKIoFoqOAmR4SYiDYtnYRNEKvtWN2J1UfDI+g2LQDZxYIquAVqMIrgRqyCAiBSGYvgJkMsgspYtAMVYgoqY7EIpBBDUBmLk8AKUTPCRgFlqOORssxGcbBCQQA6TIczoR+NIgAAAABJRU5ErkJggg==");
         width: 25px;
         height: 25px;
         background-size: cover;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 25px 25px 0px 0px;
     }
-    .handout .dd-content .token img {
-        display: none;
+    .dd-content .token img[src="/images/character.png"] {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTObn8Ozt9tUSDygAAAACdFJOUwBa/S110gAAAIhJREFUWMPt1jkOgDAMBVEz9z80HRKKWJxJACH/3q+I4iXiOGyJnrCLLM8T4ARwAjgBpGABkMLrAEihgAKGAD9opg9MJA/oqez3ggf0avOA3s6tEI8DMbbeA/oNc8Iy60AZMFMvCW5Elp8RoARSsfWtAE4AJ4AUCihgyE/0veC7MUdMm4k9R9YKR5IQIqaJ41sAAAAASUVORK5CYII=");
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 25px 25px 0px 0px;
     }
-	*/
+    .dd-placeholder,
+    .dd-empty {
+        background: var(--color-bg-light);
+        border: 1px dashed var(--color-yellow);
+    }
 
     /* ------------------------------ Image Library ----------------------------- */
 
