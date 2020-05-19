@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.22
+@version      1.0.23
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.22 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.23 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -3085,6 +3085,11 @@
         padding: 10px;
         background-color: var(--color-bg-light);
     }
+    /* Emote */
+    .textchatcontainer .emote {
+        color: var(--color-text-primary);
+        font-weight: 300;
+    }
     /* System */
     .textchatcontainer .message.system {
         color: var(--color-text-disabled);
@@ -3544,6 +3549,7 @@
     .sheet-rolltemplate-atk .sheet-solo > span,
     .sheet-rolltemplate-atk .sheet-adv > span,
     .sheet-rolltemplate-dmg .sheet-desc span.sheet-plus,
+    .sheet-rolltemplate-dmg span.sheet-damage,
     .sheet-rolltemplate-atkdmg .sheet-desc span.sheet-plus {
         font-weight: 800;
         font-family: var(--font-number);
