@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.21
+@version      1.0.22
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.21 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.22 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -2221,6 +2221,7 @@
     #macrobar div.macrobox.ui-sortable-helper {
         background-color: var(--color-button-main);
         margin-right: 0px;
+        box-shadow: 0px 0px 5px var(--color-button-main) !important;
     }
     #macrobar_macros {
         background: none;
@@ -3103,6 +3104,52 @@
         box-shadow: inset 0px 0px 8px var(--color-yellow);
     }
     /* Other */
+    .textchatcontainer .inlinerollresult {
+        background-color: var(--color-element-bg);
+        border-radius: 5px;
+        font-size: 22px;
+        font-weight: 800;
+        padding: 2px 5px 2px 5px;
+        color: var(--color-text-primary);
+        border: 0px;
+    }
+    .textchatcontainer .inlinerollresult.fullcrit {
+        color: var(--color-green);
+        border: 0px;
+        text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+    }
+    .textchatcontainer .inlinerollresult.fullfail {
+        color: var(--color-red);
+        border: 0px;
+        text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+    }
+    .textchatcontainer a[href^="!"] {
+        background-color: var(--color-button-main);
+        border: 0px;
+        border-radius: 5px;
+        padding: 4px;
+        margin: 2px;
+    }
+    .textchatcontainer a[href^="!"]:hover {
+        background-color: var(--color-button-hover);
+        box-shadow: 0px 0px 5px var(--color-button-main);
+        text-shadow: 0px 0px 5px var(--color-bg-dark);
+    }
+    #rightsidebar .textchatcontainer .content a[href^="!"]:not(.btn) {
+        color: var(--color-text-primary) !important;
+        font-family: var(--font-primary);
+        font-size: 15px;
+    }
+    .ui-autocomplete li a {
+        color: var(--color-text-primary);
+        font-family: var(--font-secondary);
+        background-color: var(--color-element-bg);
+    }
+    .ui-autocomplete .ui-state-hover,
+    .ui-autocomplete .ui-state-focus {
+        background-color: var(--color-button-main);
+        color: var(--color-text-primary);
+    }
     /* Formula */
     .textchatcontainer .formula,
     .textchatcontainer .rolled {
