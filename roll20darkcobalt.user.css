@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.20
+@version      1.0.21
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.20 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.21 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1742,8 +1742,14 @@
         font-family: var(--font-primary);
         font-size: 16px;
     }
-    .d20contextmenu ul li ul.submenu {
-        width: 180px;
+    .d20contextmenu ul li ul.submenu,
+    .d20contextmenu ul li ul.submenu li,
+    .d20contextmenu > ul {
+        width: auto !important;
+    }
+    .d20contextmenu.actions_menu,
+    .d20contextmenu.actions_menu .submenu {
+        width: 175px !important;
     }
     .d20contextmenu ul li {
         border: 0px;
@@ -1768,7 +1774,38 @@
     .d20contextmenu li[data-action-type="deletefolderpropagate"] {
         background-color: var(--color-bg-light) !important;
     }
+    /* ------------------------------ Decks ------------------------------------- */
 
+    #showndecks {
+        min-width: 140px;
+    }
+    div#showndecks:hover {
+        border: 0px;
+        background-color: var(--color-floating-bar-bg);
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px var(--color-text-disabled),
+            0px 0px 3px var(--color-text-disabled);
+    }
+    #showndecks .deckstack .controls {
+        width: 50px;
+        padding: 10px 10px 10px 5px;
+        text-align: left;
+        background: none;
+        border: 0px;
+        float: left;
+    }
+    #showndecks .deckstack .controls .control {
+        color: var(--color-text-primary);
+        font-family: var(--font-secondary);
+    }
+    #showndecks .deckstack .controls .control a {
+        color: var(--color-yellow);
+    }
+    #playerzone .deckhands .hand .handcontainer {
+        background-color: var(--color-floating-bar-bg);
+        box-shadow: 0px 0px 3px var(--color-text-disabled),
+            0px 0px 3px var(--color-text-disabled);
+    }
     /* -------------------------------------------------------------------------- */
     /*                                   Editor                                   */
     /* -------------------------------------------------------------------------- */
