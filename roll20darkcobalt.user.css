@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.23
+@version      1.0.24
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.23 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.24 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1163,8 +1163,8 @@
     input[type="radio"]:checked:after {
         content: "";
         display: block;
-        width: 7px;
-        height: 8px;
+        width: 7.5px;
+        height: 7.5px;
         border-radius: 8px;
         position: absolute;
         background-color: var(--color-yellow);
@@ -3940,7 +3940,13 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet
         .sheet-attack
         .sheet-options
-        input[type="checkbox"]:checked:before {
+        input[type="checkbox"]:checked:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_skill_active_flag"]:checked:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_attack_active_flag"]:checked:before,
+    .charsheet
+        input[type="checkbox"][name="attr_global_save_active_flag"]:checked:before {
         background-color: var(--color-button-main) !important;
         border: 2px solid var(--color-button-main) !important;
     }
