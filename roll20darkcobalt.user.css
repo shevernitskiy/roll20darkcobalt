@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.24
+@version      1.0.25
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,16 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.24 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.25 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     /* ---------------------------------- Fonts --------------------------------- */
@@ -1404,6 +1413,7 @@
         background-color: var(--color-element-bg);
         color: var(--color-text-primary);
         border: 0px;
+        width: calc(100% - 5px) !important;
     }
     .btn.note-btn {
         color: var(--color-text-primary);
@@ -1617,7 +1627,6 @@
     .ui-dialog .zoomoptionsmenu button.zoomout {
         border-radius: 0px 5px 5px 0px;
     }
-    /*
     .ui-dialog button.zoomoptions {
         height: 17.5px;
     }
@@ -1626,7 +1635,6 @@
         top: -0.5px;
         position: relative;
     }
-	*/
     .ui-dialog .zoomoptionsmenu button,
     .ui-dialog .ui-dialog-buttonpane button {
         font-family: var(--font-primary);
@@ -1667,6 +1675,9 @@
     }
     .ui-dialog .ui-dialog-titlebar-close:hover {
         color: var(--color-text-primary);
+    }
+    .ui-dialog .ui-dialog-buttonpane button {
+        padding: 2px 5px !important;
     }
     .ui-widget-content {
         background-color: var(--color-bg-light) !important;
@@ -3466,6 +3477,7 @@
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail {
         color: var(--color-red) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+        animation: var(--anim-numbers);
     }
     .sheet-rolltemplate-simple .inlinerollresult.fullcrit,
     .sheet-rolltemplate-skill .inlinerollresult.fullcrit,
@@ -3475,6 +3487,7 @@
     .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit {
         color: var(--color-green) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+        animation: var(--anim-numbers);
     }
     .sheet-rolltemplate-simple .sheet-grey .inlinerollresult.fullfail,
     .sheet-rolltemplate-skill .sheet-grey .inlinerollresult.fullfail,
@@ -3762,6 +3775,20 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-header span {
         color: var(--color-text-disabled);
     }
+
+    /*.charsheet .sheet-options {
+		position: relative;
+		z-index: 1000;
+		width: 140%;
+		height: 140%;
+		left: -20%;
+		top: -20%;
+		transform: scale(1);
+		padding: 15px !important;
+		font-size: 1.3em;
+		outline: solid rgba(0, 0, 0, .6) 10000px;
+		box-shadow: 0px 0px 15px var(--color-yellow), 0px 0px 15px var(--color-text-disabled) !important;
+	}*/
     .attributesabilities .abil {
         background-color: var(--color-element-bg);
         border-radius: 5px;
