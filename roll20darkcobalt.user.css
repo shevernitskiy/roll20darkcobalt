@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.26
+@version      1.0.27
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.26 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.27 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1149,38 +1149,6 @@
         top: 0px;
         left: 3.5px;
     }
-    /* Radio */
-    /*input[type="radio"] {
-        position: relative;
-        cursor: pointer;
-        margin: 2px;
-        top: 1px;
-        left: 1px;
-    }
-    input[type="radio"]:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: -1px;
-        left: -1px;
-        background-color: var(--color-element-bg);
-        border-radius: 8px;
-        border: 2px solid var(--color-element-bg);
-    }
-    input[type="radio"]:checked:after {
-        content: "";
-        display: block;
-        width: 7.5px;
-        height: 7.5px;
-        border-radius: 8px;
-        position: absolute;
-        background-color: var(--color-yellow);
-        top: 2px;
-        left: 2.5px;
-        box-shadow: 0px 0px 5px var(--color-yellow);
-    }*/
     /* Slider */
     .ui-slider {
         border: 1px solid var(--color-element-bg);
@@ -6114,6 +6082,13 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     /* ------------------------------ Charactermancer --------------------------- */
     .charsheet .sheet-showleveler[value="1"] + .sheet-levelerbutton {
         width: 18px;
+        border-radius: 2px;
+        background-color: var(--color-button-main);
+        border: 2px solid var(--color-button-main);
+        box-shadow: 0px 0px 3px var(--color-yellow);
+    }
+    .charsheet .sheet-showleveler[value="1"] + .sheet-levelerbutton:hover {
+        box-shadow: 0px 0px 8px var(--color-yellow);
     }
     .charsheet
         .sheet-licensecontainer
@@ -6122,6 +6097,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         button.sheet-levelerbutton
         > img {
         width: 18px !important;
+        filter: invert(100%);
     }
     .charsheet .sheet-charmancer .sheet-steps {
         background: var(--color-bg-light);
@@ -6186,6 +6162,33 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     .charsheet .sheet-charmancer .sheet-compendium-class-name {
         font-family: var(--font-header);
+    }
+    .charsheet .sheet-charmancer .sheet-topbar div div,
+    .charsheet .sheet-charmancer .sheet-leveler-topbar div div {
+        border: 0px;
+    }
+    .charsheet div.sheet-charmancer .sheet-meta-info-container,
+    .charsheet div.sheet-charmancer .sheet-summary-container,
+    .charsheet div.sheet-charmancer .sheet-info .sheet-compendium-page {
+        border: none !important;
+    }
+    .charsheet .sheet-charmancer .sheet-cancel-prompt {
+        background-color: var(--color-bg-dark);
+        border: 0px;
+        box-shadow: 0px 0px 5px var(--color-red), 0px 0px 10px var(--color-red);
+        left: calc(50% - 325px);
+    }
+    .charsheet .sheet-charmancer button.sheet-warning {
+        background-color: var(--color-red);
+    }
+    .charsheet .sheet-charmancer button:hover.sheet-warning,
+    .charsheet .sheet-charmancer button:hover.sheet-exit {
+        background-color: var(--color-red);
+        color: var(--color-text-primary);
+        box-shadow: 0px 0px 5px var(--color-red);
+    }
+    .charsheet .sheet-charmancer .sheet-warning {
+        color: var(--color-red);
     }
     .charsheet .sheet-charmancer input[type="number"] {
         background-color: var(--color-bg-light);
@@ -6425,6 +6428,38 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     #dicerollerdialog .btn.btn-primary.rolladvanced {
         margin-bottom: 3px;
+    }
+    /* Radio */
+    #dicerollerdialog input[type="radio"] {
+        position: relative;
+        cursor: pointer;
+        margin: 2px;
+        top: 1px;
+        left: 1px;
+    }
+    #dicerollerdialog input[type="radio"]:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: -1px;
+        left: -1px;
+        background-color: var(--color-element-bg);
+        border-radius: 8px;
+        border: 2px solid var(--color-element-bg);
+    }
+    #dicerollerdialog input[type="radio"]:checked:after {
+        content: "";
+        display: block;
+        width: 7.5px;
+        height: 7.5px;
+        border-radius: 8px;
+        position: absolute;
+        background-color: var(--color-yellow);
+        top: 2px;
+        left: 2.5px;
+        box-shadow: 0px 0px 5px var(--color-yellow);
     }
 }
 @-moz-document url-prefix("https://app.roll20.net/compendium/") {
