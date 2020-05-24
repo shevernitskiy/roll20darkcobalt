@@ -3983,18 +3983,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-color: var(--color-button-main) !important;
         border: 2px solid var(--color-button-main) !important;
     }
-    /* Charactermancer */
-    .charsheet .sheet-showleveler[value="1"] + .sheet-levelerbutton {
-        width: 18px;
-    }
-    .charsheet
-        .sheet-licensecontainer
-        .sheet-container:not(.sheet-npc)
-        .sheet-display
-        button.sheet-levelerbutton
-        > img {
-        width: 18px !important;
-    }
+
     .charsheet .sheet-saving-throw input[type="checkbox"]:checked:after,
     .charsheet .sheet-skill input[type="checkbox"]:checked:after {
         content: "";
@@ -6122,7 +6111,168 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-color: var(--color-element-bg) !important;
         border: 1px solid var(--color-bg-medium) !important;
     }
-
+    /* ------------------------------ Charactermancer --------------------------- */
+    .charsheet .sheet-showleveler[value="1"] + .sheet-levelerbutton {
+        width: 18px;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-display
+        button.sheet-levelerbutton
+        > img {
+        width: 18px !important;
+    }
+    .charsheet .sheet-charmancer .sheet-steps {
+        background: var(--color-bg-light);
+        border: 0px;
+    }
+    .charsheet .sheet-charmancer .sheet-bottombar {
+        border-top: 1px dashed var(--color-element-bg);
+        background: var(--color-bg-light);
+    }
+    .charsheet .sheet-charmancer button,
+    .charsheet .sheet-charmancer button[type="roll"] {
+        background-color: var(--color-button-main);
+        color: var(--color-text-primary);
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 500;
+        border: 0px;
+    }
+    .charsheet .sheet-charmancer .sheet-steps button {
+        border-radius: 0px;
+    }
+    .charsheet .sheet-charmancer .sheet-steps li:nth-last-of-type(1) button {
+        border-radius: 5px;
+    }
+    .charsheet .sheet-charmancer .sheet-steps li:nth-last-of-type(2) button {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .charsheet .sheet-charmancer .sheet-steps li:nth-of-type(1) button {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .charsheet .sheet-charmancer .sheet-lp-steps li {
+        margin: 0px;
+    }
+    .charsheet .sheet-charmancer button:hover,
+    .charsheet .sheet-charmancer button:hover.sheet-step,
+    .charsheet .sheet-charmancer button:hover.sheet-step.sheet-done,
+    .charsheet .sheet-charmancer button.sheet-step.sheet-here,
+    .charsheet .sheet-charmancer button[type="roll"]:hover,
+    .charsheet .sheet-charmancer button[type="roll"]:hover * {
+        background-color: var(--color-button-hover);
+        box-shadow: 0px 0px 5px;
+    }
+    .charsheet .sheet-charmancer button.sheet-step.sheet-here {
+        background-color: var(--color-yellow);
+        color: var(--color-button-hover);
+    }
+    .charsheet .sheet-charmancer button.sheet-step.sheet-next,
+    .charsheet .sheet-charmancer button.sheet-step.sheet-prev,
+    .charsheet .sheet-charmancer button.sheet-step.sheet-done,
+    .charsheet .sheet-charmancer button.sheet-step:not(.sheet-here) {
+        background-color: var(--color-button-main);
+        color: var(--color-text-primary);
+    }
+    .charsheet .sheet-charmancer button.sheet-exit {
+        background-color: var(--color-red);
+        color: var(--color-text-primary);
+    }
+    .charsheet .sheet-charmancer .sheet-leveler-topbar div span {
+        font-family: var(--font-number);
+    }
+    .charsheet .sheet-charmancer .sheet-compendium-class-name {
+        font-family: var(--font-header);
+    }
+    .charsheet .sheet-charmancer input[type="number"] {
+        background-color: var(--color-bg-light);
+        color: var(--color-text-primary);
+        border: 0px;
+    }
+    .charsheet .sheet-charmancer .sheet-levels-hp-row {
+        background: var(--color-element-bg);
+        border: var(--color-element-bg);
+    }
+    .charsheet
+        .sheet-charmancer
+        .sheet-levels-hp-row
+        .sheet-hpbylevel-toggle:checked
+        ~ span.sheet-collapse
+        + div
+        > div {
+        background: var(--color-element-bg);
+    }
+    .charsheet
+        .sheet-charmancer
+        .sheet-levels-hp-row
+        .sheet-hpbylevel-toggle:checked
+        ~ .sheet-class1_by-levels,
+    .charsheet
+        .sheet-charmancer
+        .sheet-levels-hp-row
+        .sheet-hpbylevel-toggle:checked
+        ~ .sheet-class2_by-levels,
+    .charsheet
+        .sheet-charmancer
+        .sheet-levels-hp-row
+        .sheet-hpbylevel-toggle:checked
+        ~ .sheet-class3_by-levels,
+    .charsheet
+        .sheet-charmancer
+        .sheet-levels-hp-row
+        .sheet-hpbylevel-toggle:checked
+        ~ .sheet-class4_by-levels {
+        border-top: 1px solid var(--color-bg-light);
+    }
+    .charsheet .sheet-charmancer button[type="roll"] {
+        padding: 1px 6px 4px 6px;
+    }
+    .sheet-rolltemplate-mancerroll .sheet-container,
+    .sheet-rolltemplate-mancerhproll .sheet-container {
+        background-color: var(--color-element-bg);
+        color: var(--color-text-primary);
+        border: 0px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px var(--color-text-disabled);
+    }
+    .sheet-rolltemplate-mancerroll .sheet-row.sheet-header,
+    .sheet-rolltemplate-mancerhproll .sheet-row.sheet-header {
+        text-align: center;
+        font-family: var(--font-primary);
+        border: 0px;
+    }
+    .charsheet
+        .sheet-charmancer
+        .sheet-lp-summary.sheet-summary-container
+        .sheet-before
+        h2 {
+        color: var(--font-primary);
+    }
+    .charsheet
+        .sheet-charmancer
+        .sheet-lp-summary.sheet-summary-container
+        .sheet-after
+        h2 {
+        color: var(--color-yellow);
+    }
+    .charsheet
+        .sheet-charmancer
+        .sheet-lp-summary.sheet-summary-container
+        span.sheet-highlight {
+        color: var(--color-yellow);
+    }
+    .charsheet div.sheet-charmancer .sheet-row + .sheet-row::before,
+    .charsheet div.sheet-charmancer .sheet-holder .sheet-row::before {
+        border-top: 1px solid var(--color-element-bg);
+        border-bottom: none;
+        border-left: none;
+    }
+    .charsheet div.sheet-charmancer .sheet-summary:nth-child(even) {
+        background-color: var(--color-bg-light);
+    }
     /* ------------------------------ Map Settings ------------------------------ */
 
     .dialog .pagedetails.tab-pane label {
