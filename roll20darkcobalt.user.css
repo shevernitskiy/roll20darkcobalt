@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.27
+@version      1.0.28
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.27 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.28 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -5441,6 +5441,21 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-color: var(--color-bg-light);
         border-bottom: 1px solid var(--color-element-bg);
     }
+    /* Whisper Toggle */
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-advantagetoggle.sheet-whispertoggle:not(.sheet-npc) {
+        left: 498px;
+    }
+    .charsheet
+        .sheet-advantagetoggle.sheet-whispertoggle:not(.sheet-npc)
+        input[type="radio"],
+    .charsheet
+        .sheet-advantagetoggle.sheet-whispertoggle:not(.sheet-npc)
+        input[type="radio"]
+        + span {
+        width: 70px !important;
+    }
 
     /* --------------------------------- Spells --------------------------------- */
 
@@ -5752,6 +5767,23 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         color: var(--color-button-hover);
         box-shadow: 0px 0px 10px var(--color-yellow);
     }
+    /* Whisper toggle */
+    .charsheet
+        .sheet-npc_toggle[value="1"]
+        ~ .sheet-advantagetoggle.sheet-whispertoggle {
+        left: 505px;
+        top: -15px;
+    }
+    .charsheet
+        .sheet-advantagetoggle.sheet-whispertoggle
+        input.sheet-toggle-left,
+    .charsheet
+        .sheet-advantagetoggle.sheet-whispertoggle
+        input.sheet-toggle-left
+        + span {
+        right: 74px !important;
+    }
+
     .charsheet .sheet-licensecontainer div.sheet-npc div.sheet-triangle,
     .charsheet .sheet-licensecontainer div.sheet-triangle {
         border: 0.5px solid var(--color-text-disabled);
