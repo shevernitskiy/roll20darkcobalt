@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.28
+@version      1.0.29
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.28 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.29 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -5138,10 +5138,18 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .sheet-ac-init-speed-container
         .sheet-ac
         input {
-        font-size: 28px;
+        font-size: 25px;
         font-weight: 700;
     }
-
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-ac-init-speed-container
+        .sheet-speed
+        input {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
     .charsheet
         .sheet-licensecontainer
         .sheet-container:not(.sheet-npc)
