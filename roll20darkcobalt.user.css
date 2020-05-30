@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.29
+@version      1.0.30
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.29 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.30 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -2185,7 +2185,7 @@
         font-size: 18px;
     }
     #page-toolbar .pages .availablepage .settings {
-        background-color: var(--color-button-main);
+        background: none;
     }
     #page-toolbar div.handle {
         background-color: var(--color-element-bg);
@@ -2195,6 +2195,40 @@
     }
     .table-striped > tbody > tr:nth-of-type(odd) {
         background-color: var(--color-element-bg);
+    }
+    #page-toolbar .pages .availablepage {
+        height: 150px;
+        margin-right: 10px;
+    }
+    #page-toolbar .pages .availablepage span {
+        font-size: 14px;
+        font-weight: 300 !important;
+
+        word-wrap: normal;
+        white-space: pre-wrap;
+        height: 60px;
+        top: 92px;
+        display: table-cell;
+        padding-bottom: 3px;
+        vertical-align: middle;
+        line-height: 16px;
+    }
+    #page-toolbar .pages .availablepage input {
+        width: 120px;
+        font-size: 12px !important;
+        top: 10px;
+    }
+    #page-toolbar .activepage img.pagethumb {
+        border: 0px;
+    }
+    #page-toolbar .pages div.availablepage:hover img.pagethumb {
+        box-shadow: 0px 0px 10px var(--color-button-main),
+            0px 0px 10px var(--color-button-main);
+    }
+    #page-toolbar .pages div.activepage img.pagethumb {
+        box-shadow: 0px 0px 10px var(--color-yellow),
+            0px 0px 10px var(--color-yellow);
+        border-radius: 0px;
     }
 
     /* ------------------------------- Playerzone ------------------------------- */
@@ -6315,6 +6349,35 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     .charsheet div.sheet-charmancer .sheet-summary:nth-child(even) {
         background-color: var(--color-bg-light);
+    }
+    /* Popups */
+    .charsheet
+        .sheet-licensecontainer.active-drop-target.dropping
+        ~ .sheet-compendium_warning,
+    .charsheet .sheet-monster_confirm_flag[value="1"] ~ .sheet-monster_confirm,
+    .charsheet .sheet-mancer_confirm_flag[value="1"] ~ .sheet-mancer_confirm {
+        height: 100px;
+        background: var(--color-floating-bar-bg);
+        box-shadow: 0px 0px 5px var(--color-text-disabled);
+        border: 0px;
+        border-radius: 5px;
+        width: 400px;
+    }
+    .charsheet .sheet-mancer_confirm input[type="checkbox"] + span {
+        top: -0px;
+        font-size: 14px;
+        font-family: var(--font-primary);
+        background-color: var(--color-button-main);
+        border: 0px;
+        vertical-align: middle;
+        height: 35px;
+    }
+    .charsheet .sheet-mancer_confirm input[type="checkbox"]:hover + span {
+        box-shadow: 0px 0px 5px var(--color-button-main);
+        background-color: var(--color-button-hover);
+    }
+    .charsheet .sheet-mancer_confirm input[type="checkbox"] {
+        height: 35px;
     }
     /* ------------------------------ Map Settings ------------------------------ */
 
