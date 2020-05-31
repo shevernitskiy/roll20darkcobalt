@@ -1883,6 +1883,16 @@
     #initiativewindow ul li {
         background-color: var(--color-bg-light);
     }
+    #initiativewindow ul li .controls {
+        color: var(--color-yellow);
+        background-color: var(--color-floating-bar-bg);
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        top: 5px;
+        left: 5px;
+        padding: 0px;
+    }
     /* ------------------------------ Radial Menu ------------------------------- */
     /*
     #radial-menu .button {
@@ -2911,12 +2921,12 @@
     #journal .dd-item > button {
         margin: 0px;
     }
-	#journal .dd-item {
-		min-height: 32px;
-	}
-	#journal .folder-title {
-		font-weight: 800;
-	}
+    #journal .dd-item {
+        min-height: 32px;
+    }
+    #journal .folder-title {
+        font-weight: 800;
+    }
     #journal .dd-item .playerdots {
         background-color: var(--color-bg-light);
     }
@@ -3213,10 +3223,10 @@
         border: 0px;
         font-size: inherit;
     }
-	.textchatcontainer .rolled:before {
-		font-weight: 300;
-		font-size: 18px;
-	}
+    .textchatcontainer .rolled:before {
+        font-weight: 300;
+        font-size: 18px;
+    }
     .textchatcontainer .dicegrouping {
         font-family: var(--font-number);
         font-size: 24px;
