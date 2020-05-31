@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.30
+@version      1.0.31
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.30 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.31 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -2911,6 +2911,15 @@
     #journal .dd-item > button {
         margin: 0px;
     }
+    #journal .dd-item {
+        min-height: 32px;
+    }
+    #journal .content {
+        padding-left: 0px !important;
+    }
+    #journal .folder-title {
+        font-weight: 800;
+    }
     #journal .dd-item .playerdots {
         background-color: var(--color-bg-light);
     }
@@ -3206,6 +3215,10 @@
         background: var(--color-element-bg);
         border: 0px;
         font-size: inherit;
+    }
+    .textchatcontainer .rolled:before {
+        font-weight: 300;
+        font-size: 18px;
     }
     .textchatcontainer .dicegrouping {
         font-family: var(--font-number);
