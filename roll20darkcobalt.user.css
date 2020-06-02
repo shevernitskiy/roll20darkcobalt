@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.31
+@version      1.0.32
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.31 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.32 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -3954,6 +3954,16 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         border-radius: 0px;
         border: 2px solid var(--color-bg-light);
     }
+    .charsheet .sheet-saving-throw input[type="checkbox"]:checked + span,
+    .charsheet .sheet-skill input[type="checkbox"]:checked + span {
+        text-shadow: 0px 0px 5px var(--color-green);
+        font-weight: 700;
+        color: var(--color-green);
+    }
+    .charsheet .sheet-saving-throw input[type="checkbox"]:checked ~ button,
+    .charsheet .sheet-skill input[type="checkbox"]:checked ~ button {
+        font-weight: 700;
+    }
     .charsheet .sheet-saving-throw input[type="checkbox"]:checked:before,
     .charsheet .sheet-skill input[type="checkbox"]:checked:before,
     .bartoggle label input[type="checkbox"]:checked:before,
@@ -4524,6 +4534,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         font-weight: 400;
         color: var(--color-text-secondary);
         bottom: 4px !important;
+        text-transform: uppercase;
     }
     .charsheet
         .sheet-licensecontainer
@@ -4598,6 +4609,34 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-resources input[type="number"] {
         color: var(--color-text-primary);
         font-family: var(--font-number);
+    }
+    .charsheet
+        .sheet-pc
+        div.sheet-global-dmg
+        div.sheet-display
+        span.sheet-subheader
+        span {
+        line-height: 8px;
+        height: 8px;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        position: relative;
+        bottom: 4px;
+    }
+    .charsheet
+        .sheet-pc
+        div.sheet-global-dmg
+        div.sheet-display
+        span.sheet-subheader
+        span:after,
+    .charsheet
+        .sheet-pc
+        div.sheet-global-dmg
+        div.sheet-display
+        span.sheet-subheader
+        span:before {
+        bottom: -4px;
+        position: relative;
     }
     .charsheet
         .sheet-licensecontainer
@@ -5169,6 +5208,26 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         input[type="checkbox"][name="attr_global_damage_active_flag"] {
         margin-top: 1px;
     }
+    .charsheet
+        .sheet-globalattack
+        input[type="checkbox"][name="attr_global_damage_active_flag"]:checked
+        ~ div.sheet-display
+        > span,
+    .charsheet
+        .sheet-pc
+        .sheet-global-mod
+        .sheet-active-flag:checked
+        ~ div.sheet-globaldisplay,
+    .charsheet
+        .sheet-pc
+        .sheet-global-mod
+        .sheet-active-flag:checked
+        ~ div.sheet-display
+        > span {
+        box-shadow: inset 0px 0px 4px var(--color-button-main),
+            inset 0px 0px 7px var(--color-button-main);
+    }
+
     /* Resourses */
     .charsheet .sheet-resources .repcontrol {
         margin-top: -3px;
