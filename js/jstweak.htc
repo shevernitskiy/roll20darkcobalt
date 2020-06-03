@@ -1,6 +1,0 @@
-<public:attach event="onload" for="window" onevent="initialise()" />
-<script language="javascript">
-    function initialise() {
-        alert("I'm stealing your stuffeses");
-    }
-</script>
