@@ -2233,7 +2233,6 @@
         height: 60px;
         top: 120px;
         left: -50px;
-        padding-bottom: 3px;
         text-align: right;
         align-content: center;
         line-height: 1.2;
@@ -2266,6 +2265,9 @@
         max-width: 50px;
         max-height: 50px;
     }
+	#page-toolbar .playerbookmark {
+		left: 11px;
+	}
 
     /* ------------------------------- Playerzone ------------------------------- */
 
@@ -6486,6 +6488,9 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     /* ------------------------------ Map Settings ------------------------------ */
 
+	#color_selector + .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.ui-dialog-buttons {
+		min-width: 500px;
+	}
     .dialog .pagedetails.tab-pane label {
         width: 90px !important;
     }
