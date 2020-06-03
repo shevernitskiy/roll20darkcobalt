@@ -2265,9 +2265,9 @@
         max-width: 50px;
         max-height: 50px;
     }
-	#page-toolbar .playerbookmark {
-		left: 11px;
-	}
+    #page-toolbar .playerbookmark {
+        left: 10px;
+    }
 
     /* ------------------------------- Playerzone ------------------------------- */
 
@@ -6488,9 +6488,10 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     /* ------------------------------ Map Settings ------------------------------ */
 
-	#color_selector + .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.ui-dialog-buttons {
-		min-width: 500px;
-	}
+    #color_selector
+        + .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.ui-dialog-buttons {
+        min-width: 500px;
+    }
     .dialog .pagedetails.tab-pane label {
         width: 90px !important;
     }
