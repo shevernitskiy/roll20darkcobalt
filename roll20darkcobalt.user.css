@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.33
+@version      1.0.34
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,7 +38,7 @@
         --font-primary: "Alegreya Sans", sans-serif;
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
-        --version: "Dark Cobalt v1.0.33 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.34 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1346,6 +1346,10 @@
     .dropbox {
         border: 1px dashed var(--color-yellow);
     }
+    .dropbox.filled {
+        border: 1px solid var(--color-bg-light);
+        box-shadow: 0px 0px 3px var(--color-yellow);
+    }
     .handouteditor .avatar {
         background-color: var(--color-bg-light);
     }
@@ -1361,6 +1365,7 @@
     }
     .panel-default {
         border: 0px;
+        border-bottom: 1px solid var(--color-bg-light);
     }
     .note-editor.note-frame .note-statusbar {
         background-color: var(--color-element-bg);
@@ -1544,7 +1549,16 @@
         border-top: 1px solid var(--color-text-disabled);
         border-top-color: var(--color-text-disabled);
     }
-
+    blockquote {
+        font-size: 14px;
+        font-style: italic;
+        padding: 5px 10px;
+        border-left: 3px solid var(--color-text-secondary);
+        color: var(--color-text-primary);
+    }
+    blockquote p {
+        margin: 0px;
+    }
     /* ------------------------------- UI dialogs ------------------------------- */
 
     .ui-dialog {
@@ -5252,8 +5266,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .sheet-active-flag:checked
         ~ div.sheet-display
         > span {
-        box-shadow: inset 0px 0px 4px var(--color-button-main),
-            inset 0px 0px 7px var(--color-button-main);
+        box-shadow: inset 0px 0px 3px var(--color-green);
     }
 
     /* Resourses */
