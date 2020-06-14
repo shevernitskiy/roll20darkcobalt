@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.36
+@version      1.0.37
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.36 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.37 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -2014,6 +2014,9 @@
     }
     #initiativewindow ul li {
         border: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        vertical-align: middle;
     }
     div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix
         > div
@@ -2023,10 +2026,13 @@
     #initiativewindow ul li span.initiative {
         font-family: var(--font-number);
         padding: 0px;
-        padding-top: 5px;
+        line-height: 1.3em;
     }
     .no-touch #initiativewindow span.editable:hover {
         background-color: var(--color-element-bg);
+    }
+    #initiativewindow ul li span.name {
+        margin-left: 2px;
     }
     #initiativewindow_settings p a.btn {
         padding: 3px 1px 3px 1px;
@@ -2580,6 +2586,8 @@
     }
     #page-toolbar .playerbookmark {
         left: 10px;
+        transform: scale(0.6);
+        top: -14px;
     }
 
     /* ------------------------------- Playerzone ------------------------------- */
@@ -3713,6 +3721,9 @@
         padding: 10px;
         color: var(--color-text-secondary);
         line-height: 14px;
+    }
+    .sheet-rolltemplate-atk div.sheet-desc {
+        box-shadow: none !important;
     }
     .sheet-rolltemplate-atk div.sheet-desc,
     .sheet-rolltemplate-atkdmg div.sheet-desc,
@@ -5573,7 +5584,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .sheet-active-flag:checked
         ~ div.sheet-display
         > span {
-        box-shadow: inset 0px 0px 3px var(--color-green);
+        box-shadow: inset 0px 0px 5px var(--color-yellow);
     }
 
     /* Resourses */
@@ -6817,10 +6828,10 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     /* ------------------------------ Map Settings ------------------------------ */
 
-    #color_selector
+    /*#color_selector
         + .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.ui-dialog-buttons {
         min-width: 500px;
-    }
+    }*/
     .dialog .pagedetails.tab-pane label {
         width: 90px !important;
     }
