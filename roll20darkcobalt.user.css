@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.37
+@version      1.0.38
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.37 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.38 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1492,6 +1492,13 @@
     .note-editor a[href^="http://journal.roll20.net"]
     {
         color: var(--color-yellow) !important;
+        text-decoration: none;
+    }
+    .note-editor a:hover,
+    .note-editor a:focus {
+        text-shadow: 0 0 3px;
+        color: var(--color-yellow) !important;
+        text-decoration: underline;
     }
     .btn.note-btn {
         color: var(--color-text-primary);
@@ -1874,7 +1881,10 @@
         font-size: 14px;
         font-weight: 400;
     }
-
+    a.lightly .mag-glass {
+        color: var(--yellow) !important;
+        text-shadow: 0 0 5px var(--color-bg-dark), 0 0 5px var(--color-bg-dark);
+    }
     /* ------------------------------ Context Menu ------------------------------ */
 
     .d20contextmenu > ul,
@@ -3782,6 +3792,27 @@
         box-shadow: 0px 0px 10px var(--color-yellow);
     }
 	*/
+    .sheet-rolltemplate-default {
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px var(--color-text-disabled);
+    }
+    .sheet-rolltemplate-default table {
+        border: 0px;
+        background-color: var(--color-element-bg);
+    }
+    .sheet-rolltemplate-default caption {
+        font: 24px var(--font-header);
+        background-color: var(--color-element-bg);
+        font-weight: 500;
+        color: var(--color-yellow);
+        text-align: center;
+    }
+    .sheet-rolltemplate-default tr:nth-child(odd) {
+        background-color: var(--color-bg-light);
+    }
+    .sheet-rolltemplate-default tr:nth-child(even) {
+        background-color: var(--color-element-bg);
+    }
     .sheet-rolltemplate-simple .sheet-adv span,
     .sheet-rolltemplate-simple .sheet-solo span,
     .sheet-rolltemplate-skill .sheet-roll span,
