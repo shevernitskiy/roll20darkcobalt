@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.38
+@version      1.0.39
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.38 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.39 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -3889,7 +3889,8 @@
     .sheet-rolltemplate-atk .inlinerollresult.fullfail,
     .sheet-rolltemplate-atkdmg .inlinerollresult.fullfail,
     .sheet-rolltemplate-dmg .inlinerollresult.fullfail,
-    .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail {
+    .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail,
+	.inlinerollresult.importantroll.fullfail {
         color: var(--color-red) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
         animation: var(--anim-numbers);
@@ -3899,7 +3900,8 @@
     .sheet-rolltemplate-atk .inlinerollresult.fullcrit,
     .sheet-rolltemplate-atkdmg .inlinerollresult.fullcrit,
     .sheet-rolltemplate-dmg .inlinerollresult.fullcrit,
-    .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit {
+    .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit,
+	.inlinerollresult.importantroll.fullcrit {
         color: var(--color-green) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
         animation: var(--anim-numbers);
@@ -4163,6 +4165,17 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         left: -10px;
         position: relative;
     }
+	.sheet-rolltemplate-simple .inlinerollresult.importantroll,
+	.sheet-rolltemplate-atk .inlinerollresult.importantroll,
+	.sheet-rolltemplate-skill .inlinerollresult.importantroll,
+	.sheet-rolltemplate-dmg .inlinerollresult.importantroll,
+	.sheet-rolltemplate-atkdmg .inlinerollresult.importantroll,
+	.sheet-rolltemplate-simple3D .inlinerollresult.importantroll {
+		color: var(--color-blue) !important;
+		text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+        animation: var(--anim-numbers);
+	}
+	
 
     /* -------------------------------------------------------------------------- */
     /*                                5e Charsheet                                */
@@ -4171,6 +4184,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-header input,
     .charsheet .sheet-header select {
         color: var(--color-text-primary);
+		background-color: var(--color-bg-light);
     }
     .charsheet .sheet-name-container input {
         font-size: 26px;
