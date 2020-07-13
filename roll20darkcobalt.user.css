@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.39
+@version      1.0.40
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -30,7 +30,7 @@
         --color-floating-bar-bg: rgba(55, 58, 82, 0.9);
         --color-red: #f85212;
         --color-green: #78ff10;
-        --color-blue: #0c6be7;
+        --color-blue: #0c8ce7;
         --color-yellow: #fc0;
         --color-player-progress: rgba(255, 204, 0, 0.6);
         --color-none: #0000;
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.39 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.40 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -3836,6 +3836,11 @@
     .sheet-rolltemplate-dmg .sheet-save .sheet-savedc span span {
         top: 0px !important;
     }
+	.sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.fullfail .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.fullfail, .sheet-rolltemplate-mancerroll .inlinerollresult.fullcrit, .sheet-rolltemplate-mancerroll .inlinerollresult.importantroll, .sheet-rolltemplate-mancerroll .inlinerollresult.fullfail, .sheet-rolltemplate-mancerhproll .inlinerollresult.fullcrit, .sheet-rolltemplate-mancerhproll .inlinerollresult.importantroll, .sheet-rolltemplate-mancerhproll .inlinerollresult.fullfail {
+		color: var(--color-blue);
+		text-shadow: 0px 0px 20px, 0px 0px 20px !important;
+        animation: var(--anim-numbers);
+	}
     .sheet-rolltemplate-atk .sheet-save .sheet-savedc span,
     .sheet-rolltemplate-dmg .sheet-save .sheet-savedc span,
     .sheet-rolltemplate-atkdmg .sheet-save .sheet-savedc span {
