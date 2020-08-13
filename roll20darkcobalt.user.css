@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.40
+@version      1.0.41
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.40 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.41 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -3954,7 +3954,8 @@
     .sheet-rolltemplate-npcatk,
     .sheet-rolltemplate-npcdmg,
     .sheet-rolltemplate-traits,
-    .sheet-rolltemplate-spell .sheet-container {
+    .sheet-rolltemplate-spell .sheet-container,
+	.sheet-rolltemplate-npcfullatk .sheet-container {
         width: calc(100% - 60px);
         margin-left: 30px;
         padding: 5px 0px 10px 0px;
@@ -4057,7 +4058,8 @@
         padding-left: 14px !important;
         padding-right: 14px !important;
     }
-    .sheet-rolltemplate-npcatk {
+    .sheet-rolltemplate-npcatk,
+	.sheet-rolltemplate-npcfullatk .sheet-container:nth-of-type(1) {
         background-repeat: no-repeat !important;
         background-color: var(--color-element-bg) !important;
         background-position-x: 3px, calc(100% - 3px) !important;
@@ -4066,7 +4068,8 @@
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC3UExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9lRJuQIAAAA8dFJOUwBiZjReKtKlcjY6B5WdBAHcwwr3E/x08pfIKy7OG4zVekdPeNkjfohBbA35PK92gknLkBaYu1mix+Ft6WY0sRUAAAIySURBVDjLtZTHbuNAEESLWaQYREUr52BYliw5777//649jAK5kO2T+zAYEIXqqWZ1Sb9Tzy/D0635NI+DIJ4/NW8CQxZDSXW72+Jc3T/1W0AWdVkdStWZVMt9LesOeNVfoDZyI8+L3LgG4IdF4MuJ4DloPUbXz9Ej8GAVgMOFAYbKJC3tdRCs7aWk0AfuC8h6DkByvQJjK1X1Dihy1l8BaEu9gpaFI03gofTOYRgDFSnJV1PPm64GQMOVEvCv2q2/L1LbcF60jAFXVb/wtdqhlUkVwyltg1UoZTE0+gqhc6a0jZALZw7kfSkGP9Uj2CdgFxzVe4azLcUAjZmyMVhyoHvyAdSkVxLDWZGWrg+NviIYSDVaxiEzGGkJeaF7GkMufcBQI3iSJM3hTTbspaui1Ie+dmDLhbkkKQFHa5ipqMiFtjawVgSxJCkAzxxhHhvOqdSDRB4E5igDE1hK7a+A76fWU63AlTSdZcXWm3Pr1UnMTlvwUzOz1IdQlZKY83gGkg/vqb4ajxn4ACI5LVjYvZ59c+DmF1owzuRetrCxUdYt/0LdQ6J0AYnk+AZ30xTNDg99OQ1IMmm7Ct4nZ5s5JZtpD4dMLjC+rGE0MMY9FO1c/YSj5DaAwW7jeZvdx2kV7kqroG0LJpKz4KflugeOmVJr/O26yrj60JfUs49BcLR7ksLDfwFgOFtA4HwXKed3flIIqdGNkLrkxf6H2LtWczfg+yAtZMvbPgiCeD5r6rfrH+csgwqLqbWWAAAAAElFTkSuQmCC"),
             url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUdwTObn8Ozt9tUSDygAAAACdFJOUwBa/S110gAAAIhJREFUWMPt1jkOgDAMBVEz9z80HRKKWJxJACH/3q+I4iXiOGyJnrCLLM8T4ARwAjgBpGABkMLrAEihgAKGAD9opg9MJA/oqez3ggf0avOA3s6tEI8DMbbeA/oNc8Iy60AZMFMvCW5Elp8RoARSsfWtAE4AJ4AUCihgyE/0veC7MUdMm4k9R9YKR5IQIqaJ41sAAAAASUVORK5CYII=");
     }
-    .sheet-rolltemplate-npcdmg {
+    .sheet-rolltemplate-npcdmg,
+	.sheet-rolltemplate-npcfullatk .sheet-container.sheet-dmgcontainer {
         background-repeat: no-repeat !important;
         background-color: var(--color-element-bg) !important;
         background-position-x: 3px, calc(100% - 3px) !important;
@@ -6527,13 +6530,24 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .sheet-rolltemplate-npcaction .sheet-header,
     .sheet-rolltemplate-npcatk .sheet-header,
     .sheet-rolltemplate-npcdmg .sheet-header,
-    .sheet-rolltemplate-npc .sheet-header {
+    .sheet-rolltemplate-npc .sheet-header,
+	.sheet-rolltemplate-npcfullatk .sheet-header {
         font-family: var(--font-header);
         font-size: 20px;
         color: var(--color-yellow);
         text-align: center;
         font-weight: 600;
     }
+	.sheet-rolltemplate-npc div.sheet-arrow-right, .sheet-rolltemplate-npcaction div.sheet-arrow-right, .sheet-rolltemplate-npcfullatk div.sheet-arrow-right, .sheet-rolltemplate-npcatk div.sheet-arrow-right, .sheet-rolltemplate-npcdmg div.sheet-arrow-right {
+		border: 0px !important;
+	}
+	.sheet-rolltemplate-npcfullatk .sheet-header {
+		margin-bottom: 5px;
+	}
+	.sheet-rolltemplate-npcfullatk .sheet-subheader {
+		margin-top: 0px;
+		margin-bottom: 8px;
+	}
     .sheet-rolltemplate-npc div.sheet-arrow-right,
     .sheet-rolltemplate-npcaction div.sheet-arrow-right,
     .sheet-rolltemplate-npcatk div.sheet-arrow-right,
@@ -6555,7 +6569,8 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .sheet-rolltemplate-npcaction .inlinerollresult.fullcrit,
     .sheet-rolltemplate-npcatk .inlinerollresult.fullcrit,
     .sheet-rolltemplate-npcdmg .inlinerollresult.fullcrit,
-    .sheet-rolltemplate-npcdmg
+	.sheet-rolltemplate-npcfullatk .sheet-damagetemplate .inlinerollresult.fullcrit,
+    .sheet-rolltemplate-npcdmg,
         .sheet-damagetemplate
         .inlinerollresult.fullcrit {
         color: var(--color-green) !important;
@@ -6567,6 +6582,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .sheet-rolltemplate-npcaction .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcatk .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcdmg .inlinerollresult.fullfail,
+	.sheet-rolltemplate-npcfullatk .sheet-damagetemplate .inlinerollresult.fullfail,
     .sheet-rolltemplate-npcdmg
         .sheet-damagetemplate
         .inlinerollresult.fullfail {
@@ -6584,11 +6600,19 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .sheet-rolltemplate-npcatk .sheet-row,
     .sheet-rolltemplate-npcatk .sheet-desc,
     .sheet-rolltemplate-npcaction .sheet-row,
-    .sheet-rolltemplate-npcaction .sheet-container .sheet-desc {
+    .sheet-rolltemplate-npcaction .sheet-container .sheet-desc,
+	.sheet-rolltemplate-npcfullatk .sheet-row{
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
     }
+	.sheet-rolltemplate-npcfullatk .sheet-dmgcontainer {
+		text-align: center;
+	}
+	.sheet-rolltemplate-npcfullatk .sheet-dmgcontainer span {
+		top: 2px;
+		position: relative;
+	}
     .sheet-rolltemplate-npcaction .sheet-container .sheet-desc {
         display: block;
         padding-bottom: 0px;
