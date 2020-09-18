@@ -18,4 +18,3 @@
 ### Disclaimer
 I don't know how it will work with other sheets and games
 
-work in progress...
