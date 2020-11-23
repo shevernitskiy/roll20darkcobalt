@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.43
+@version      1.0.44
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.43 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.44 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1241,7 +1241,7 @@
     }
 	/* Slider selector */
 	input:checked + .slider {
-		background-color: var(--color-button-hover);
+		background-color: var(--color-button-hover) !important;
 		box-shadow: 0px 0px 2px var(--color-button-hover);
 	}
 	.slider:before {
@@ -1251,7 +1251,7 @@
 		color: var(--color-yellow);
 	}
 	.slider {
-		background-color: var(--color-bg-dark);
+		background-color: var(--color-bg-dark) !important;
 	}
     /* Slider */
     .ui-slider {
@@ -1261,6 +1261,9 @@
     .ui-slider-horizontal {
         height: 5px;
     }
+    .ui-slider-horizontal.ui-widget-content {
+        background-color: var(--color-bg-dark) !important;
+    }	
     .ui-slider-horizontal:hover {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
@@ -2532,7 +2535,7 @@
 
     #page-toolbar {
         background-color: var(--color-floating-bar-bg);
-        height: 250px;
+        height: 260px;
         border-radius: 5px;
         font-family: var(--font-header);
         font-size: 18px;
@@ -2555,13 +2558,13 @@
         /*bottom: -33px !important;*/
     }
     #page-toolbar .container {
-        height: 250px;
+        height: 260px;
     }
     .table-striped > tbody > tr:nth-of-type(odd) {
         background-color: var(--color-element-bg);
     }
     #page-toolbar .pages .availablepage {
-        height: 200px;
+        height: 230px;
         margin-right: 10px;
         display: inline-block;
         width: 60px;
@@ -2573,7 +2576,7 @@
         white-space: pre-wrap;
         display: block;
         height: 60px;
-        top: 120px;
+        top: 130px;
         left: -50px;
         text-align: right;
         align-content: center;
@@ -2597,15 +2600,15 @@
         box-shadow: 0px 0px 10px var(--color-yellow),
             0px 0px 10px var(--color-yellow);
         border-radius: 0px;
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 60px;
+        max-height: 60px;
     }
     #page-toolbar .pages div.activepage span {
         text-shadow: 0px 0px 50px var(--color-yellow);
     }
     #page-toolbar .pages .availablepage img.pagethumb {
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 60px;
+        max-height: 60px;
     }
     #page-toolbar .playerbookmark {
         left: 10px;
