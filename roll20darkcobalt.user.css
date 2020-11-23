@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.42
+@version      1.0.43
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.42 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.43 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1145,13 +1145,13 @@
     #rightsidebar .ui-tabs-panel::-webkit-scrollbar,
     textarea::-webkit-scrollbar {
         -webkit-appearance: none;
-        width: 8px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
     }
     #editor-wrapper::-webkit-scrollbar-thumb,
     #rightsidebar .ui-tabs-panel::-webkit-scrollbar-thumb,
     textarea::-webkit-scrollbar-thumb {
-        border-radius: 4px;
+        border-radius: 6px;
         border: 2px solid rgba(0, 0, 0, 0);
         background-color: rgba(0, 0, 0, 0.5);
     }
@@ -2552,7 +2552,7 @@
         background-color: var(--color-element-bg);
         box-shadow: 0px 0px 5px var(--color-text-disabled);
         border-radius: 0px 0px 5px 5px;
-        bottom: -33px !important;
+        /*bottom: -33px !important;*/
     }
     #page-toolbar .container {
         height: 250px;
