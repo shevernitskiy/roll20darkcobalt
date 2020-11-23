@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.44
+@version      1.0.45
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.44 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.45 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1242,13 +1242,13 @@
 	/* Slider selector */
 	input:checked + .slider {
 		background-color: var(--color-button-hover) !important;
-		box-shadow: 0px 0px 2px var(--color-button-hover);
+		box-shadow: 0px 0px 2px var(--color-button-hover) !important;
 	}
 	.slider:before {
-		background-color: var(--color-yellow);
+		background-color: var(--color-yellow) !important;
 	}
 	.slider:after {
-		color: var(--color-yellow);
+		color: var(--color-yellow) !important;
 	}
 	.slider {
 		background-color: var(--color-bg-dark) !important;
@@ -7046,7 +7046,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         width: 140px !important;
     }
     .dialog .pagedetails.tab-pane .ui-slider {
-        background: var(--color-element-bg) !important;
+        background: var(--color-bg-dark) !important;
         margin-top: 7px;
         width: 110px;
         margin-left: 20px;
