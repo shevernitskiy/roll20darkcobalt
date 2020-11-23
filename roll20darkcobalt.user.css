@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.41
+@version      1.0.42
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.41 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.42 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -1239,6 +1239,20 @@
         top: 0px;
         left: 3.5px;
     }
+	/* Slider selector */
+	input:checked + .slider {
+		background-color: var(--color-button-hover);
+		box-shadow: 0px 0px 2px var(--color-button-hover);
+	}
+	.slider:before {
+		background-color: var(--color-yellow);
+	}
+	.slider:after {
+		color: var(--color-yellow);
+	}
+	.slider {
+		background-color: var(--color-bg-dark);
+	}
     /* Slider */
     .ui-slider {
         border: 1px solid var(--color-element-bg);
@@ -2542,7 +2556,6 @@
     }
     #page-toolbar .container {
         height: 250px;
-        width: 96%;
     }
     .table-striped > tbody > tr:nth-of-type(odd) {
         background-color: var(--color-element-bg);
@@ -2599,6 +2612,12 @@
         transform: scale(0.6);
         top: -14px;
     }
+	.fas.fa-file {
+		color: var(--color-yellow)
+	}
+	.fas.fa-times {
+		color: var(--color-red)
+	}
 
     /* ------------------------------- Playerzone ------------------------------- */
 
@@ -3955,7 +3974,8 @@
     .sheet-rolltemplate-npcdmg,
     .sheet-rolltemplate-traits,
     .sheet-rolltemplate-spell .sheet-container,
-	.sheet-rolltemplate-npcfullatk .sheet-container {
+	.sheet-rolltemplate-npcfullatk .sheet-container,
+	.sheet-rolltemplate-spelloutput .sheet-container {
         width: calc(100% - 60px);
         margin-left: 30px;
         padding: 5px 0px 10px 0px;
@@ -3968,7 +3988,8 @@
         line-height: 14px;
     }
     .sheet-rolltemplate-traits .sheet-header,
-    .sheet-rolltemplate-spell .sheet-title {
+    .sheet-rolltemplate-spell .sheet-title,
+	.sheet-rolltemplate-spelloutput .sheet-title {
         font-family: var(--font-header);
         color: var(--color-yellow);
         font-size: 22px;
@@ -3982,6 +4003,7 @@
     }
     .sheet-rolltemplate-traits .sheet-subheader,
     .sheet-rolltemplate-spell .sheet-italics,
+	.sheet-rolltemplate-spelloutput .sheet-italics,
     .charsheet .sheet-npc .sheet-italics {
         font-family: var(--font-secondary);
         color: var(--color-text-disabled);
@@ -3989,26 +4011,31 @@
         font-size: 12px !important;
     }
     .sheet-rolltemplate-traits .sheet-row,
-    .sheet-rolltemplate-spell .sheet-row {
+    .sheet-rolltemplate-spell .sheet-row,
+	.sheet-rolltemplate-spelloutput .sheet-row{
         padding: 5px 10px 5px 10px;
     }
     .sheet-rolltemplate-traits .sheet-desc {
         line-height: 14px;
     }
-    .sheet-rolltemplate-spell .sheet-container {
+    .sheet-rolltemplate-spell .sheet-container,
+	.sheet-rolltemplate-spelloutput .sheet-container {
         font-family: var(--font-secondary);
         font-size: 12px !important;
     }
     .sheet-rolltemplate-traits .sheet-subheader span {
         font-size: 12px;
     }
-    .sheet-rolltemplate-spell .sheet-row:not(.sheet-title) {
+    .sheet-rolltemplate-spell .sheet-row:not(.sheet-title),
+	.sheet-rolltemplate-spelloutput .sheet-row:not(.sheet-title) {
         padding-top: 0px;
     }
-    .sheet-rolltemplate-spell .sheet-row.sheet-italics {
+    .sheet-rolltemplate-spell .sheet-row.sheet-italics,
+	.sheet-rolltemplate-spelloutput .sheet-row.sheet-italics {
         padding-top: 5px;
     }
     .sheet-rolltemplate-spell .sheet-bold,
+	.sheet-rolltemplate-spelloutput .sheet-bold,
     .charsheet .sheet-actions .sheet-bold {
         color: var(--color-text-primary);
         font-weight: 400;
@@ -4039,6 +4066,7 @@
     .sheet-rolltemplate-dmg div.sheet-desc,
     .sheet-rolltemplate-dmg div.sheet-savedc,
     .sheet-rolltemplate-spell div.sheet-container,
+	.sheet-rolltemplate-spelloutput div.sheet-container,
     .sheet-rolltemplate-traits,
     .sheet-rolltemplate-npc,
     .sheet-rolltemplate-npcaction div.sheet-container,
@@ -4103,7 +4131,8 @@
     .sheet-rolltemplate-dmg div.sheet-savedc {
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACrUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9orJI/sAAAA4dFJOUwD28gQVMyli1f3vtHRP30eJkxvrmlXiEdAOZge72YDCCi6t+UI5Wm2fd6N7S+c8X6any8eOIiONP68JdwAAAXZJREFUOMvN1NeagjAQBtChBAxdigiuFXt36//+T7Y3KAmIeunc8eVkMikM0TsFC4LpC0xfA+Cx/oRpOwUAAHWjPXKuh1sM963M+IAUH8ZdlnVRj+I7bbqVijth5TW2GN7GlFzXzWpWfyHBXpVkRkS0rb57csZ+NTJibKRUGZnoEldbRfdqjHLNTQTYwZilXV5nvDthY6giPO+UtT6tnaNt6DEHIMIj+bAcTboZX3MsoAZzIhvw3MGmPBjVGfjXWSI8ZOSUq505wNepYd9yS5vpOZ2y/owFwTQTdyZB4UT2RPNo1n0KUYRh8UfUDrld3odpWhP6aYdbMpQS2kSzdmgTrUqongTXXNqgsITCKw+T5mYOx1MdWinNRfgl3bEAA6K4L8BlO1wWS/FB+p37kA89X/5pBuVL+Z33pBqdQbOXxByARvMKtnWW6RhwiT6vcMxae0XiRcYVesmj5jPZRH2YJqCMJk/6WXjhro9L+EKHzIjSt+rs/xxjf+1GkXknAAAAAElFTkSuQmCC");
     }
-    .sheet-rolltemplate-spell div.sheet-container {
+    .sheet-rolltemplate-spell div.sheet-container,
+	.sheet-rolltemplate-spelloutput div.sheet-container {
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAClUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9pVrbrcAAAA2dFJOUwAtCVn+5AJ301dv7Vr6vH/zDwZQej8g8MFgk+dzOsuqSt0YoIz1hPa0J0cVj100a2MalqJqmyxtqt4AAAFZSURBVBgZjcCHWuowAAXg05mme7BBkKV+Du4+7/9ot02ogG2DP66sliW+w5pyjG+w1+Rv9Ik/0BovPS8imcwLdBTJDC1/xrMkeMKN9THhUTzgrJiytYBiQ/ugMsbZg0sl/wnlxAm0DUmvQmvispGfoKVMofgRyQyfBJUZtLdn8hENy3tf5Rk+vZBeRBLanGRko+aXgGWhVW43EuUfElrA2h6DHj0oYzaeX3/tYGJbAVtB7S96vL2+byPemqMrS9iRocduy69efPTZpbyV+hjwL+EVb4JBDq+MMKQUCHlxwIByRlnxYo0BBzKseJEX6CVIhhWvSPQZsRZmrE1/yJS1BXoINsI9yY0NYLJYMkCXoBLuOa2g+asndAhqVnywYSCouDHMRtQcmAlqEmaCmoSZoOI6MBNU3BhmI2oOzAQ1CTNBTcLMouI6uGPOhhvjnuLImoP7Tjkpcdd/NPBWC+usrlMAAAAASUVORK5CYII=");
     }
     .sheet-rolltemplate-simple
@@ -4126,6 +4155,9 @@
         top: -10px;
         left: 10px;
     }
+	.sheet-rolltemplate-spelloutput .sheet-container .sheet-desconly {
+		display: none;
+	}
     /*
 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTOzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9uzt9nvqL5kAAAAZdFJOUwAZ/OsSf/CmTgrTULZv5QHiP1Q+zCuaWJXib9kOAAAAv0lEQVQ4y6WUSw6DMAwFnQCElP+v7bv/RUsLLFKi+EnMeqSRFccid3g1M+VVgB0Jz5cAWkJ0ADBR4Q2jennGif0vjMxzYTw0zwykuIeBRvFqe4iFMnEHTjzDQM1M/GVV3/jC4hPhgCIRTorxMJDlXBgVGXbx5bpQ/s/8JMPy5sIifqHCAWsiHK5aIhxQnF6Xc6KtlS1vuLDIY/cGQ4qVein2/+V67VKY+HJFTgAXFmmpiQ+x9IQ4Wiq8MbtJ7vABh1QoG+cdBuUAAAAASUVORK5CYII=")	
 	*/
@@ -4556,12 +4588,18 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         .sheet-hp {
         background-color: var(--color-element-bg) !important;
         background-image: none !important;
-        margin: 10px !important;
+        margin: 9px 9px 9px 9.5px !important;
         border-radius: 10px;
-        width: calc(100% - 20px);
+        width: calc(100% - 19.5px);
         outline: 10px solid var(--color-bg-dark);
-        box-shadow: 0 0 0 10px var(--color-bg-dark);
     }
+	.charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+		div.sheet-hp {
+		box-shadow: 0 0 0 10px var(--color-bg-dark) !important;
+	}
+	
     .charsheet
         .sheet-licensecontainer
         .sheet-container:not(.sheet-npc)
@@ -6613,6 +6651,10 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 		top: 2px;
 		position: relative;
 	}
+	.sheet-rolltemplate-npcfullatk .sheet-dmgcontainer .sheet-desc {
+		font-style: italic;
+		font-size: 12px;
+	}
     .sheet-rolltemplate-npcaction .sheet-container .sheet-desc {
         display: block;
         padding-bottom: 0px;
@@ -6900,12 +6942,25 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-mancer_confirm input[type="checkbox"] {
         height: 35px;
     }
+	/* ------------------------------ Token Settings ---------------------------- */
+	.tokeneditor__dropdown .btn {
+		background-image: none;
+		background-color: var(--color-button-main);
+		border: 0px;
+	}
+	.tokeneditor__dropdown .btn svg {
+		fill: var(--color-yellow);
+		padding-top: 3px;
+	}
     /* ------------------------------ Map Settings ------------------------------ */
 
     /*#color_selector
         + .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.ui-dialog-buttons {
         min-width: 500px;
     }*/
+	.pagedetails .disable_box, .tokeneditor .disable_box {
+		background: var(--color-bg-dark) !important;
+	}
     .dialog .pagedetails.tab-pane label {
         width: 90px !important;
     }
@@ -6926,14 +6981,13 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     .dialog .pagedetails.tab-pane select.scale_units {
         bottom: -1px;
-        width: 55px !important;
+		border-radius: 0;
     }
     #size_settings {
         margin: 0px;
         display: inline-block;
         text-align: left;
         position: relative;
-        left: -40px;
     }
     .dialog .pagedetails.tab-pane > label > strong {
         display: inline-block;
@@ -7019,6 +7073,13 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
     }
+	.pagedetails .page-buttons button.archive::before {
+		filter: invert(100%);
+	}
+	.pagedetails .row {
+		margin-top: 10px;
+	}
+
 
     /* ------------------------------- Dice Roller ------------------------------ */
 
