@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.45
+@version      1.0.46
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Nunito", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.45 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.46 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -4593,7 +4593,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-image: none !important;
         margin: 9px 9px 9px 9.5px !important;
         border-radius: 10px;
-        width: calc(100% - 19.5px);
+        width: calc(100% - 19px);
         outline: 10px solid var(--color-bg-dark);
     }
 	.charsheet
@@ -5458,10 +5458,10 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-color: var(--color-element-bg);
     }
     /* Inventory */
-    .charsheet .sheet-money {
-        width: 100%;
-        display: block;
-        margin-left: 10px;
+    /*.charsheet .sheet-money {
+        width: 100% !important;
+        display: block !important;
+        margin-left: 5px !important;
     }
     .charsheet
         .sheet-licensecontainer
@@ -5587,7 +5587,122 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-item .sheet-inventorysubflag:checked ~ .sheet-subitem {
         margin-top: 2px;
         box-shadow: 0px 0px 5px var(--color-yellow);
+    }*/
+	/*---------new version--------*/
+    .charsheet .sheet-equipment {
+        min-height: 140px;
+    }	
+	.charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-money .sheet-coin:after,
+	.charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-money {
+		border: none;
+	}
+	.charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-coin {
+        background-color: var(--color-bg-light);
+        border-radius: 4px;
+        width: 45px;
+		margin-top: 5px !important;
     }
+	.charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-coin
+        .sheet-label {
+        background-position: 0px 0px !important;
+        left: -3px !important;
+        top: -5px !important;
+        line-height: 42px !important;
+        text-indent: 2px !important;
+        font-size: 6px !important;
+		color: var(--color-text-secondary) !important;
+    }
+    .charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-coin
+        input {
+        left: 10px !important;
+        top: 0px !important;
+        width: 32px !important;
+    }	
+	.charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-complex {
+		padding: 0 5px;
+		margin-top: 0px;
+		margin-bottom: 3px;
+	}
+	.charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-complex .sheet-header {
+		padding-left: 20px;
+	}
+    .charsheet
+        .sheet-container:not(.sheet-npc)
+        .sheet-equipment
+        .sheet-header
+        span:nth-last-of-type(1) {
+        display: block;
+        width: 28px !important;
+        height: 15px;
+        float: right;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlIiJlFNgF1AAAAAZdFJOUwAUNUV34Ab6tYGuHtXvomOPJsNuLJlOyeoe7rvvAAAArUlEQVQYGX3ACZaCMBBF0Q8kqQSc57f/jTZKox6pcPUlhQc8QpIrZV5ykieA5WwQ5IlYJ3VGlGOArFGGQUsD9Br1MMgRsVZqjahfoZRyB3IG7qWUoC9HFo76CCwEfWQWst7SloVt0qzD0Wl2wHHQbINjo38NrkaTPa69JjtcO00Ml+mlpaLVU6Gi6OlExUmjxqiwRtKNqpukK1VXSZGqKF1YcdGZFWf1rOhlrLA/sh03526/DgwAAAAASUVORK5CYII=");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+    .charsheet .sheet-equipment .sheet-header span img {
+        display: none;
+    }
+    .charsheet .sheet-header span.sheet-pictos {
+        font-family: "Pictos" !important;
+    }
+    .charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-complex .sheet-header span[data-i18n=item-name-u] {
+        width: 70% !important;
+        text-align: center !important;
+    }
+	.charsheet .sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment .sheet-complex .sheet-item .sheet-name {
+		width: 152px !important;
+	}
+    .charsheet .sheet-equipment .sheet-warning span,
+    .charsheet .sheet-charactermancer_options .sheet-warning span,
+    .charsheet .sheet-equipment .sheet-encumb {
+        color: var(--color-red);
+        text-shadow: 0px 0px 5px;
+    }
+    .charsheet .sheet-equipment .sheet-encumb {
+        float: right;
+        width: 30%;
+        padding-top: 5px;
+    }
+	.charsheet
+        .sheet-licensecontainer
+        .sheet-container:not(.sheet-npc)
+        .sheet-equipment
+        .sheet-weighttotal {
+        width: 96%;
+		margin-bottom: 3px;
+    }
+	.charsheet
+        .sheet-equipment
+        .sheet-weighttotal
+        span[data-i18n="total-weight-u"] {
+        display: block;
+        float: left;
+        width: 35%;
+        padding-top: 10px;
+        color: var(--color-text-secondary);
+    }
+	.charsheet .sheet-equipment .sheet-weighttotal input {
+        width: 35%;
+    }
+	.charsheet .sheet-equipment input[type="checkbox"].sheet-equipped:before	 {
+		background-color: var(--color-bg-light) !important;
+		border: 2px solid var(--color-bg-light) !important;
+	}
+	.charsheet .sheet-equipment .sheet-subitem input[type="checkbox"].sheet-equipped:before	 {
+		background-color: var(--color-element-bg) !important;
+		border: 2px solid var(--color-element-bg) !important;
+	}
+
     /* Traits */
     .charsheet
         .sheet-licensecontainer
