@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.48
+@version      1.0.49
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.48 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.49 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -2538,11 +2538,14 @@
 
     #page-toolbar {
         background-color: var(--color-floating-bar-bg);
-        height: 260px;
+        height: calc(100% - 100px);
         border-radius: 5px;
         font-family: var(--font-header);
         font-size: 18px;
     }
+	#page-toolbar .pages {
+		width: 98%;
+	}
     #page-toolbar .pages .availablepage .settings {
         background: none;
         color: var(--color-yellow);
@@ -2558,21 +2561,20 @@
         background-color: var(--color-element-bg);
         box-shadow: 0px 0px 5px var(--color-text-disabled);
         border-radius: 0px 0px 5px 5px;
-        /*bottom: -33px !important;*/
     }
     #page-toolbar .container {
-        height: 260px;
+        height: 100%;
     }
     .table-striped > tbody > tr:nth-of-type(odd) {
         background-color: var(--color-element-bg);
     }
     #page-toolbar .pages .availablepage {
-        height: 230px;
+        height: 100px;
         margin-right: 10px;
         display: inline-block;
-        width: 60px;
+        width: 360px;
     }
-    #page-toolbar .pages .availablepage span {
+    /*#page-toolbar .pages .availablepage span {
         font-size: 14px !important;
         font-weight: 300 !important;
         word-wrap: normal !important;
@@ -2586,11 +2588,11 @@
         line-height: 1.2;
         transform: rotate(-90deg);
         width: 170px !important;
-    }
+    }*/
     #page-toolbar .pages .availablepage input {
-        width: 120px;
-        font-size: 12px !important;
-        top: 10px;
+        width: 80% !important;
+        font-size: 14px !important;
+        top: 0px !important;
     }
     #page-toolbar .activepage img.pagethumb {
         border: 0px;
@@ -2610,19 +2612,52 @@
         text-shadow: 0px 0px 50px var(--color-yellow);
     }
     #page-toolbar .pages .availablepage img.pagethumb {
-        max-width: 60px;
-        max-height: 60px;
+        max-width: 80px;
+        max-height: 80px;
     }
     #page-toolbar .playerbookmark {
-        left: 10px;
-        transform: scale(0.6);
-        top: -14px;
+        left: -5px;
+        transform: scale(0.7);
+        top: -11px;
     }
 	.fas.fa-file {
 		color: var(--color-yellow)
 	}
 	.fas.fa-times {
 		color: var(--color-red)
+	}
+	/*new version*/
+	#page-toolbar .pages .availablepage .page-actions {
+		left: -8px !important;
+		flex-direction: row;
+		width: 94px;
+		padding: 0px;
+	}
+	#page-toolbar .pages .availablepage {
+		text-align: left;
+		display: block !important;
+		width: 100%;
+		margin: 0px !important;
+	}
+	#page-toolbar .pages div.availablepage img.pagethumb {
+		float: left;
+	}
+	#page-toolbar .pages .availablepage span.page-title,
+	#page-toolbar .pages .availablepage span {
+		display: inline-block;
+		text-align: left;
+		font-size: 18px;
+        font-weight: 300;
+		position: absolute;
+		left: 100px;
+		top: 10px;
+		max-width: 80%;
+		word-wrap: normal !important;
+        white-space: pre-wrap;
+	}
+	#page-toolbar .pages .availablepage .page-actions .page-actions__item {
+		padding: 0px;
+		width: 30px;
 	}
 	
     /* ------------------------------- Playerzone ------------------------------- */
