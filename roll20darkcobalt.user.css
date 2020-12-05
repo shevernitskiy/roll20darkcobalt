@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.49
+@version      1.0.50
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.49 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.50 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     }
     @keyframes fadein {
@@ -2542,9 +2542,13 @@
         border-radius: 5px;
         font-family: var(--font-header);
         font-size: 18px;
+		max-width: 550px;
+		min-width: 350px;
     }
 	#page-toolbar .pages {
 		width: 98%;
+		max-width: 500px;
+		min-width: 300px;
 	}
     #page-toolbar .pages .availablepage .settings {
         background: none;
@@ -2564,15 +2568,16 @@
     }
     #page-toolbar .container {
         height: 100%;
+		
     }
     .table-striped > tbody > tr:nth-of-type(odd) {
         background-color: var(--color-element-bg);
     }
     #page-toolbar .pages .availablepage {
-        height: 100px;
-        margin-right: 10px;
+        height: 90px;
+        margin-right: 0px;
         display: inline-block;
-        width: 360px;
+        width: 370px;
     }
     /*#page-toolbar .pages .availablepage span {
         font-size: 14px !important;
@@ -2629,9 +2634,11 @@
 	/*new version*/
 	#page-toolbar .pages .availablepage .page-actions {
 		left: -8px !important;
+		top: 56px !important;
 		flex-direction: row;
 		width: 94px;
 		padding: 0px;
+		position: absolute;
 	}
 	#page-toolbar .pages .availablepage {
 		text-align: left;
@@ -2641,19 +2648,23 @@
 	}
 	#page-toolbar .pages div.availablepage img.pagethumb {
 		float: left;
+		display: inline-flex !important;
+  		align-items: center !important;
+		text-align: center !important;
 	}
 	#page-toolbar .pages .availablepage span.page-title,
 	#page-toolbar .pages .availablepage span {
-		display: inline-block;
 		text-align: left;
 		font-size: 18px;
         font-weight: 300;
 		position: absolute;
-		left: 100px;
-		top: 10px;
+		left: 90px;
+		top: 6px;
 		max-width: 80%;
 		word-wrap: normal !important;
         white-space: pre-wrap;
+		display: inline-flex !important;
+  		align-items: center !important;
 	}
 	#page-toolbar .pages .availablepage .page-actions .page-actions__item {
 		padding: 0px;
