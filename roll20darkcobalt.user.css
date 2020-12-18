@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.52
+@version      1.0.53
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,15 +38,128 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.52 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.53 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
+        --anim-attack: bounceInRight 1s;
+        --anim-damage: fadeInDown 0.5s;
+        --anim-traits: bounceInLeft 1s;
+        --anim-crit: bounceInRight 1s;
+        --anim-spell: jackInTheBox 1s;
     }
+    /* ---------------------------------- Animation ----------------------------- */
     @keyframes fadein {
         from {
             opacity: 0;
         }
         to {
             opacity: 1;
+        }
+    }
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes jackInTheBox {
+        from {
+            opacity: 0;
+            transform: scale(0.1) rotate(30deg);
+            transform-origin: center bottom;
+        }
+        50% {
+            transform: rotate(-10deg);
+        }
+        70% {
+            transform: rotate(3deg);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    @keyframes bounceInDown {
+        from, 60%, 75%, 90%, to {
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -60px, 0) scaleY(3);
+        }
+        60% {
+            opacity: 1;
+            transform: translate3d(0, 25px, 0) scaleY(0.9);
+        }
+        75% {
+            transform: translate3d(0, -10px, 0) scaleY(0.95);
+        }
+        90% {
+            transform: translate3d(0, 5px, 0) scaleY(0.985);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes backInRight {
+        0% {
+            transform: translateX(2000px) scale(0.7);
+            opacity: 0.7;
+        }
+        80% {
+            transform: translateX(0px) scale(0.7);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    @keyframes bounceInRight {
+        from, 60%, 75%, 90%, to {
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        from {
+            opacity: 0;
+            transform: translate3d(3000px, 0, 0) scaleX(3);
+        }
+        60% {
+            opacity: 1;
+            transform: translate3d(-25px, 0, 0) scaleX(1);
+        }
+        75% {
+            transform: translate3d(10px, 0, 0) scaleX(0.98);
+        }
+        90% {
+            transform: translate3d(-5px, 0, 0) scaleX(0.995);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes bounceInLeft {
+        from, 60%, 75%, 90%, to {
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        0% {
+            opacity: 0;
+            transform: translate3d(-3000px, 0, 0) scaleX(3);
+        }
+        60% {
+            opacity: 1;
+            transform: translate3d(25px, 0, 0) scaleX(1);
+        }
+        75% {
+            transform: translate3d(-10px, 0, 0) scaleX(0.98);
+        }
+        90% {
+            transform: translate3d(5px, 0, 0) scaleX(0.995);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
         }
     }
     /* ---------------------------------- Fonts --------------------------------- */
@@ -876,14 +989,14 @@
     #jukebox .primarycontrols .btn, #jukebox .secondarycontrols .btn {
         background-image: none;
     }
-	button.btn-primary {
-		background-color: var(--color-red);
-		text-shadow: 0px 0px 2px var(--color-bg-dark);
-	}
-	button.btn-primary:hover, button.btn-primary:active:hover, button.btn-primary:focus {
-		background-color: var(--color-red);
-		box-shadow: 0 0 5px var(--color-red);
-	}
+    button.btn-primary {
+        background-color: var(--color-red);
+        text-shadow: 0px 0px 2px var(--color-bg-dark);
+    }
+    button.btn-primary:hover, button.btn-primary:active:hover, button.btn-primary:focus {
+        background-color: var(--color-red);
+        box-shadow: 0 0 5px var(--color-red);
+    }
     /* Checkbox */
     input[type="checkbox"] {
         position: relative;
@@ -2176,22 +2289,22 @@
         padding: 0px;
         width: 30px;
     }
-	#page-toolbar .pages .availablepage .page-duplication {
-		width: 180px !important;
-		background-color: var(--color-element-bg);
+    #page-toolbar .pages .availablepage .page-duplication {
+        width: 180px !important;
+        background-color: var(--color-element-bg);
         box-shadow: 0px 0px 3px var(--color-text-disabled);
         border-radius: 5px;
         font-size: 18px;
-		z-index: 1;
-		left: 90px;
-		top: -20px;
-	}
-	#page-toolbar .pages .availablepage .page-duplication .page-duplication__body .form-group .checkbox input {
-		top: -2px !important;
-	}
-	#page-toolbar .pages .availablepage .page-duplication .page-duplication__body .form-group {
-		margin: 5px 0px;
-	}
+        z-index: 1;
+        left: 90px;
+        top: -20px;
+    }
+    #page-toolbar .pages .availablepage .page-duplication .page-duplication__body .form-group .checkbox input {
+        top: -2px !important;
+    }
+    #page-toolbar .pages .availablepage .page-duplication .page-duplication__body .form-group {
+        margin: 5px 0px;
+    }
     /* ------------------------------- Playerzone ------------------------------- */
     #playerzone .player {
         box-shadow: 0px 0px 5px var(--color-text-disabled);
@@ -2263,6 +2376,11 @@
         top: auto;
         padding: 0px;
         height: auto !important;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    #rightsidebar ul.tabmenu li {
+        flex-basis: 14.1%;
     }
     .ui-tabs .ui-tabs-nav {
         border: 0px;
@@ -3118,6 +3236,18 @@
         width: calc(100% - 60px);
         margin-left: 30px;
     }
+    .sheet-rolltemplate-atk {
+        animation: var(--anim-attack);
+    }
+    .sheet-rolltemplate-dmg {
+        animation: var(--anim-damage);
+    }
+    .sheet-rolltemplate-traits {
+        animation: var(--anim-traits);
+    }
+    .sheet-rolltemplate-spelloutput {
+        animation: var(--anim-spell);
+    }
     .sheet-rolltemplate-simple .sheet-container, .sheet-rolltemplate-skill .sheet-container, .sheet-rolltemplate-atk .sheet-container, .sheet-rolltemplate-atkdmg .sheet-container.sheet-atk, .sheet-rolltemplate-dmg .sheet-atk, .sheet-rolltemplate-dmg .sheet-container, .sheet-rolltemplate-atkdmg .sheet-container.sheet-damagetemplate {
         color: var(--color-text-primary);
     }
@@ -3220,7 +3350,7 @@
     .sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-atkdmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-npcaction .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.fullcrit, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.fullfail, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .inlinerollresult.importantroll, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-atkdmg .sheet-desc .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-dmg .sheet-desc .inlinerollresult.fullfail .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.fullcrit, .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.importantroll, .sheet-rolltemplate-atk .sheet-desc .inlinerollresult.fullfail, .sheet-rolltemplate-mancerroll .inlinerollresult.fullcrit, .sheet-rolltemplate-mancerroll .inlinerollresult.importantroll, .sheet-rolltemplate-mancerroll .inlinerollresult.fullfail, .sheet-rolltemplate-mancerhproll .inlinerollresult.fullcrit, .sheet-rolltemplate-mancerhproll .inlinerollresult.importantroll, .sheet-rolltemplate-mancerhproll .inlinerollresult.fullfail {
         color: var(--color-blue);
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
-        animation: var(--anim-numbers);
+        animation: var(--anim-crit);
     }
     .sheet-rolltemplate-atk .sheet-save .sheet-savedc span, .sheet-rolltemplate-dmg .sheet-save .sheet-savedc span, .sheet-rolltemplate-atkdmg .sheet-save .sheet-savedc span {
         font-size: 26px;
@@ -3257,12 +3387,12 @@
     .sheet-rolltemplate-simple .inlinerollresult.fullfail, .sheet-rolltemplate-skill .inlinerollresult.fullfail, .sheet-rolltemplate-atk .inlinerollresult.fullfail, .sheet-rolltemplate-atkdmg .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullfail, .inlinerollresult.importantroll.fullfail {
         color: var(--color-red) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
-        animation: var(--anim-numbers);
+        animation: var(--anim-crit);
     }
     .sheet-rolltemplate-simple .inlinerollresult.fullcrit, .sheet-rolltemplate-skill .inlinerollresult.fullcrit, .sheet-rolltemplate-atk .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-damagetemplate .inlinerollresult.fullcrit, .inlinerollresult.importantroll.fullcrit {
         color: var(--color-green) !important;
         text-shadow: 0px 0px 20px, 0px 0px 20px !important;
-        animation: var(--anim-numbers);
+        animation: var(--anim-crit);
     }
     .sheet-rolltemplate-simple .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-skill .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-atk .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-atkdmg .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-dmg .sheet-damagetemplate .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-simple .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-skill .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-atk .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-atkdmg .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-dmg .sheet-damagetemplate .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-npc .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-npcaction .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-npcatk .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-npcdmg .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .sheet-grey .inlinerollresult.fullfail, .sheet-rolltemplate-npc .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-npcaction .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-npcatk .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-npcdmg .sheet-grey .inlinerollresult.fullcrit, .sheet-rolltemplate-npcdmg .sheet-damagetemplate .sheet-grey .inlinerollresult.fullcrit {
         color: var(--color-text-disabled) !important;
@@ -3285,10 +3415,11 @@
         font-family: var(--font-header);
         color: var(--color-yellow);
         font-size: 22px;
-        font-weight: 600;
+        font-weight: 500;
         text-align: center;
         line-height: 20px;
         padding-top: 5px !important;
+        font-variant: none;
     }
     .sheet-rolltemplate-npcaction div.sheet-container {
         padding-top: 10px;
@@ -4336,7 +4467,9 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .sheet-traits .sheet-display .sheet-title {
         font-family: var(--font-header);
         color: var(--color-yellow);
-        font-size: 20px;
+        font-size: 17px;
+        font-variant: none;
+        font-weight: 600;
     }
     .charsheet .sheet-traits input[name="attr_source_type"] {
         width: 140px !important;
@@ -4828,7 +4961,8 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         font-size: 20px;
         color: var(--color-yellow);
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
+        font-variant: none;
     }
     .sheet-rolltemplate-npc div.sheet-arrow-right, .sheet-rolltemplate-npcaction div.sheet-arrow-right, .sheet-rolltemplate-npcfullatk div.sheet-arrow-right, .sheet-rolltemplate-npcatk div.sheet-arrow-right, .sheet-rolltemplate-npcdmg div.sheet-arrow-right {
         border: 0px !important;
@@ -5388,7 +5522,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         background-color: var(--color-button-hover);
     }
     .booktemplate {
-        color: var(--color-bg-light);
+        color: var(--color-text-secondary) !important;
     }
     .booktemplate.expansion0 .header {
         background-color: var(--color-element-bg);
@@ -5398,7 +5532,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         color: var(--color-element-bg);
     }
     .booktemplate .single-view h2 {
-        color: var(--color-element-bg);
+        color: var(--color-yellow) !important;
     }
     .globalfooter .footerborder1, .globalfooter .footerborder2 {
         visibility: hidden;
@@ -5429,5 +5563,78 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     }
     caption {
         color: var(--color-text-primary);
+    }
+    .booktemplate .header {
+        background-color: transparent !important;
+    }
+    .booktemplate .header a {
+        color: var(--color-yellow) !important;
+        font-size: 16px;
+    }
+    .listResult.closed .dropdown-toggle, .listResult .dropdown-toggle {
+        display: inline-block;
+        position: static;
+        border-color: var(--color-yellow);
+        transform: scale(0.7);
+    }
+    .booktemplate .subtitle {
+        font-size: 12px;
+    }
+    .booktemplate .gold {
+        display: none;
+    }
+    .booktemplate .single-view {
+        background: var(--color-element-bg) !important;
+        border-radius: 5px !important;
+    }
+    .booktemplate .name h1 {
+        color: var(--color-yellow) !important;
+        font-family: var(--font-header) !important;
+        font-variant: none !important;
+        font-weight: 600 !important;
+    }
+    .booktemplate .redsubtitle {
+        color: var(--color-text-secondary) !important;
+    }
+    .booktemplate .single-list {
+        color: var(--color-text-main) !important;
+    }
+    .booktemplate .taper {
+        border-top: 1px dashed var(--color-bg-dark) !important;
+        border-bottom: none !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+    .booktemplate .single-list span, .booktemplate .attributes span {
+        color: var(--color-yellow) !important;
+    }
+    .booktemplate .attributes {
+        color: var(--color-yellow) !important;
+        font-family: var(--font-number) !important;
+        font-weight: 600;
+    }
+    .booktemplate .actions li, .booktemplate .traits li, .booktemplate .legendary-actions .leg-text, .booktemplate .legendary-actions .leg-desc {
+        color: var(--color-text-main) !important;
+        font-size: 13px;
+    }
+    .booktemplate .legendary-actions span, .booktemplate .traits span, .booktemplate .actions span, .booktemplate .reactions span {
+        color: var(--color-yellow) !important;
+    }
+    .booktemplate hr {
+        background: none !important;
+        border-top: 1px dashed var(--color-bg-dark) !important;
+    }
+    .booktemplate.list h3 {
+        font-size: 12px !important;
+        color: var(--color-text-secondary);
+        font-weight: 300;
+    }
+    .booktemplate.list li.header-long span, .booktemplate.list li.header-short span, .booktemplate.list li.header-tiny span {
+        color: var(--color-text-main) !important;
+        font-style: normal !important;
+        font-size: 14px !important;
+    }
+    .booktemplate.list li.header-tiny {
+        width: calc(10% - 5px) !important;
     }
 }
