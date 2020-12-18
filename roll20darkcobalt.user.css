@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.54
+@version      1.0.55
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,12 +38,12 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.54 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.55 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
-        --anim-attack: bounceInRight 1s;
-        --anim-damage: fadeInDown 0.5s;
+        --anim-attack: slide-in-blurred-right 0.6s;
+        --anim-damage: slide-in-blurred-top 0.5s;
         --anim-traits: bounceInLeft 1s;
-        --anim-crit: bounceInRight 1s;
+        --anim-crit: text-flicker-in-glow 2s linear 1s both;
         --anim-spell: jackInTheBox 1s;
         --anim-simple: flipInY 1s;
     }
@@ -194,6 +194,261 @@
         }
         to {
             transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes slide-in-blurred-right {
+        0% {
+            -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slide-in-blurred-top {
+        0% {
+            -webkit-transform: translateY(-100px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(-100px) scaleY(2.5) scaleX(0.2);
+            -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    @keyframes roll-in-blurred-left {
+        0% {
+            -webkit-transform: translateY(-300px) rotate(-720deg);
+            transform: translateY(-300px) rotate(-720deg);
+            -webkit-filter: blur(50px);
+            filter: blur(50px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    @keyframes focus-in-contract {
+        0% {
+            letter-spacing: 1em;
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes focus-in-expand-fwd {
+        0% {
+            letter-spacing: -0.5em;
+            -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+    @keyframes shake-lr {
+        0%, 100% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+        10% {
+            -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+        }
+        20%, 40%, 60% {
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+        30%, 50%, 70% {
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+        80% {
+            -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+        }
+        90% {
+            -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+        }
+    }
+    @keyframes text-flicker-in-glow {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        10.1% {
+            opacity: 1;
+            text-shadow: none;
+        }
+        10.2% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        20% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        20.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+        }
+        20.6% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        30% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        30.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+        }
+        30.5% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+        }
+        30.6% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        45% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        45.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+        }
+        50% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+        }
+        55% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+        }
+        55.1% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        57% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        57.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+        }
+        60% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+        }
+        60.1% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        65% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        65.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+        75% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+        75.1% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        77% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        77.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+        85% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+        85.1% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        86% {
+            opacity: 0;
+            text-shadow: none;
+        }
+        86.1% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+        100% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+    }
+    @keyframes tracking-in-contract-bck {
+        0% {
+            letter-spacing: 1em;
+            -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
         }
     }
     /* ---------------------------------- Fonts --------------------------------- */
