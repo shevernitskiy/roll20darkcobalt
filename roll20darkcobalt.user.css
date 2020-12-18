@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.53
+@version      1.0.54
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -38,13 +38,14 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.53 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.54 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
         --anim-attack: bounceInRight 1s;
         --anim-damage: fadeInDown 0.5s;
         --anim-traits: bounceInLeft 1s;
         --anim-crit: bounceInRight 1s;
         --anim-spell: jackInTheBox 1s;
+        --anim-simple: flipInY 1s;
     }
     /* ---------------------------------- Animation ----------------------------- */
     @keyframes fadein {
@@ -53,6 +54,39 @@
         }
         to {
             opacity: 1;
+        }
+    }
+    @keyframes zoomInLeft {
+        from {
+            opacity: 0;
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        60% {
+            opacity: 1;
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+    }
+    @keyframes flipInY {
+        from {
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            animation-timing-function: ease-in;
+            opacity: 0;
+        }
+        40% {
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            animation-timing-function: ease-in;
+        }
+        60% {
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            opacity: 1;
+        }
+        80% {
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            transform: perspective(400px);
         }
     }
     @keyframes fadeInDown {
@@ -3247,6 +3281,9 @@
     }
     .sheet-rolltemplate-spelloutput {
         animation: var(--anim-spell);
+    }
+    .sheet-rolltemplate-simple {
+        animation: var(--anim-simple);
     }
     .sheet-rolltemplate-simple .sheet-container, .sheet-rolltemplate-skill .sheet-container, .sheet-rolltemplate-atk .sheet-container, .sheet-rolltemplate-atkdmg .sheet-container.sheet-atk, .sheet-rolltemplate-dmg .sheet-atk, .sheet-rolltemplate-dmg .sheet-container, .sheet-rolltemplate-atkdmg .sheet-container.sheet-damagetemplate {
         color: var(--color-text-primary);
