@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.56
+@version      1.0.57
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -39,7 +39,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.56 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.57 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
         --anim-attack: slide-in-blurred-right 0.6s;
         --anim-damage: slide-in-blurred-top 0.5s;
@@ -4354,6 +4354,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     .charsheet .hp .top input, .charsheet .hdice-dsaves-container .top input[type="text"] {
         color: var(--color-text-primary);
         font-family: var(--font-number);
+		font-size: 12px !important;
     }
     .charsheet .header input, .charsheet .header select {
         font-family: var(--font-header);
@@ -4701,6 +4702,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         left: 10px !important;
         top: 0px !important;
         width: 32px !important;
+		font-size: 12px !important;
     }
     .charsheet .equipment .item input {
         font-size: 10px;
@@ -5195,6 +5197,8 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
         font-family: var(--font-header);
         font-weight: 600;
         font-size: 28px;
+		text-align: left !important;
+		
     }
     .charsheet .npc .actiontitle {
         border-bottom: 1px solid var(--color-text-disabled);
