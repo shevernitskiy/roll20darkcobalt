@@ -4013,6 +4013,11 @@
         line-height: 32px;
     }
 
+    #textchat-notifier {
+        background-color: var(--color-bg-light);
+        color: var(--color-yellow);
+    }
+
     #rightsidebar #textchat {
         height: calc(100% - 145px) !important;
     }
