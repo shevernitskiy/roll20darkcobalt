@@ -2666,7 +2666,7 @@
 
 	*/
     /* ------------------------------ Flotating Bar ----------------------------- */
-    #floatingtoolbar, #floatingtoolbar div.submenu ul, #editinglayer li.gm_slider_box, #secondary-toolbar, #color_selector, #page-toolbar .pages .availablepage .page-actions {
+    #floatingtoolbar, #floatingtoolbar div.submenu ul, #floatingtoolbar div.submenu ul.selZoom, #editinglayer li.gm_slider_box, #secondary-toolbar, #color_selector, #page-toolbar .pages .availablepage .page-actions {
         background-color: var(--color-floating-bar-bg);
         box-shadow: 0px 0px 3px var(--color-text-disabled);
         border-radius: 5px;
