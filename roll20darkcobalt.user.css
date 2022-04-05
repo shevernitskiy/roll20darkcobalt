@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.62
+@version      1.0.63
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
         --font-header: "Alegreya Sans SC", sans-serif;
         --font-secondary: "Ruda", sans-serif;
         --font-mono: "Ubuntu Mono", monospace;
-        --version: "Dark Cobalt v1.0.62 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+        --version: "Dark Cobalt v1.0.63 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
         --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
         --anim-attack: slide-in-blurred-right 0.6s;
         --anim-damage: slide-in-blurred-top 0.5s;
@@ -5341,6 +5341,23 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 
     .charsheet .editmode~.repcontrol .repcontrol_edit:after {
         content: "✐";
+    }
+
+    .resources .rest button {
+        background-color: var(--color-button-main);
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-weight: 200 !important;
+        border: 0px;
+        color: var(--color-text-primary);
+        padding: 4px;
+        padding-top: 5px;
+        padding-bottom: 3px;
+        border-radius: 4px;
+    }
+
+    .resources .rest button:hover {
+        background-color: var(--color-button-hover);
     }
 
     .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {
