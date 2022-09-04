@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.64
+@version      1.0.65
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: 'Alegreya Sans SC', sans-serif;
     --font-secondary: 'Ruda', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.64 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.65 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -8009,13 +8009,15 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 /* ----------------------------- New EL elements ---------------------------- */
 
 :root {
-  --el-bg-color-overlay: var(--color-bg-light);
-  --el-border-color-light: var(--color-bg-light);
-  --el-border-color: var(--color-bg-light);
-  --el-text-color-regular: var(--color-text-main);
-  --el-fill-color-light: var(--color-bg-dark);
-  --color-surface1: var(--color-bg-light);
-  --color-primary-text: var(--color-yellow);
+  --el-color-primary: var(--color-button-main) !important;
+  --el-bg-color-overlay: var(--color-bg-light) !important;
+  --el-border-color-light: var(--color-bg-light) !important;
+  --el-border-color: var(--color-bg-light) !important;
+  --el-text-color-regular: var(--color-text-main) !important;
+  --el-fill-color-light: var(--color-bg-dark) !important;
+  --color-surface1: var(--color-bg-light) !important;
+  --color-primary-text: var(--color-yellow) !important;
+  --el-checkbox-checked-bg-color: var(--color-button-main) !important;
 }
 
 .el-input__wrapper {
@@ -8035,28 +8037,28 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 }
 .el-checkbox {
   --el-checkbox-checked-text-color: var(--color-text-secondary) !important;
-  --el-checkbox-text-color: var(--color-text-main);
-  --el-checkbox-bg-color: var(--color-element-bg);
-  --el-checkbox-input-border: var(--color-element-bg);
+  --el-checkbox-text-color: var(--color-text-main) !important;
+  --el-checkbox-bg-color: var(--color-element-bg) !important;
+  --el-checkbox-input-border: var(--color-element-bg) !important;
 }
 
 .el-button.is-plain {
   --el-button-hover-bg-color: var(--color-button-hover) !important;
 }
 .el-button.is-text {
-  background-color: var(--color-button-main);
+  background-color: var(--color-button-main) !important;
 }
 .el-button {
-  --el-button-bg-color: var(--color-button-main);
+  --el-button-bg-color: var(--color-button-main) !important;
 }
 .el-slider {
-  --el-slider-runway-bg-color: var(--color-bg-dark);
+  --el-slider-runway-bg-color: var(--color-bg-dark) !important;
 }
 .el-button--primary,
 .el-button {
-  --el-button-hover-bg-color: var(--color-button-hover);
+  --el-button-hover-bg-color: var(--color-button-hover) !important;
   --el-button-hover-border-color: transparent;
-  --el-button-hover-text-color: var(--color-text-main);
+  --el-button-hover-text-color: var(--color-text-main) !important;
 }
 
 .el-select-dropdown__item.selected {
