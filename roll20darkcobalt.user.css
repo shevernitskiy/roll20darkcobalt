@@ -3,12 +3,12 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.65
+@version      1.0.66
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://app.roll20.net/")
+@-moz-document url-prefix("https://app.roll20.net/editor/")
 {
   /* -------------------------------------------------------------------------- */
   /*                                Global Things                               */
@@ -40,7 +40,7 @@
     --font-header: 'Alegreya Sans SC', sans-serif;
     --font-secondary: 'Ruda', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.65 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.66 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
