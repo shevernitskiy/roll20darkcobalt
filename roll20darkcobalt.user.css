@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.67
+@version      1.0.68
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -30,17 +30,17 @@
     --color-element-bg: #373a52;
     --color-floating-bar-bg: rgba(55, 58, 82, 0.9);
     --color-red: #f85212;
-    --color-green: #78ff10;
+    --color-green: #78ff10ff;
     --color-blue: #0c8ce7;
     --color-yellow: #fc0;
     --color-player-progress: rgba(255, 204, 0, 0.6);
     --color-none: #0000;
-    --font-number: 'Ruda', sans-serif;
-    --font-primary: 'Alegreya Sans', sans-serif;
-    --font-header: 'Alegreya Sans SC', sans-serif;
-    --font-secondary: 'Ruda', sans-serif;
+    --font-number: 'Gitan', sans-serif;
+    --font-primary: 'Gitan', sans-serif;
+    --font-header: 'Gitan', sans-serif;
+    --font-secondary: 'Gitan', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.67 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.68 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -49,6 +49,34 @@
     --anim-spell: jackInTheBox 1s;
     --anim-simple: flipInY 1s;
     --anim-sheet: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  /* normal */
+  @font-face {
+    font-family: 'Gitan';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://shevernitskiy.github.io/store/fonts/Gitan/Gitan-Regular.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Gitan';
+    font-style: normal;
+    font-weight: bold;
+    src: url('https://shevernitskiy.github.io/store/fonts/Gitan/Gitan-Bold.otf') format('opentype');
+  }
+
+  /* itaclic */
+  @font-face {
+    font-family: 'Gitan';
+    font-style: italic;
+    font-weight: normal;
+    src: url('https://shevernitskiy.github.io/store/fonts/Gitan/Gitan-RegularItalic.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Gitan';
+    font-style: italic;
+    font-weight: bold;
+    src: url('https://shevernitskiy.github.io/store/fonts/Gitan/Gitan-BoldItalic.otf') format('opentype');
   }
 
   /* ---------------------------------- Animation ----------------------------- */
@@ -5346,6 +5374,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     color: var(--color-text-main);
     font-family: var(--font-primary);
     font-size: 18px;
+    font-weight: 400;
   }
   .piety .container .desc input:not([value]) + textarea,
   .piety .container .desc input[value=''] + textarea {
@@ -5696,6 +5725,24 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     background-color: var(--color-bg-dark);
     border-radius: 10px;
     margin-top: 10px;
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .rp-traits {
+    padding: 5px;
+    background-color: var(--color-bg-dark);
+    border-radius: 10px;
+    margin-top: 0px;
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .rp-traits::after {
+    display: none;
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .rp-traits .rp-traits__title span {
+    color: var(--color-text-main);
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 400;
   }
 
   .charsheet .licensecontainer .container:not(.npc) .attacks,
@@ -6100,6 +6147,31 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 
   .charsheet .globalattack .global-mod {
     margin-left: 0px;
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .display button span[name='attr_atkname'] {
+    width: 80% !important;
+    min-width: 80%;
+    max-width: 80%;
+    font-size: 10px;
+    font-family: var(--font-number);
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .display button input[name='attr_atkbonus'] {
+    width: 20% !important;
+    min-width: 20%;
+    max-width: 20%;
+    font-size: 10px;
+    font-family: var(--font-number);
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .display button input[name='attr_atkdmgtype'] {
+    width: 100% !important;
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 10px;
+    text-align: center;
+    font-family: var(--font-number);
   }
 
   .charsheet .licensecontainer .container:not(.npc) .display button * {
