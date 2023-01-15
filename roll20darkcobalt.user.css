@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.68
+@version      1.0.69
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: 'Gitan', sans-serif;
     --font-secondary: 'Gitan', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.68 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.69 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -6150,17 +6150,17 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
   }
 
   .charsheet .licensecontainer .container:not(.npc) .display button span[name='attr_atkname'] {
-    width: 80% !important;
-    min-width: 80%;
-    max-width: 80%;
+    width: 105px !important;
+    min-width: 105px !important;
+    max-width: 105px !important;
     font-size: 10px;
     font-family: var(--font-number);
   }
 
   .charsheet .licensecontainer .container:not(.npc) .display button input[name='attr_atkbonus'] {
-    width: 20% !important;
-    min-width: 20%;
-    max-width: 20%;
+    width: 25px !important;
+    min-width: 25px !important;
+    max-width: 25px !important;
     font-size: 10px;
     font-family: var(--font-number);
   }
