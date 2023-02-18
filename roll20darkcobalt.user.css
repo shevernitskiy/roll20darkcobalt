@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.70
+@version      1.0.71
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: 'Gitan', sans-serif;
     --font-secondary: 'Gitan', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.70 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.71 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -1961,6 +1961,11 @@
     background-color: var(--color-element-bg);
   }
 
+  .pc .traits select[name='attr_filter_traits_by'] {
+    background: var(--color-element-bg);
+    color: var(--color-text-primary);
+  }
+
   .popover {
     background-color: var(--color-element-bg);
     box-shadow: 0px 0px 6px var(--color-text-disabled);
@@ -3443,6 +3448,26 @@
 
   #rightsidebar div.content a:not(.btn) {
     color: var(--color-yellow) !important;
+    font-weight: 400;
+  }
+  .sheet-rolltemplate-simple a[href^='~'],
+  .sheet-rolltemplate-simple3D a[href^='~'],
+  .sheet-rolltemplate-skill a[href^='~'],
+  .sheet-rolltemplate-atk a[href^='~'],
+  .sheet-rolltemplate-atkdmg a[href^='~'],
+  .sheet-rolltemplate-dmg a[href^='~'] {
+    background-color: var(--color-bg-light);
+    box-shadow: 0px 0 1px 0px black;
+    border: none;
+  }
+  .sheet-rolltemplate-simple a[href^='~']:hover,
+  .sheet-rolltemplate-simple3D a[href^='~']:hover,
+  .sheet-rolltemplate-skill a[href^='~']:hover,
+  .sheet-rolltemplate-atk a[href^='~']:hover,
+  .sheet-rolltemplate-atkdmg a[href^='~']:hover,
+  .sheet-rolltemplate-dmg a[href^='~']:hover {
+    background-color: var(--color-bg-light);
+    box-shadow: 0px 0 3px 0px var(--color-yellow);
   }
 
   /* -------------------------------- Tab Menu -------------------------------- */
@@ -4293,6 +4318,10 @@
     border: 1px dashed var(--color-red);
   }
 
+  .dark-mode-switch {
+    display: none;
+  }
+
   /* ------------------------------ Image Library ----------------------------- */
   #imagedialog .searchbox {
     background-color: var(--color-bg-light);
@@ -4440,7 +4469,7 @@
   }
 
   #speakingas {
-    width: calc(84%);
+    width: calc(100% - 42px);
     margin-right: 9px;
     height: 30px;
   }
@@ -4798,29 +4827,6 @@
     display: none;
   }
 
-  /*
-    .sheet-rolltemplate-simple div.sheet-container:hover,
-    .sheet-rolltemplate-skill div.sheet-container:hover,
-    .sheet-rolltemplate-atk div.sheet-container:hover,
-    .sheet-rolltemplate-atkdmg div.sheet-container.sheet-atk:hover,
-    .sheet-rolltemplate-dmg div.sheet-atk:hover,
-    .sheet-rolltemplate-dmg div.sheet-container:hover,
-    .sheet-rolltemplate-atkdmg div.sheet-container.sheet-damagetemplate:hover,
-    .sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-middle:hover,
-    .sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-middle:hover,
-    .sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-middle:hover,
-    .sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-middle:hover,
-    .sheet-rolltemplate-atk div.sheet-desc:hover,
-    .sheet-rolltemplate-atkdmg div.sheet-desc:hover,
-    .sheet-rolltemplate-dmg div.sheet-desc:hover,
-    .sheet-rolltemplate-desc div.sheet-desc:hover,
-    .sheet-rolltemplate-traits:hover,
-    .sheet-rolltemplate-npcaction div.sheet-container:hover,
-    .sheet-rolltemplate-npcatk:hover,
-    .sheet-rolltemplate-npcdmg:hover {
-        box-shadow: 0px 0px 10px var(--color-yellow);
-    }
-	*/
   .sheet-rolltemplate-default {
     border-radius: 5px;
     box-shadow: 0px 0px 5px var(--color-text-disabled);
@@ -5302,15 +5308,18 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     font-weight: normal;
   }
 
+  .hero-points .label {
+    display: flex;
+  }
   .hero-points .label button {
     color: var(--color-text-main);
     background: var(--color-button-main);
-    width: 99%;
+    width: 95%;
     height: 30px;
     left: -5px;
   }
   .hero-points .label button > span {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     line-height: 30px;
   }
@@ -5331,7 +5340,12 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
   }
   .hero-points .label button > span:last-of-type {
     color: var(--color-red);
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .hero-points input[name='attr_consumed_hero_points']:before,
+  .hero-points input[name='attr_consumed_hero_points']:after {
+    top: 10px;
   }
 
   .charsheet button.roll-hd.btn[type='roll']:hover,
@@ -5404,7 +5418,7 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
     display: block;
     left: calc(50% - 17px);
     position: relative;
-    width: 50px;
+    width: 50px !important;
     font-size: 26px;
     font-weight: bold;
   }
@@ -6292,6 +6306,14 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 
   .ui-dialog .charsheet .repcontainer .repitem .itemcontrol .repcontrol_del:hover {
     background-color: red;
+  }
+
+  .charsheet .licensecontainer .new-hit-dice .repcontainer .repitem input[name='attr_consumed'] {
+    width: 20px !important;
+    margin-right: 10px;
+  }
+  .charsheet .licensecontainer .new-hit-dice .repcontainer .repitem input[name='attr_consumed']:before {
+    background-color: var(--color-bg-dark);
   }
 
   .charsheet .spell .details-flag:checked + span,
