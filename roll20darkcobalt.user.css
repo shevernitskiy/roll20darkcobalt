@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.72
+@version      1.0.73
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: 'Gitan', sans-serif;
     --font-secondary: 'Gitan', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.72 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.73 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -2297,22 +2297,17 @@
     border-radius: 5px;
   }
 
-  .ui-dialog .ui-dialog-title > button:nth-of-type(3),
-  .ui-dialog .zoomoptionsmenu button:nth-of-type(2) {
-    border-top-left-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
-  }
-
-  .ui-dialog .ui-dialog-title > button:nth-of-type(2),
-  .ui-dialog .zoomoptionsmenu button:nth-of-type(1) {
+  .ui-dialog button.showpopout,
+  .ui-dialog button#printsheet {
     border-radius: 5px !important;
     font-family: 'Pictos';
   }
 
-  .ui-dialog .ui-dialog-title > button:nth-last-of-type(1),
-  .ui-dialog .zoomoptionsmenu button:nth-last-of-type(1) {
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
+  .ui-dialog .ui-dialog-title > button.broadcastcharacter,
+  .ui-dialog .ui-dialog-title > button.broadcasthandout,
+  .ui-dialog .ui-dialog-title > button.broadcastpdf {
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
   }
 
   .ui-dialog button.zoomoptions,
