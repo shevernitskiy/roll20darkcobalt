@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.73
+@version      1.0.74
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: 'Gitan', sans-serif;
     --font-secondary: 'Gitan', sans-serif;
     --font-mono: 'Ubuntu Mono', monospace;
-    --version: 'Dark Cobalt v1.0.73 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
+    --version: 'Dark Cobalt v1.0.74 \A 🔗github.com/shevernitskiy/roll20darkcobalt';
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -3379,6 +3379,27 @@
     background-color: var(--color-floating-bar-bg);
   }
 
+  .nameplate {
+    font-family: var(--font-primary) !important;
+    color: var(--color-yellow) !important;
+    text-shadow: 0px 0px 3px var(--color-bg-dark), 0px 0px 3px var(--color-bg-dark), 0px 0px 2px var(--color-bg-dark) !important;
+    background-color: transparent !important;
+  }
+
+  .bar-background::before {
+    font-family: var(--font-primary) !important;
+    text-shadow: 0px 0px 2px var(--color-bg-dark), 0px 0px 2px var(--color-bg-dark), 0px 0px 2px var(--color-bg-dark) !important;
+  }
+
+  .bar-background {
+    border-radius: 2px !important;
+    padding: 1px;
+  }
+
+  .token-bar {
+    border-radius: 2px !important;
+  }
+
   /* -------------------------------- Macro box ------------------------------- */
   #macrobar {
     margin: 10px;
@@ -4459,10 +4480,11 @@
     height: 90px !important;
     background-color: var(--color-bg-light);
     border: 0px;
+    width: 300px !important;
   }
 
   #textchat-input textarea {
-    width: calc(100% - 10px) !important;
+    width: calc(100% - 20px) !important;
     height: 35px;
     margin-bottom: 5px;
   }
@@ -4478,7 +4500,7 @@
   }
 
   #textchat-input .clear + div div {
-    width: calc(80%);
+    width: calc(75%);
   }
 
   #textchat-input label {
@@ -7512,10 +7534,13 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
   .sheet-rolltemplate-npcatk .inlinerollresult.fullcrit,
   .sheet-rolltemplate-npcdmg .inlinerollresult.fullcrit,
   .sheet-rolltemplate-npcfullatk .sheet-damagetemplate .inlinerollresult.fullcrit,
-  .sheet-rolltemplate-npcdmg,
   .sheet-damagetemplate .inlinerollresult.fullcrit {
     color: var(--color-green) !important;
     text-shadow: 0px 0px 20px var(--color-green), 0px 0px 20px var(--color-green) !important;
+  }
+
+  .sheet-rolltemplate-npcdmg .sheet-row {
+    padding: 10px 10px 0px 10px;
   }
 
   .sheet-rolltemplate-npc .inlinerollresult.fullfail,
