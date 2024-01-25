@@ -3,7 +3,7 @@
 @namespace    github.com/shevernitskiy/roll20darkcobalt
 @homepageURL  https://github.com/shevernitskiy/roll20darkcobalt
 @updateURL    https://raw.githubusercontent.com/shevernitskiy/roll20darkcobalt/master/roll20darkcobalt.user.css
-@version      1.0.77
+@version      1.0.78
 @author       shevernitskiy
 @license      MIT
 ==/UserStyle== */
@@ -40,7 +40,7 @@
     --font-header: "Gitan", sans-serif;
     --font-secondary: "Gitan", sans-serif;
     --font-mono: "Ubuntu Mono", monospace;
-    --version: "Dark Cobalt v1.0.77 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
+    --version: "Dark Cobalt v1.0.78 \A 🔗github.com/shevernitskiy/roll20darkcobalt";
     --anim-numbers: fadein cubic-bezier(0.8, 0, 0.9, 1) 0.7s;
     --anim-attack: slide-in-blurred-right 0.6s;
     --anim-damage: slide-in-blurred-top 0.5s;
@@ -1819,7 +1819,7 @@
   .selectize-input.focus,
   textarea:focus {
     outline: none;
-    border: 1px solid var(--color-yellow);
+    /*     border: 1px solid var(--color-yellow); */
   }
 
   select[disabled] {
@@ -1835,10 +1835,10 @@
   .dialog select.chosen,
   textarea {
     color: var(--color-text-primary);
-    background: var(--color-element-bg);
+    /*     background: var(--color-element-bg); */
     font-family: var(--font-secondary);
     font-size: 15px;
-    border: 1px solid var(--color-element-bg);
+    /*     border: 1px solid var(--color-element-bg); */
   }
 
   input[type="text"]::placeholder,
@@ -4625,7 +4625,11 @@
 
   .sheet-rolltemplate-darkmode.sheet-rolltemplate-simple div.sheet-container,
   .sheet-rolltemplate-darkmode.sheet-rolltemplate-simple3D div.sheet-container,
-  .sheet-rolltemplate-darkmode.sheet-rolltemplate-skill div.sheet-container {
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-skill div.sheet-container,
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-middle {
     background-image: none;
   }
 
@@ -4637,6 +4641,14 @@
   .sheet-rolltemplate-darkmode.sheet-rolltemplate-dmg a[href^="~"] {
     background-color: var(--color-bg-dark);
     border-color: var(--color-bg-dark);
+  }
+
+  .sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-middle,
+  .sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-middle {
+    box-shadow: none !important;
+    background-color: transparent !important ;
   }
 
   .textchatcontainer a[href^="!"]:hover {
@@ -6300,6 +6312,27 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
   .charsheet .npc button[type="roll"] {
     color: var(--color-text-primary);
     font-weight: 400;
+    font-size: 12px;
+  }
+
+  .charsheet .saving-throw button[type="roll"],
+  .charsheet .skill button[type="roll"],
+  .charsheet .equipment .item input {
+    font-size: 12px !important;
+  }
+
+  .textbox .display span.desc {
+    font-size: 14px !important;
+  }
+
+  .charsheet .spells .details div.row:not(.ellipsis) span {
+    font-size: 14px !important;
+  }
+
+  .charsheet .licensecontainer .container:not(.npc) .display button input[name="attr_atkdmgtype"],
+  .charsheet .licensecontainer .container:not(.npc) .display button span[name="attr_atkname"],
+  .charsheet .licensecontainer .container:not(.npc) .display button input[name="attr_atkbonus"] {
+    font-size: 11px !important;
   }
 
   .charsheet button[type="roll"]:hover,
@@ -8506,6 +8539,129 @@ url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBT
 .legacy-label[data-v-6d5f8e14],
 .bar-label[data-v-6d5f8e14] {
   color: var(--color-text-main);
+}
+
+/*
+  Version 2 overhaul
+*/
+
+:root {
+  --vtt-toolbar-active-selection-bg: var(--color-element-bg) !important;
+  --vtt-surface2: var(--color-bg-light) !important;
+  --vtt-surface: var(--color-bg-light) !important;
+  --vtt-grayscale-base: var(--color-text-secondary) !important;
+  --grayscale-d30: var(--color-text-secondary) !important;
+  --grayscale-base: var(--color-text-main) !important;
+  --vtt-container-bg: var(--color-bg-light) !important;
+  --vtt-toolbar-drawer-bg: var(--color-bg-light) !important;
+  --vtt-label-color: var(--color-text-secondary) !important;
+  --vtt-tooltip-color: var(--color-text-secondary) !important;
+  --vtt-tooltip-bg: var(--color-element-bg) !important;
+  --font-family-proxima-nova: var(--font-primary) !important;
+  --vtt-submenu-input-selected-color: var(--color-element-bg) !important;
+  --vtt-submenu-input-hover-color: var(--color-element-bg) !important;
+  --colors-dark-f20: var(--color-element-bg) !important;
+  --vtt-submenu-highlight-color: var(--color-element-bg) !important;
+  --vtt-toolbar-icon-color: var(--color-text-secondary) !important;
+  --vtt-collapse-btn-color: var(--color-text-secondary) !important;
+  --vtt-submenu-input-label-color: var(--color-yellow) !important;
+  --vtt-submenu-item-hover-color: var(--color-text-secondary) !important;
+  --vtt-submenu-item-active-bg: var(--color-yellow) !important;
+  --surface: var(--color-bg-medium) !important;
+  --el-text-color-secondary: var(--color-yellow) !important;
+  --primary-light-l90: var(--color-yellow) !important;
+  --primary-light-l60: var(--color-yellow) !important;
+  --surface-light: var(--color-element-bg) !important;
+  --grayscale-light-base: var(--color-text-main) !important;
+  --primary-input-border--focus: var(--color-yellow) !important;
+  --surface-contrast-text: var(--color-yellow) !important;
+  --surface-contrast-border: var(--color-yellow) !important;
+  --primary-l20: var(--color-yellow) !important;
+  --primary-contrast-text: var(--color-bg-dark) !important;
+  --primary: var(--color-yellow) !important;
+  --surface-light-light-3: var(--color-element-bg) !important;
+  --primary-light-l-40: var(--color-yellow) !important;
+  --opacity-colors-1-black-light-110: var(--color-bg-light) !important;
+  --color-surface2: var(--color-bg-light) !important;
+  --surface-primary-text: var(--color-yellow) !important;
+  --primary-l80: var(--color-button-hover) !important;
+  --vtt-submenu-label-color: var(--color-text-secondary) !important;
+  --vtt-footer-link-color: var(--color-yellow) !important;
+  --colors-light-060: var(--color-bg-light) !important;
+  --vtt-zoom-slider-bg: var(--color-bg-light) !important;
+  --vtt-zoom-slider-color: var(--color-text-secondary) !important;
+  --el-bg-color: var(--color-bg-light) !important;
+  --category-background-color: var(--color-element-bg) !important;
+  --item-background-color: var(--color-element-bg) !important;
+  --title-color: var(--color-text-secondary) !important;
+  --el-input-icon-color: var(--color-text-secondary) !important;
+  --breadcrumb-hover-color: var(--color-yellow) !important;
+  --item-accent-color: var(--color-bg-dark) !important;
+
+  .el-input__prefix {
+    --el-input-icon-color: var(--color-text-secondary) !important;
+    margin-left: 10px !important;
+  }
+
+  .journalbutton,
+  .superadd.btn {
+    padding: 7px;
+  }
+
+  .compendium-breadcrumb .compendium-title {
+    font-family: var(--font-primary);
+  }
+
+  .inapp .single-view {
+    width: 100% !important;
+  }
+
+  .compendium-page__expandable-content .booktemplate {
+    padding: 0;
+  }
+
+  .booktemplate .single-view {
+    background-color: var(--color-bg-dark) !important;
+  }
+
+  .compendium-page {
+    max-width: 90%;
+  }
+
+  #collapseGraphics .el-checkbox__label {
+    --el-checkbox-font-size: 11px !important;
+  }
+  .el-switch__core {
+    --el-switch-off-color: var(--color-element-bg) !important;
+    --surface-light: var(--color-yellow) !important;
+  }
+
+  .vtt-page-card.selected .vtt-page-title .el-text {
+    color: black !important;
+  }
+
+  .btn-cancel {
+    background-color: var(--color-bg-medium) !important;
+    border-color: var(--color-bg-medium) !important;
+  }
+
+  #vm-dice-roller .el-button.is-text {
+    background-color: var(--color-bg-ligth) !important;
+  }
+
+  div.submenu li:hover {
+    color: red !important;
+  }
+}
+
+.master-toolbar-outer {
+  background: var(--color-bg-light) !important;
+}
+
+.icon-slot {
+  color: var(--color-text-main) !important;
+}
+.icon-slot.icon-selected {
 }
 
 @-moz-document url-prefix("https://app.roll20.net/compendium/")
